@@ -1,0 +1,5 @@
+E:\my documents\telerik\2015\C# 1\Intro-Programming-Homework\ReformatCode\bin\Debug\ReformatCode.exe.config
+E:\my documents\telerik\2015\C# 1\Intro-Programming-Homework\ReformatCode\bin\Debug\ReformatCode.exe
+E:\my documents\telerik\2015\C# 1\Intro-Programming-Homework\ReformatCode\bin\Debug\ReformatCode.pdb
+E:\my documents\telerik\2015\C# 1\Intro-Programming-Homework\ReformatCode\obj\Debug\ReformatCode.exe
+E:\my documents\telerik\2015\C# 1\Intro-Programming-Homework\ReformatCode\obj\Debug\ReformatCode.pdb

@@ -1,0 +1,6 @@
+E:\my documents\telerik\2015\C# 1\operators_expressions\prime_num_check\bin\Debug\prime_num_check.exe.config
+E:\my documents\telerik\2015\C# 1\operators_expressions\prime_num_check\bin\Debug\prime_num_check.exe
+E:\my documents\telerik\2015\C# 1\operators_expressions\prime_num_check\bin\Debug\prime_num_check.pdb
+E:\my documents\telerik\2015\C# 1\operators_expressions\prime_num_check\obj\Debug\prime_num_check.exe
+E:\my documents\telerik\2015\C# 1\operators_expressions\prime_num_check\obj\Debug\prime_num_check.pdb
+E:\my documents\telerik\2015\C# 1\operators_expressions\prime_num_check\obj\Debug\prime_num_check.csprojResolveAssemblyReference.cache

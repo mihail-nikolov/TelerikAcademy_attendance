@@ -1,0 +1,5 @@
+E:\my documents\telerik\2015\C# 1\operators_expressions\rectangles\bin\Debug\rectangles.exe.config
+E:\my documents\telerik\2015\C# 1\operators_expressions\rectangles\bin\Debug\rectangles.exe
+E:\my documents\telerik\2015\C# 1\operators_expressions\rectangles\bin\Debug\rectangles.pdb
+E:\my documents\telerik\2015\C# 1\operators_expressions\rectangles\obj\Debug\rectangles.exe
+E:\my documents\telerik\2015\C# 1\operators_expressions\rectangles\obj\Debug\rectangles.pdb

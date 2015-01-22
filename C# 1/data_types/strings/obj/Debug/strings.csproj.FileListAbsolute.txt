@@ -1,0 +1,5 @@
+E:\my documents\telerik\2015\C# 1\data_types\strings\bin\Debug\strings.exe.config
+E:\my documents\telerik\2015\C# 1\data_types\strings\bin\Debug\strings.exe
+E:\my documents\telerik\2015\C# 1\data_types\strings\bin\Debug\strings.pdb
+E:\my documents\telerik\2015\C# 1\data_types\strings\obj\Debug\strings.exe
+E:\my documents\telerik\2015\C# 1\data_types\strings\obj\Debug\strings.pdb

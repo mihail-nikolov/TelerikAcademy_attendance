@@ -1,0 +1,5 @@
+E:\my documents\telerik\2015\C# 1\operators_expressions\trapezoids\bin\Debug\trapezoids.exe.config
+E:\my documents\telerik\2015\C# 1\operators_expressions\trapezoids\bin\Debug\trapezoids.exe
+E:\my documents\telerik\2015\C# 1\operators_expressions\trapezoids\bin\Debug\trapezoids.pdb
+E:\my documents\telerik\2015\C# 1\operators_expressions\trapezoids\obj\Debug\trapezoids.exe
+E:\my documents\telerik\2015\C# 1\operators_expressions\trapezoids\obj\Debug\trapezoids.pdb

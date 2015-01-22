@@ -1,0 +1,5 @@
+E:\my documents\telerik\2015\C# 1\data_types\unicode_char\bin\Debug\unicode_char.exe.config
+E:\my documents\telerik\2015\C# 1\data_types\unicode_char\bin\Debug\unicode_char.exe
+E:\my documents\telerik\2015\C# 1\data_types\unicode_char\bin\Debug\unicode_char.pdb
+E:\my documents\telerik\2015\C# 1\data_types\unicode_char\obj\Debug\unicode_char.exe
+E:\my documents\telerik\2015\C# 1\data_types\unicode_char\obj\Debug\unicode_char.pdb

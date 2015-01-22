@@ -1,0 +1,14 @@
+Microsoft Visual Studio:
+	It is a definitive IDE for Windows application development. Visual Studio products cover languages like C++, C# and VB.NET. In addition, you are also able to develop for the Windows x86, Windows RT, and Windows Phone.
+
+Oracle Netbeans 7:
+	If you are more of a Java developer, Oracle's got your back with their Netbeans IDE. Of course, despite the fact that excellent Java support is its claim to fame going as far back as the Sun Microsystems days, other languages like C/C++, Ruby, HTML5, PHP and more are supported as well. Netbeans is extremely extensible via its plugin-centric design, allowing you to add additional language syntax support and libraries, among other things.
+
+Eclipse:
+	This IDE is quite comprehensive and even similar to Netbeans in a variety of ways, including its use of Java and plugin architecture. However, Eclipse as an IDE comes in a wild variety of flavors, catering to various needs and objectives in software development workflows. 
+
+Code::Blocks:
+	Unlike the other products seen thus far, Code::Blocks, which is built on the wxWidgets framework, is exceptionally lightweight in size, yet still quite functional and feature-rich IDE. You can load up a number of under-the-hood compiler engines, ranging from GCC and LLVM, to Digital Mars and Open Watcom. 
+
+ Aptana Studio 3:
+	If web and scripting languages are more of your style, Aptana is well suited for the task. PHP, Ruby on Rails, and Python are supported as well as the likes of Adobe AIR. Even the studio itself is available as a plugin for Eclipse if you prefer the way Aptana handles your work and want to combine it with a more comprehensive IDE. Aptana Studio 3 is free and available solely under the GNU General Public License.

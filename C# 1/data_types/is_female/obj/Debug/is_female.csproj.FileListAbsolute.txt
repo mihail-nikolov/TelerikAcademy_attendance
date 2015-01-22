@@ -1,0 +1,5 @@
+E:\my documents\telerik\2015\C# 1\data_types\is_female\bin\Debug\is_female.exe.config
+E:\my documents\telerik\2015\C# 1\data_types\is_female\bin\Debug\is_female.exe
+E:\my documents\telerik\2015\C# 1\data_types\is_female\bin\Debug\is_female.pdb
+E:\my documents\telerik\2015\C# 1\data_types\is_female\obj\Debug\is_female.exe
+E:\my documents\telerik\2015\C# 1\data_types\is_female\obj\Debug\is_female.pdb

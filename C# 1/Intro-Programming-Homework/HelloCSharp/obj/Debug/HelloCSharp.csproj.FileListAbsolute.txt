@@ -1,0 +1,5 @@
+E:\my documents\telerik\2015\C# 1\Intro-Programming-Homework\HelloCSharp\bin\Debug\HelloCSharp.exe.config
+E:\my documents\telerik\2015\C# 1\Intro-Programming-Homework\HelloCSharp\bin\Debug\HelloCSharp.exe
+E:\my documents\telerik\2015\C# 1\Intro-Programming-Homework\HelloCSharp\bin\Debug\HelloCSharp.pdb
+E:\my documents\telerik\2015\C# 1\Intro-Programming-Homework\HelloCSharp\obj\Debug\HelloCSharp.exe
+E:\my documents\telerik\2015\C# 1\Intro-Programming-Homework\HelloCSharp\obj\Debug\HelloCSharp.pdb

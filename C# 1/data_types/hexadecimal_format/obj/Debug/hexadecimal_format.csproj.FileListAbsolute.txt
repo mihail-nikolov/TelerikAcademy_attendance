@@ -1,0 +1,5 @@
+E:\my documents\telerik\2015\C# 1\data_types\hexadecimal_format\bin\Debug\hexadecimal_format.exe.config
+E:\my documents\telerik\2015\C# 1\data_types\hexadecimal_format\bin\Debug\hexadecimal_format.exe
+E:\my documents\telerik\2015\C# 1\data_types\hexadecimal_format\bin\Debug\hexadecimal_format.pdb
+E:\my documents\telerik\2015\C# 1\data_types\hexadecimal_format\obj\Debug\hexadecimal_format.exe
+E:\my documents\telerik\2015\C# 1\data_types\hexadecimal_format\obj\Debug\hexadecimal_format.pdb

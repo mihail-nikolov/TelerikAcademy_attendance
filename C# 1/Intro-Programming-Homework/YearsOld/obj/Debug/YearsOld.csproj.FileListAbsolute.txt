@@ -1,0 +1,6 @@
+E:\my documents\telerik\2015\C# 1\Intro-Programming-Homework\YearsOld\bin\Debug\YearsOld.exe.config
+E:\my documents\telerik\2015\C# 1\Intro-Programming-Homework\YearsOld\bin\Debug\YearsOld.exe
+E:\my documents\telerik\2015\C# 1\Intro-Programming-Homework\YearsOld\bin\Debug\YearsOld.pdb
+E:\my documents\telerik\2015\C# 1\Intro-Programming-Homework\YearsOld\obj\Debug\YearsOld.csprojResolveAssemblyReference.cache
+E:\my documents\telerik\2015\C# 1\Intro-Programming-Homework\YearsOld\obj\Debug\YearsOld.exe
+E:\my documents\telerik\2015\C# 1\Intro-Programming-Homework\YearsOld\obj\Debug\YearsOld.pdb

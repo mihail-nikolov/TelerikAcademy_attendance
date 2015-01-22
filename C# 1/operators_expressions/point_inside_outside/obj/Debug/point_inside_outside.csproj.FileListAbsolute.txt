@@ -1,0 +1,6 @@
+E:\my documents\telerik\2015\C# 1\operators_expressions\point_inside_outside\bin\Debug\point_inside_outside.exe.config
+E:\my documents\telerik\2015\C# 1\operators_expressions\point_inside_outside\bin\Debug\point_inside_outside.exe
+E:\my documents\telerik\2015\C# 1\operators_expressions\point_inside_outside\bin\Debug\point_inside_outside.pdb
+E:\my documents\telerik\2015\C# 1\operators_expressions\point_inside_outside\obj\Debug\point_inside_outside.csprojResolveAssemblyReference.cache
+E:\my documents\telerik\2015\C# 1\operators_expressions\point_inside_outside\obj\Debug\point_inside_outside.exe
+E:\my documents\telerik\2015\C# 1\operators_expressions\point_inside_outside\obj\Debug\point_inside_outside.pdb

@@ -1,0 +1,5 @@
+E:\my documents\telerik\2015\C# 1\operators_expressions\third_digit\bin\Debug\third_digit.exe.config
+E:\my documents\telerik\2015\C# 1\operators_expressions\third_digit\bin\Debug\third_digit.exe
+E:\my documents\telerik\2015\C# 1\operators_expressions\third_digit\bin\Debug\third_digit.pdb
+E:\my documents\telerik\2015\C# 1\operators_expressions\third_digit\obj\Debug\third_digit.exe
+E:\my documents\telerik\2015\C# 1\operators_expressions\third_digit\obj\Debug\third_digit.pdb

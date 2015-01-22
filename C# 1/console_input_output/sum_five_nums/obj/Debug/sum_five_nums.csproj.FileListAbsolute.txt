@@ -1,0 +1,5 @@
+E:\my documents\telerik\2015\C# 1\console_input_output\sum_five_nums\bin\Debug\sum_five_nums.exe.config
+E:\my documents\telerik\2015\C# 1\console_input_output\sum_five_nums\bin\Debug\sum_five_nums.exe
+E:\my documents\telerik\2015\C# 1\console_input_output\sum_five_nums\bin\Debug\sum_five_nums.pdb
+E:\my documents\telerik\2015\C# 1\console_input_output\sum_five_nums\obj\Debug\sum_five_nums.exe
+E:\my documents\telerik\2015\C# 1\console_input_output\sum_five_nums\obj\Debug\sum_five_nums.pdb

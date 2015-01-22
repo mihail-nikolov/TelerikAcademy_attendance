@@ -1,0 +1,6 @@
+E:\my documents\telerik\2015\C# 1\Intro-Programming-Homework\PrintMyName\bin\Debug\PrintMyName.exe.config
+E:\my documents\telerik\2015\C# 1\Intro-Programming-Homework\PrintMyName\bin\Debug\PrintMyName.exe
+E:\my documents\telerik\2015\C# 1\Intro-Programming-Homework\PrintMyName\bin\Debug\PrintMyName.pdb
+E:\my documents\telerik\2015\C# 1\Intro-Programming-Homework\PrintMyName\obj\Debug\PrintMyName.csprojResolveAssemblyReference.cache
+E:\my documents\telerik\2015\C# 1\Intro-Programming-Homework\PrintMyName\obj\Debug\PrintMyName.exe
+E:\my documents\telerik\2015\C# 1\Intro-Programming-Homework\PrintMyName\obj\Debug\PrintMyName.pdb

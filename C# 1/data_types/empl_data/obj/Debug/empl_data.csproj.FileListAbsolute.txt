@@ -1,0 +1,5 @@
+E:\my documents\telerik\2015\C# 1\data_types\empl_data\bin\Debug\empl_data.exe.config
+E:\my documents\telerik\2015\C# 1\data_types\empl_data\bin\Debug\empl_data.exe
+E:\my documents\telerik\2015\C# 1\data_types\empl_data\bin\Debug\empl_data.pdb
+E:\my documents\telerik\2015\C# 1\data_types\empl_data\obj\Debug\empl_data.exe
+E:\my documents\telerik\2015\C# 1\data_types\empl_data\obj\Debug\empl_data.pdb

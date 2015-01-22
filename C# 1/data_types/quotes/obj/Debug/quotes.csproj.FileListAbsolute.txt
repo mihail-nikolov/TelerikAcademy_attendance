@@ -1,0 +1,5 @@
+E:\my documents\telerik\2015\C# 1\data_types\quotes\bin\Debug\quotes.exe.config
+E:\my documents\telerik\2015\C# 1\data_types\quotes\bin\Debug\quotes.exe
+E:\my documents\telerik\2015\C# 1\data_types\quotes\bin\Debug\quotes.pdb
+E:\my documents\telerik\2015\C# 1\data_types\quotes\obj\Debug\quotes.exe
+E:\my documents\telerik\2015\C# 1\data_types\quotes\obj\Debug\quotes.pdb

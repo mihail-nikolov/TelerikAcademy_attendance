@@ -1,0 +1,5 @@
+E:\my documents\telerik\2015\C# 1\data_types\bank_acc\bin\Debug\bank_acc.exe.config
+E:\my documents\telerik\2015\C# 1\data_types\bank_acc\bin\Debug\bank_acc.exe
+E:\my documents\telerik\2015\C# 1\data_types\bank_acc\bin\Debug\bank_acc.pdb
+E:\my documents\telerik\2015\C# 1\data_types\bank_acc\obj\Debug\bank_acc.exe
+E:\my documents\telerik\2015\C# 1\data_types\bank_acc\obj\Debug\bank_acc.pdb

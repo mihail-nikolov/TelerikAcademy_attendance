@@ -1,0 +1,5 @@
+E:\my documents\telerik\2015\C# 1\operators_expressions\divide_seven_five\bin\Debug\divide_seven_five.exe.config
+E:\my documents\telerik\2015\C# 1\operators_expressions\divide_seven_five\bin\Debug\divide_seven_five.exe
+E:\my documents\telerik\2015\C# 1\operators_expressions\divide_seven_five\bin\Debug\divide_seven_five.pdb
+E:\my documents\telerik\2015\C# 1\operators_expressions\divide_seven_five\obj\Debug\divide_seven_five.exe
+E:\my documents\telerik\2015\C# 1\operators_expressions\divide_seven_five\obj\Debug\divide_seven_five.pdb

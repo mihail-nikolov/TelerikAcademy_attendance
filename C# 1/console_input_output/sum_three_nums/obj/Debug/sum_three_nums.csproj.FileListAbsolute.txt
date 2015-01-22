@@ -1,0 +1,6 @@
+E:\my documents\telerik\2015\C# 1\console_input_output\sum_three_nums\bin\Debug\sum_three_nums.exe.config
+E:\my documents\telerik\2015\C# 1\console_input_output\sum_three_nums\bin\Debug\sum_three_nums.exe
+E:\my documents\telerik\2015\C# 1\console_input_output\sum_three_nums\bin\Debug\sum_three_nums.pdb
+E:\my documents\telerik\2015\C# 1\console_input_output\sum_three_nums\obj\Debug\sum_three_nums.csprojResolveAssemblyReference.cache
+E:\my documents\telerik\2015\C# 1\console_input_output\sum_three_nums\obj\Debug\sum_three_nums.exe
+E:\my documents\telerik\2015\C# 1\console_input_output\sum_three_nums\obj\Debug\sum_three_nums.pdb

@@ -1,0 +1,6 @@
+E:\my documents\telerik\2015\C# 1\data_types\declare_variables\bin\Debug\declare_variables.exe.config
+E:\my documents\telerik\2015\C# 1\data_types\declare_variables\bin\Debug\declare_variables.exe
+E:\my documents\telerik\2015\C# 1\data_types\declare_variables\bin\Debug\declare_variables.pdb
+E:\my documents\telerik\2015\C# 1\data_types\declare_variables\obj\Debug\declare_variables.csprojResolveAssemblyReference.cache
+E:\my documents\telerik\2015\C# 1\data_types\declare_variables\obj\Debug\declare_variables.exe
+E:\my documents\telerik\2015\C# 1\data_types\declare_variables\obj\Debug\declare_variables.pdb
