@@ -25,6 +25,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "number_word", "number_word\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "beers", "beers\beers.csproj", "{E4B2464F-5EF8-4481-BED8-4E4C80598A03}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "zero_subset", "zero_subset\zero_subset.csproj", "{D449993C-F354-4A06-B1C6-97FB6CF252E0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -75,6 +77,10 @@ Global
 		{E4B2464F-5EF8-4481-BED8-4E4C80598A03}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E4B2464F-5EF8-4481-BED8-4E4C80598A03}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E4B2464F-5EF8-4481-BED8-4E4C80598A03}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D449993C-F354-4A06-B1C6-97FB6CF252E0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D449993C-F354-4A06-B1C6-97FB6CF252E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D449993C-F354-4A06-B1C6-97FB6CF252E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D449993C-F354-4A06-B1C6-97FB6CF252E0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
