@@ -13,6 +13,9 @@ namespace _7.LargestAreaInMatrix
     {
         static void Main()
         {
+            int n = 4;
+            int[,] matrix = caseA(n);
+            printMatrix(matrix);
         }
     }
 }
