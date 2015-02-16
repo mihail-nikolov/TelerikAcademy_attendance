@@ -12,8 +12,25 @@ namespace _2.GetLargestNums
 {
     class GetLargestNums
     {
+        static int getMax(int a, int b)
+        {
+            if (a > b)
+            {
+                return a;
+            }
+            return b;
+        }
         static void Main()
         {
+            int[] nums = new int[3];
+            for (int i = 0; i < 3; i++)
+            {
+                Console.WriteLine("enter num: ");
+                nums[i] = int.Parse(Console.ReadLine());
+            }
+            int num1 = getMax(nums[0], nums[1]);
+            int num2 = getMax(nums[2], num1);
+            Console.WriteLine("the biggest nunm is: {0}", num2);
         }
     }
 }

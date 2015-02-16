@@ -11,8 +11,29 @@ namespace _5.SortByStrLength
 {
     class SortByStrLength
     {
+        static void swap(string[] arr, int i, int j)
+        {
+            string tmp = arr[i];
+            arr[i] = arr[j];
+            arr[j] = tmp;
+        }
         static void Main()
         {
+            string[] arr = { "are", "given", "an", "strings", "characters", "method", "its" };
+            string unsortedArr = string.Join(", ", arr);
+            Console.WriteLine(unsortedArr);
+            for (int i = 0; i < arr.Length - 1; i++)
+            {
+                for (int j = i; j < arr.Length; j++)
+                {
+                    if (arr[i].Length > arr[j].Length)
+                    {
+                        swap(arr, i, j);
+                    }
+                }
+            }
+            string sortedArr = string.Join(", ", arr);
+            Console.WriteLine(sortedArr);
         }
     }
 }
