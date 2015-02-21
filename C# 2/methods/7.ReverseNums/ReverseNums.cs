@@ -11,7 +11,7 @@ namespace _7.ReverseNums
 {
     class ReverseNums
     {
-        static string Reverse(int num)
+        static string Reverse(double num)
         {
             string numStr = num.ToString();
             string reversedNum = "";
@@ -23,7 +23,7 @@ namespace _7.ReverseNums
         }
         static void Main()
         {
-            int num = 256;
+            double num = 123.45;
             string reversedNum = Reverse(num);
             Console.WriteLine("num : {0}, reversed: {1}", num, reversedNum);
         }

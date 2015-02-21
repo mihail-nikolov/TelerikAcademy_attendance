@@ -23,9 +23,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "9.SortingArr", "9.SortingAr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "10.NFactorial", "10.NFactorial\10.NFactorial.csproj", "{AA68B16E-C500-48A1-8F23-810EDC8C0C95}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "11.AddingPolynomials", "11.AddingPolynomials\11.AddingPolynomials.csproj", "{1E1A7F7F-4919-49B7-A0EB-62463CB6D461}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "12.SubstractiongPolynomials", "12.SubstractiongPolynomials\12.SubstractiongPolynomials.csproj", "{6FD07AFA-E47C-49D8-89AF-D07DBFA8286C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "11.12.AddingPolynomials", "11.AddingPolynomials\11.12.AddingPolynomials.csproj", "{1E1A7F7F-4919-49B7-A0EB-62463CB6D461}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "13.SolveTasks", "13.SolveTasks\13.SolveTasks.csproj", "{FAAED438-45AC-48C4-A1A8-81F6BB25A531}"
 EndProject
@@ -83,10 +81,6 @@ Global
 		{1E1A7F7F-4919-49B7-A0EB-62463CB6D461}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1E1A7F7F-4919-49B7-A0EB-62463CB6D461}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1E1A7F7F-4919-49B7-A0EB-62463CB6D461}.Release|Any CPU.Build.0 = Release|Any CPU
-		{6FD07AFA-E47C-49D8-89AF-D07DBFA8286C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6FD07AFA-E47C-49D8-89AF-D07DBFA8286C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6FD07AFA-E47C-49D8-89AF-D07DBFA8286C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6FD07AFA-E47C-49D8-89AF-D07DBFA8286C}.Release|Any CPU.Build.0 = Release|Any CPU
 		{FAAED438-45AC-48C4-A1A8-81F6BB25A531}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{FAAED438-45AC-48C4-A1A8-81F6BB25A531}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FAAED438-45AC-48C4-A1A8-81F6BB25A531}.Release|Any CPU.ActiveCfg = Release|Any CPU
