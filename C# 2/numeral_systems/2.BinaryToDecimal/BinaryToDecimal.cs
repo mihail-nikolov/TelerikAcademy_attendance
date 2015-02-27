@@ -13,6 +13,13 @@ namespace _2.BinaryToDecimal
     {
         static void Main()
         {
+            string myBin = "1010101010101011";
+            double sumOfMyNym = 0;
+            for (int i = 0; i <= myBin.Length - 1; i++)
+            {
+                sumOfMyNym += (int)Char.GetNumericValue(myBin[i]) * Math.Pow(2, (myBin.Length - 1 - i));
+            }
+            Console.WriteLine(sumOfMyNym);
         }
     }
 }
