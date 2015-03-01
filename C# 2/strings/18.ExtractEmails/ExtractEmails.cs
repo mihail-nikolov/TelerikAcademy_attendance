@@ -14,6 +14,7 @@ namespace _18.ExtractEmails
     {
         static void Main()
         {
+
         }
     }
 }

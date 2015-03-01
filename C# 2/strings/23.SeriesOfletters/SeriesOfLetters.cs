@@ -13,6 +13,19 @@ namespace _23.SeriesOfletters
     {
         static void Main()
         {
+            string str = "aaaaabbbbbcdddeeeedssaa";
+            string newStr = str[0].ToString();
+            for (int i = 1; i < str.Length; i++)
+            {
+
+                if (str[i] != str[i - 1])
+                {
+                    newStr += str[i];
+                }
+            }
+            Console.WriteLine(str);
+            Console.WriteLine(newStr);
         }
     }
 }
+
