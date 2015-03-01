@@ -87,7 +87,7 @@ namespace _13.ReverseSnt
         static void Main()
         {
             Dictionary<string, List<int>> myDictDB = new Dictionary<string, List<int>>();
-            string myStr = "C# is not C++, not PHP and not Delphi!";
+            string myStr = "C#, is not C++, not PHP and not Delphi!";
             Console.WriteLine(myStr);
             string[] strArr = myStr.Split(' ');
             LoopThroughTheStrArr(strArr, myDictDB);

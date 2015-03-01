@@ -13,8 +13,12 @@ namespace _7.EncodeDecode
 {
     class EncodeDecode
     {
-        static void Main(string[] args)
+        static void Main()
         {
+            string myStr = "blq";
+            char a = 'T';
+            char b = 'a';
+            Console.WriteLine((char)(a^b));
         }
     }
 }
