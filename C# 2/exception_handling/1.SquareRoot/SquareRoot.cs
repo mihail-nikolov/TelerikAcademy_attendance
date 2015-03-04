@@ -16,6 +16,29 @@ namespace _1.SquareRoot
     {
         static void Main()
         {
+            Console.Write("n = ");
+            try
+            {
+                int num = int.Parse(Console.ReadLine());
+                if (num <= 0)
+                {
+                    throw new ArgumentException("Invaild Number");
+                }
+                Console.WriteLine(Math.Sqrt(num));
+            }
+            catch (FormatException)
+            {
+                Console.WriteLine("Invalid Number");
+            }
+            catch (ArgumentException argEx)
+            {
+                Console.WriteLine(argEx.Message);
+            }
+            finally
+            {
+                Console.WriteLine("good bye");
+            }
+            
         }
     }
 }

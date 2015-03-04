@@ -14,6 +14,32 @@ namespace _3.CorrectBrackets
     {
         static void Main()
         {
+            string expression = "((a+b))";
+            char opening = '(';
+            char closing = ')';
+            int count = 0;
+            for (int i = 0; i < expression.Length - 2; i++)
+            {
+                if (expression[i] == opening)
+                {
+                    count++;
+                }
+            }
+            for (int i = expression.Length - 1; i > 0; i--)
+            {
+                if (expression[i] == closing)
+                {
+                    count--;
+                }
+            }
+            if (count == 0)
+            {
+                Console.WriteLine("correct!");
+            }
+            else
+            {
+                Console.WriteLine("NOT correct!");
+            }
         }
     }
 }

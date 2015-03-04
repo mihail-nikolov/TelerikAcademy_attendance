@@ -15,10 +15,23 @@ namespace _7.EncodeDecode
     {
         static void Main()
         {
-            string myStr = "blq";
-            char a = 'T';
-            char b = 'a';
-            Console.WriteLine((char)(a^b));
+            string myStr = "Test";
+            Console.WriteLine(myStr);
+            string key = "ab";
+            string decoded = "";
+            string encoded = "";
+            int keyLen = key.Length;
+            for (int i = 0; i < myStr.Length; i++)
+            {
+                encoded += (char)(myStr[i] ^ key[i%keyLen]);
+            }
+            Console.WriteLine(encoded);
+            for (int j = 0; j < encoded.Length; j++)
+            {
+                decoded += (char)(encoded[j] ^ key[j % keyLen]);
+            }
+            Console.WriteLine(decoded);
+
         }
     }
 }

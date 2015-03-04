@@ -13,6 +13,22 @@ namespace _12.ParseURL
     {
         static void Main()
         {
+            string address = "http://telerikacademy.com/Courses/Courses/Details/212";
+            int indexProtocolEnd = address.IndexOf(':');
+            string protocol = address.Substring(0, indexProtocolEnd);
+            Console.WriteLine("[protocol] = {0}", protocol);
+
+            string protocolServerDivider = "//";
+            int indexServerStart = address.IndexOf(protocolServerDivider);
+            string serverResourceDivider = "/";
+            int indexServerEnd = address.IndexOf(serverResourceDivider, indexServerStart + (protocolServerDivider.Length));
+            int serverLength = indexServerEnd - (indexServerStart + protocolServerDivider.Length);
+            string server = address.Substring(indexServerStart + (protocolServerDivider.Length), serverLength);
+
+            Console.WriteLine("[server] = {0}", server);
+            int resourceLength = address.Length - indexServerEnd;
+            string resource = address.Substring(indexServerEnd, resourceLength);
+            Console.WriteLine("[resource] = {0}", resource);
         }
     }
 }

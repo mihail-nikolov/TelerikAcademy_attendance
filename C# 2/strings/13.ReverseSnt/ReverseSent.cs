@@ -12,7 +12,7 @@ namespace _13.ReverseSnt
 {
     class ReverseSent
     {
-        static public string[] PUNCT = { ",", ".", "!?", "!", "...", "?", ";", ":" };
+        static public string[] PUNCT = { ",", "...", "!?", "!", ".", "?", ";", ":" };
         static void PrintDict(Dictionary<string, List<int>> myDict)
         {
             foreach (var item in myDict.Keys)

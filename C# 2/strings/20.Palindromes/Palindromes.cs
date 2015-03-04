@@ -47,7 +47,7 @@ namespace _20.Palindromes
         }
         static void Main()
         {
-            string myText = "ABBA lamal, exe! kh;asd";
+            string myText = "ABBA lamal, exe! khasd;";
             Console.WriteLine(myText);
             string[] words = GetArrFromWords(myText);
             PrintPalindromes(words);

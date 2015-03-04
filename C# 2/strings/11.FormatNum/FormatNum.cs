@@ -14,6 +14,13 @@ namespace _11.FormatNum
     {
         static void Main()
         {
+            int number = 15;
+            string decimalNum = number.ToString("F2");
+            string hexNum = number.ToString("X");
+            string percNum = number.ToString("P");
+            string scienNum = number.ToString("E");
+            Console.WriteLine("{0, 15}|{1, 15}|{2, 15}|{3, 15}",
+            decimalNum, hexNum, percNum, scienNum);
         }
     }
 }
