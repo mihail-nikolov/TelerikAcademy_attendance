@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DefineClasses1
 {
-    class GSMCallHistoryTest
+    public class GSMCallHistoryTest
     {
         public void HistoryTest()
         {

@@ -89,8 +89,10 @@ namespace DefineClasses1
             Console.WriteLine(myGSM.Display.NumberOfColors);
             Console.WriteLine(myGSM.ToString());
             Console.WriteLine(GSM.Iphone4S);
+
             Console.WriteLine("----------------------------------");
             Console.WriteLine("----------------------------------");
+
             GSMtest myTest = new GSMtest(2);
             myTest.DisplayIphone4SInfo();
             myTest.GenerateGSMs();
