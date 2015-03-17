@@ -82,6 +82,7 @@ namespace DefineClasses
                     Console.Write(myMatr5[i, j] + " ");
                 }
             }
+            SampleClass.Sample();
         }
     }
 }

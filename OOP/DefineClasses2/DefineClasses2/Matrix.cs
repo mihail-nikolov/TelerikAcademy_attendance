@@ -127,9 +127,24 @@ namespace DefineClasses
                 throw new IndexOutOfRangeException("rows of the one matrix has to be equal to the cols of the other");
             }
         }
-        // public static operator true (Matrix<T> M1)
-        //{
-
-        //}
+        public static bool operator true(Matrix<T> M)
+        {
+            return BooleanOperator(M, true);
+        }
+        public static bool operator false(Matrix<T> M)
+        {
+            return BooleanOperator(M, false);
+        }
+        private static bool BooleanOperator(Matrix<T> M, bool trueFalse)
+        {
+            foreach (var element in M.items)
+            {
+                if (!element.Equals(default(T)))
+                {
+                    return trueFalse;
+                }
+            }
+            return !trueFalse;
+        }
     }
 }

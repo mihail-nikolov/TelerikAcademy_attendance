@@ -41,6 +41,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="SampleClass.cs" />
+    <Compile Include="VersionAttribute.cs" />
     <Compile Include="Calc3D.cs" />
     <Compile Include="GenericList.cs" />
     <Compile Include="Matrix.cs" />
