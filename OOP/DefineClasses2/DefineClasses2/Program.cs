@@ -46,8 +46,8 @@ namespace DefineClasses
             {
                 Console.WriteLine(item);
             }
-            Console.WriteLine(myArr.Min());
-            Console.WriteLine(myArr.Max());
+            Console.WriteLine(myArr.MIN());
+            Console.WriteLine(myArr.MAX());
             Matrix<int> myMat1 = new Matrix<int>(2, 2);
             myMat1[0, 0] = 1;
             myMat1[0, 1] = 2;

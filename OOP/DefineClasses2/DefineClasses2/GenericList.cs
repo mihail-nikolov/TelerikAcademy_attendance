@@ -96,14 +96,13 @@ namespace DefineClasses
             }
             return arrStr;
         }
-        public T MIN<A>()
-           where A:IComparable<A>
+        public T MIN()
+          // where T:IComparable<A>
         {
-            //T item = this.items.Max();
             return this.items.Min();
         }
-        public T MAX<A>()
-           where A:IComparable<A>
+        public T MAX()
+           //where A:IComparable<A>
         {
             return this.items.Max();
         }
