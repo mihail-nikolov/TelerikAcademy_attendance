@@ -26,9 +26,6 @@ namespace Ext_Delegates_Lambda_Linq
 
         public static void LongestStr(this string[] arr)
         {
-            //string newStr = 
-            //    from str in arr
-            //    where str.Max()
             var longest = arr.Where(s => s.Length == arr.Max(m => m.Length)).First();
             Console.WriteLine(longest);
         }

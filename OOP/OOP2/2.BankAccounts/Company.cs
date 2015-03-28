@@ -4,9 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace _09.StudentNameSpace
+namespace _2.BankAccounts
 {
-    class ExtractStudWithTwoRemarksExtens
+    class Company:Customer
     {
+        public Company(string name)
+            :base(name)
+        {
+        }
     }
 }

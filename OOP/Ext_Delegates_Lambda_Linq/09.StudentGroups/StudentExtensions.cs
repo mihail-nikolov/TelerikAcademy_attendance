@@ -70,7 +70,7 @@ namespace _09.StudentNameSpace
 
             IEnumerableExtension.Foreach(abvMailStudent);
         }
-        public static void ExtarctMarks(this List<Student> students)
+        public static void ExtarctMarks2006(this List<Student> students)
         {
             var marks2006 =
                 from student in students
@@ -93,7 +93,10 @@ namespace _09.StudentNameSpace
                select new { GroupN = gr.Key, Name = gr.ToList() };
             foreach (var item in grouped)
             {
-                //the printing!
+                Console.Write("gr num: {0}", item.GroupN);
+                Console.WriteLine();
+                string studentsList = string.Join(", ", item.Name);
+                Console.WriteLine(studentsList);
             }
         }
     }

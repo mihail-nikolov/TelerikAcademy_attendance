@@ -64,7 +64,7 @@ namespace _09.StudentNameSpace
         static void Main()
         {
             Student pesho = new Student("Pesho", "Mesho", 114506, "0834856456", "pm@gmail.com", 2, 23);
-            pesho.Marks = new List<int> { 2, 4, 5, 6 };
+            pesho.Marks = new List<int> { 2, 2, 5, 6 };
             Student gey = new Student("Gey", "Gejov", 115408, "085656132", "gg@abv.bg", 5, 32);
             gey.Marks = new List<int> { 3, 4, 5, 6 };
             Student gubi = new Student("Gubi", "Tapag", 112412, "08946545221", "tp@yahoo.com", 11, 33);
@@ -104,7 +104,7 @@ namespace _09.StudentNameSpace
             Console.WriteLine();
             Console.WriteLine("marks 2006");
 
-            students.ExtarctMarks();
+            students.ExtarctMarks2006();
 
             Console.WriteLine();
             Console.WriteLine("grouped by groupNum");
@@ -129,6 +129,14 @@ namespace _09.StudentNameSpace
             Console.WriteLine();
             Console.WriteLine("ordered LINQ");
             students.OrderStudentsFNameLNameLINQ();
+
+            Console.WriteLine();
+            Console.WriteLine("ExtractByExcellentMark");
+            students.ExtractByExcellentMark();
+
+            Console.WriteLine();
+            Console.WriteLine("ExtractByPoorMarks");
+            students.ExtractByPoorMarks();
         }
     }
 }

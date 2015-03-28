@@ -20,7 +20,14 @@ namespace _03.AnimalHierarchy
         public char Sex
         {
             get { return this.sex; }
-            protected set { this.sex = value; } // animals cannot change their sex, unlike humans :D
+            protected set
+            {
+                if (value != 'M' || value != 'F')
+                {
+                    throw new ArgumentException("only M - male or F - female");
+                }
+                this.sex = value; // animals cannot change their sex, unlike humans :D
+            } 
         }
         public int Age
         {
@@ -34,17 +41,17 @@ namespace _03.AnimalHierarchy
                 this.age = value; 
             }
         }
-        public Animal(string name, char sex, int age)
-        {
-            this.Name = name;
-            this.Sex = sex;
-            this.Age = age;
-        }
         public Animal(string name, int age)
         {
             this.Name = name;
             this.Age = age;
         }
+        public Animal(string name, char sex, int age)
+            :this(name, age)
+        {
+            this.Sex = sex;
+        }
+        
         public static double CalcAverageAge(Animal[] arr)
         {
             double sum = 0;
@@ -52,7 +59,7 @@ namespace _03.AnimalHierarchy
             {
                 sum += animal.age;
             }
-            return sum;
+            return sum / (arr.Length);
         }
     }
 }

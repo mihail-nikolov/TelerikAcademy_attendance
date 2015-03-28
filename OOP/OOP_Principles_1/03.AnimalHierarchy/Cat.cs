@@ -6,13 +6,8 @@ using System.Threading.Tasks;
 
 namespace _03.AnimalHierarchy
 {
-    public class Cat : Animal, ISound
+    public abstract class Cat : Animal, ISound
     {
-        public Cat(string name, char sex, int age)
-            : base(name, sex, age)
-        {
-
-        }
         public Cat(string name, int age)
             :base(name, age)
         {
