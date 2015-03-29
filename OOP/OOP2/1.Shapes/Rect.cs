@@ -8,5 +8,8 @@ namespace _1.Shapes
 {
     public class Rect: Shape
     {
+        public Rect(double height, double width) :
+            base(width, height) { }
+
     }
 }

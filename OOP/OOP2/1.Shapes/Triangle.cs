@@ -8,5 +8,12 @@ namespace _1.Shapes
 {
     public class Triangle : Shape
     {
+        public Triangle(double height, double width) :
+            base(width, height) { }
+
+        public override double CalculateSurface()
+        {
+            return base.CalculateSurface()/2;
+        }
     }
 }

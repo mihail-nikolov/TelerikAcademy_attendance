@@ -22,7 +22,7 @@ namespace _03.AnimalHierarchy
             get { return this.sex; }
             protected set
             {
-                if (value != 'M' || value != 'F')
+                if (value != 'M' && value != 'F')
                 {
                     throw new ArgumentException("only M - male or F - female");
                 }
@@ -51,7 +51,6 @@ namespace _03.AnimalHierarchy
         {
             this.Sex = sex;
         }
-        
         public static double CalcAverageAge(Animal[] arr)
         {
             double sum = 0;

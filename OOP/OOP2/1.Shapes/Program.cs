@@ -16,6 +16,19 @@ namespace _1.Shapes
     {
         static void Main(string[] args)
         {
+            Rect rect1 = new Rect(2, 3);
+
+            Square sq1 = new Square(4);
+
+            Triangle tr1 = new Triangle(4, 5);
+
+            List<Shape> shapes = new List<Shape> { };
+            shapes.Add(rect1);
+            shapes.Add(sq1);
+            shapes.Add(tr1);
+
+            shapes.ForEach(el => Console.WriteLine("Surface {0} = {1}", el.GetType().Name, el.CalculateSurface()));
+
         }
     }
 }

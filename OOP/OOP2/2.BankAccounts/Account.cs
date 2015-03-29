@@ -1,21 +1,22 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace _2.BankAccounts
+﻿namespace _2.BankAccounts
 {
-    class Account: IAccount
+    public abstract class Account : IAccount
     {
         private double balance;
         private double interestRate;
         private int monthsExisting;
         private Customer customerType;
+        public Account(double interestRate, Customer customerType)
+        {
+            this.Balance = 0;
+            this.InterestRate = interestRate;
+            this.monthsExisting = 0;
+            this.CustomerType = customerType;
+        }
         public double Balance
         {
-            get { return this.Balance; }
-            set { this.Balance = value; }
+            get { return this.balance; }
+            protected set { this.balance = value; }
         }
         public int MonthsExisting
         {
@@ -25,18 +26,18 @@ namespace _2.BankAccounts
         public double InterestRate
         {
             get { return this.interestRate; }
-            set { this.interestRate = value; }
+            private set { this.interestRate = value; }
         }
 
         public Customer CustomerType
         {
             get { return this.customerType; }
-            set { this.customerType = value; }
+            private set { this.customerType = value; }
         }
 
-        public virtual double CalculateInterestAmount(int numOfMonths)
+        public virtual double CalculateInterestAmount()
         {
-            return this.InterestRate * numOfMonths;
+            return this.InterestRate * this.MonthsExisting;
         }
         public virtual void Deposit(double money)
         {

@@ -37,7 +37,7 @@ namespace _03.AnimalHierarchy
 
             double dogAge = Animal.CalcAverageAge(pomqri);
             Console.WriteLine("-----------------------");
-            Console.WriteLine("dogAge = {0}", dogAge);
+            Console.WriteLine("dogsAge = {0}", dogAge);
             Console.WriteLine("-----------------------");
 
             Frog jabka = new Frog("jabka", 'F', 3);
@@ -49,7 +49,7 @@ namespace _03.AnimalHierarchy
 
             double frogAge = Animal.CalcAverageAge(frogs);
             Console.WriteLine("-----------------------");
-            Console.WriteLine("frogAge = {0}", frogAge);
+            Console.WriteLine("frogsAge = {0}", frogAge);
             Console.WriteLine("-----------------------");
         }
     }

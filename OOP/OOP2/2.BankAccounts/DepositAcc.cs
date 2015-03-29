@@ -6,17 +6,21 @@ using System.Threading.Tasks;
 
 namespace _2.BankAccounts
 {
-    class DepositAcc: Account
+    public class DepositAcc: Account
     {
-        public override double CalculateInterestAmount(int numOfMonths)
+        public DepositAcc(double interestRate, Customer customerType)
+            :base(interestRate, customerType)
+        {
+        }
+        public override double CalculateInterestAmount()
         {
             if (this.Balance <= 1000 && this.Balance >= 0)
             {
-                return base.CalculateInterestAmount(numOfMonths) * 0;
+                return base.CalculateInterestAmount() * 0;
             }
             else
             {
-                return base.CalculateInterestAmount(numOfMonths);
+                return base.CalculateInterestAmount();
             }
         }
         public void WithDraw(double money)
