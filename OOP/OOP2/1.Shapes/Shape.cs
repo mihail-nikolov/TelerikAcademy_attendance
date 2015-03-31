@@ -47,7 +47,7 @@ namespace _1.Shapes
         }
         public virtual double CalculateSurface()
         {
-            return this.height * this.width;
+            return this.Height * this.Width;
         }
     }
 }

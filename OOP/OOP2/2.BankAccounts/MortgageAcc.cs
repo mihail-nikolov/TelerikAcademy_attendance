@@ -8,11 +8,11 @@
         }
         public override double CalculateInterestAmount()
         {
-            if (this.MonthsExisting <= 12 && CustomerType is Company)
+            if (this.MonthsExisting <= 12 && this.CustomerType is Company)
             {
                 return base.CalculateInterestAmount() / 2;
             }
-            if (this.MonthsExisting <= 6 && CustomerType is Individual)
+            if (this.MonthsExisting <= 6 && this.CustomerType is Individual)
             {
                 return base.CalculateInterestAmount() / 2;
             }
