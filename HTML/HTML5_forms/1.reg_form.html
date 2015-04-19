@@ -1,0 +1,126 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <link rel="stylesheet" type="text/css" href="css.css" />
+    <title>TABLE</title>
+</head>
+<body>
+
+    <form type="get">
+        <table border=1>
+            <tr>
+                <td>
+                    Last name
+                </td>
+                <td>
+                    <input type="text" placeholder="Lastname" pattern="[a-zA-Z_]{3,}" /><br>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    First name
+                </td>
+                <td>
+                    <input type="text" placeholder="First Name" pattern="[a-zA-Z_]{3,}" /><br>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Address
+                </td>
+                <td>
+                    <textarea placeholder="addres..."></textarea>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    City
+                </td>
+                <td>
+                    <input type="text" placeholder="city" />State<input width="10" type="text" placeholder="State" size="10" /><br>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Zip/Postal code
+                </td>
+                <td>
+                    <input type="text" pattern="[0-9_]{3,}"  placeholder="Zip code" /><br>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Country
+                </td>
+                <td>
+                    <select>
+                        <option value="V1">Bulgaria</option>
+                        <option value="V2" selected="selected">France</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td >
+                    Phone(country code, area)
+                </td>
+                <td>
+                    (+<input type="text" size="10" />)
+                    <input type="text"  size="10"/>
+                    <input type="text"  size="10"/><br />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Email
+                </td>
+                <td>
+                    <input type="email" required="true" pattern="[a-zA-Z0-9_]{3,}@[a-zA-Z0-9_]{3,}.[a-zA-Z0-9_]{2,4}" placeholder="nickname@mail.com"><br />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Birthday
+                </td>
+                <td>
+                    <input type="text" required="true" pattern="[0-9_]{2,}.[0-9_]{2,}.[0-9_]{4,}" placeholder="дд.мм.гггг.г."><br />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Gender
+                </td>
+                <td>
+                    <select>
+                        <option value="V1">Male</option>
+                        <option value="V2" selected="selected">Female</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Starting date
+                </td>
+                <td>
+                    <input type="radio" >Spring 2015 </input>
+                    <input type="radio" >Summer 2015 </input><br>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Comments/quests
+                </td>
+                <td>
+                    <textarea placeholder="enter comments..........."></textarea>
+                </td>
+            </tr>
+            <tr bgcolor="aqua">
+                <td align="center" colspan="2">
+                    <input type="button" value="Submit" />
+        			<input type="reset" value="Clear" />
+                </td>
+            </tr>
+        </table>
+        
+    </form>
+</body>
+</html>
