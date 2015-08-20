@@ -1,0 +1,26 @@
+﻿body {
+    background-color:grey;
+}
+.left{
+    color:white;
+    font-style:italic;
+}
+.right{
+    color:whitesmoke;
+}
+thead{
+    color:whitesmoke;   
+}
+#errNotAct{
+    color:red;
+}
+#errNotAns{
+    color:orange;
+}
+a{
+    text-decoration:none;
+    color:lightyellow;
+}
+#clientName{
+    color:lightyellow;
+}

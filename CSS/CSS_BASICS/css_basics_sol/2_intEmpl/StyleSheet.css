@@ -1,0 +1,23 @@
+﻿thead td{
+    background-color:lightgreen;
+    color:white;
+    border-bottom:1px solid grey;
+}
+
+table{
+    border-bottom:1px solid grey;
+    padding:0px 0px 0px 0px;
+    border-spacing:0px 0px;
+}
+
+td{
+    padding:5px 30px 5px 5px;
+}
+
+.col1,.col2,.col3{
+    border-right:1px solid grey;
+}
+
+tr:nth-child(even) {
+    background: #CCC
+}   

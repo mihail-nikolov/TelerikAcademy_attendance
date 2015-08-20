@@ -1,0 +1,165 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Windows Calculator</title>
+    <meta charset="UTF-8" />
+    <link href="calculator-style.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="calculator">
+        <form>
+            <!--Calculator head-->
+            <img class="icon" src="calculator.png" width="16" height="18" alt="Calculator" />
+            <span class="name">Calculator</span>
+            <input class="mainbutton" type="image" name="close" src="close.jpg" alt="close" />
+            <input class="mainbutton" type="image" name="max" src="max.jpg" alt="max" />
+            <input class="mainbutton" type="image" name="min" src="min.jpg" alt="min" />
+
+            <!--Calculator menu-->
+            <div class="body">
+                <div class="nav">
+                    <ul class="menu">
+                        <li><a href="#">View</a></li>
+                        <li><a href="#">Edit</a></li>
+                        <li><a href="#">Help</a></li>
+                    </ul>
+                </div>
+
+                <div class="holder">
+                    <!--Result box-->
+                    <div class="result section">
+                        <input type="text" name="result" value="0" maxlength="16" id="total-result" />
+                    </div>
+
+                    <!--Bits and bytes-->
+                    <div class="bits section">
+                        <div class="bytes">
+                            <span>0000</span>
+                            <span>0000</span>
+                            <span>0000</span>
+                            <span>0000</span>
+                            <span>0000</span>
+                            <span>0000</span>
+                            <span>0000</span>
+                            <span class="last">0000</span>
+                        </div>
+
+                        <div class="bits-position">
+                            <span>63</span>
+                            <span class="second">47</span>
+                            <span class="last">32</span>
+                        </div>
+
+                        <div class="bytes">
+                            <span>0000</span>
+                            <span>0000</span>
+                            <span>0000</span>
+                            <span>0000</span>
+                            <span>0000</span>
+                            <span>0000</span>
+                            <span>0000</span>
+                            <span class="last">0000</span>
+                        </div>
+
+                        <div class="bits-position">
+                            <span>31</span>
+                            <span class="second">15</span>
+                            <span class="last">0</span>
+                        </div>
+                    </div>
+
+                    <!-- Buttons -->
+                    <div class="buttons">
+                        <div></div>
+                        <div><input type="submit" name="Mod" value="Mod" /></div>
+                        <div class="disabled"><input type="submit" name="A-letter" value="A" class="disabled" /></div>
+                        <div class="simple-background"><input type="submit" name="MC" value="MC" class="simple-background" /></div>
+                        <div class="simple-background"><input type="submit" name="MR" value="MR" class="simple-background" /></div>
+                        <div class="simple-background"><input type="submit" name="MS" value="MS" class="simple-background" /></div>
+                        <div class="simple-background"><input type="submit" name="Mplus" value="M&#43;" class="simple-background" /></div>
+                        <div class="simple-background"><input type="submit" name="Mminus" value="M&#45;" class="simple-background" /></div>
+                        <div><input type="submit" name="opening-parenthesis" value="&#40;" /></div>
+                        <div><input type="submit" name="closing-parenthesis" value="&#41;" /></div>
+                        <div class="disabled"><input type="submit" name="B-letter" value="B" class="disabled" /></div>
+                        <div><input type="submit" name="left-arrow" value="&#8592;" /></div>
+                        <div><input type="submit" name="CE" value="CE" /></div>
+                        <div><input type="submit" name="C" value="C" /></div>
+                        <div><input type="submit" name="plus-minus" value="&#177;" /></div>
+                        <div class="disabled"><input type="submit" name="square-root" value="&#8730;" class="disabled" /></div>
+                        <div><input type="submit" name="RoL" value="RoL" /></div>
+                        <div><input type="submit" name="RoR" value="RoR" /></div>
+                        <div class="disabled"><input type="submit" name="C-letter" value="C" class="disabled" /></div>
+                        <div><input type="submit" name="seven" value="7" class="bigger number" /></div>
+                        <div><input type="submit" name="eight" value="8" class="bigger number" /></div>
+                        <div><input type="submit" name="nine" value="9" class="bigger number" /></div>
+                        <div><input type="submit" name="slash" value="&#47;" /></div>
+                        <div class="disabled"><input type="submit" name="percent" value="&#37;" class="disabled" /></div>
+                        <div><input type="submit" name="Or" value="Or" /></div>
+                        <div><input type="submit" name="Xor" value="Xor" /></div>
+                        <div class="disabled"><input type="submit" name="D-letter" value="D" class="disabled" /></div>
+                        <div><input type="submit" name="four" value="4" class="bigger number" /></div>
+                        <div><input type="submit" name="five" value="5" class="bigger number" /></div>
+                        <div><input type="submit" name="six" value="6" class="bigger number" /></div>
+                        <div><input type="submit" name="asterisk" value="&#42;" class="bigger" /></div>
+                        <div class="disabled"><input type="submit" name="divide-by-x" value="1&#47;x" class="disabled" /></div>
+                        <div><input type="submit" name="Lsh" value="Lsh" /></div>
+                        <div><input type="submit" name="Rsh" value="Rsh" /></div>
+                        <div class="disabled"><input type="submit" name="E-letter" value="E" class="disabled" /></div>
+                        <div><input type="submit" name="one" value="1" class="bigger number" /></div>
+                        <div><input type="submit" name="two" value="2" class="bigger number" /></div>
+                        <div><input type="submit" name="three" value="3" class="bigger number" /></div>
+                        <div><input type="submit" name="minus" value="&#45;" class="bigger" /></div>
+                        <div class="equal"><input type="submit" name="equal" value="&#61;" class="equal bigger" /></div>
+                        <div><input type="submit" name="Not" value="Not" /></div>
+                        <div><input type="submit" name="And" value="And" /></div>
+                        <div class="disabled"><input type="submit" name="F-letter" value="F" class="disabled" /></div>
+                        <div class="zero"><input type="submit" name="zero" value="0" class="bigger number" /></div>
+                        <div class="disabled"><input type="submit" name="period" value="&#46;" class="disabled" /></div>
+                        <div><input type="submit" name="plus" value="&#43;" class="bigger" /></div>
+                    </div>
+
+                    <!-- Counting Systems -->
+                    <ul class="systems section">
+                        <li>
+                            <input type="radio" name="system" value="hex">
+                            <label for="hex"><span>Hex</span></label>
+                        </li>
+                        <li>
+                            <input type="radio" name="system" value="dec" checked="checked">
+                            <label for="dec"><span>Dec</span></label>
+                        </li>
+                        <li>
+                            <input type="radio" name="system" value="oct">
+                            <label for="oct"><span>Oct</span></label>
+                        </li>
+                        <li>
+                            <input type="radio" name="system" value="bin">
+                            <label for="bin"><span>Bin</span></label>
+                        </li>
+                    </ul>
+
+                    <!-- Data Types -->
+                    <ul class="data-types section">
+                        <li>
+                            <input type="radio" name="data-type" value="qword" checked="checked">
+                            <label for="qword"><span>Qword</span></label>
+                        </li>
+                        <li>
+                            <input type="radio" name="data-type" value="dword">
+                            <label for="dword"><span>Dword</span></label>
+                        </li>
+                        <li>
+                            <input type="radio" name="data-type" value="word">
+                            <label for="word"><span>Word</span></label>
+                        </li>
+                        <li>
+                            <input type="radio" name="data-type" value="byte">
+                            <label for="byte"><span>Byte</span></label>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

@@ -30,6 +30,27 @@ namespace CommonTypeSystem
             Console.WriteLine(pesho.ToString());
             Console.WriteLine(pesho.CompareTo(gubi));
             Console.WriteLine(pesho.CompareTo(pesho));
+
+            Person pesho1 = new Person("pesho1", 20);
+            Console.WriteLine(pesho1);
+
+            Person pesho2 = new Person("pesho2", null);
+            Console.WriteLine(pesho2);
+
+
+            BitArray64 numArr = new BitArray64(11);
+            Console.WriteLine(numArr);
+            numArr[0] = 0;
+            numArr[1] = 0;
+            numArr[2] = 1;
+            numArr[3] = 1;
+            Console.WriteLine(numArr);
+            BitArray64 num2 = new BitArray64(12);
+            Console.WriteLine(num2.ToString());
+            Console.WriteLine(num2.Equals(numArr));
+            Console.WriteLine(numArr == num2);
+            Console.WriteLine(numArr != num2);
+            Console.WriteLine(numArr.GetHashCode());
         }
     }
 }

@@ -13,15 +13,26 @@ namespace _01.OddLines
     {
         static void Main()
         {
-            string fileLocation = @"E:\my documents\telerik\2015\C# 2\textFiles\file1.txt";
+            string fileLocation = @"E:\my documents\telerik\2015\C# 2\textFiles\all_kinds.txt";
             StreamReader reader = new StreamReader(fileLocation);
             using (reader)
             {
-                string line = reader.ReadToEnd();
-                string[] lines = line.Split('\n');
-                for (int i = 0; i < lines.Length; i += 2)
+                string theFile = reader.ReadToEnd();
+                string[] lines = theFile.Split('\n');
+                string newPath = @"E:\lists\for_work\";
+                foreach (var line in lines)
                 {
-                    Console.WriteLine("Line {0}: {1}", i + 1, lines[i]);
+                    if (!line.StartsWith("#"))
+                    {
+                        char separator = '\\';
+                        string[] parsedFile = line.Split(separator);
+                        string theFileName = parsedFile[parsedFile.Length - 1];
+                        string theStrToCopy = @"E:" + line;
+                        Console.WriteLine(theStrToCopy);
+                        string theNewPlace = newPath + theFileName;
+                        Console.WriteLine(theNewPlace);
+                        File.Copy(theStrToCopy, theNewPlace);
+                    }
                 }
             }
         }

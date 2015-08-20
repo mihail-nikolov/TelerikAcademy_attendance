@@ -15,6 +15,39 @@ namespace _3.RangeExceptions
     {
         static void Main(string[] args)
         {
+            Console.Write("num: ");
+            try
+            {
+                int number = int.Parse(Console.ReadLine());
+                int start = 1;
+                int end = 100;
+                if (number < start || number > end)
+                {
+                    throw new InvalidRangeException<int>("Out of range!", start, end);
+                }
+                Console.WriteLine("next line");
+            }
+            catch (InvalidRangeException<int> ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            Console.Write("date: ");
+            try
+            {
+                string line = Console.ReadLine();
+                DateTime date = DateTime.Parse(line);
+                DateTime start = DateTime.Parse("1.1.1980");
+                DateTime end = DateTime.Parse("31.12.2013");
+                if (date < start || date > end)
+                {
+                    throw new InvalidRangeException<DateTime>("Out of range!", start, end);
+                }
+                Console.WriteLine("next line");
+            }
+            catch (InvalidRangeException<DateTime> ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
         }
     }
 }
