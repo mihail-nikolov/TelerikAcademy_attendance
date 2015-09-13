@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Builder")]
+[assembly: AssemblyTitle("16.CPBuilderExample")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Builder")]
+[assembly: AssemblyProduct("16.CPBuilderExample")]
 [assembly: AssemblyCopyright("Copyright ©  2015")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("ef7d654e-6db6-47b0-9267-6552826ea728")]
+[assembly: Guid("567543c3-48d4-499f-90e3-80cb9127af74")]
 
 // Version information for an assembly consists of the following four values:
 //
