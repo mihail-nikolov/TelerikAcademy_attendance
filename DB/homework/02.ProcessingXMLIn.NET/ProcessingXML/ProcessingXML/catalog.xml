@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="windows-1251"?>
+<?xml-stylesheet type="text/xsl" href="catalog.xslt"?>
+<catalogue name="My catalog">
+	<album>
+		<name>Led Zeppelin</name>
+		<artist>Led Zeppelin</artist>
+		<year>1969</year>
+		<producer>Jimmy Page</producer>
+		<price>20</price>
+		<songs>
+			<song>
+				<title>Good times bad times</title>
+				<duration>2:43</duration>
+			</song>
+			<song>
+				<title>Babe I'm Gonna Leave You</title>
+				<duration>6:42</duration>
+			</song>
+		</songs>
+	</album>
+	<album>
+		<name>Coda</name>
+		<artist>Led Zeppelin</artist>
+		<year>1982</year>
+		<producer>Jimmy Page</producer>
+		<price>22</price>
+		<songs>
+			<song>
+				<title>We're gonna grove</title>
+				<duration>2:38</duration>
+			</song>
+			<song>
+				<title>Poor Tom</title>
+				<duration>3:03</duration>
+			</song>
+		</songs>
+	</album>
+	<album>
+		<name>The Doors</name>
+		<artist>The Doors</artist>
+		<year>1966</year>
+		<producer>Paul Rothchild</producer>
+		<price>17</price>
+		<songs>
+			<song>
+				<title>Break on Through</title>
+				<duration>2:26</duration>
+			</song>
+			<song>
+				<title>Soul Kitchen</title>
+				<duration>3:35</duration>
+			</song>
+		</songs>
+	</album>
+</catalogue>
