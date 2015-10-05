@@ -99,14 +99,12 @@
 <h2>What is a NoSQL database?</h2>
 <ul>		
 	<li> provides a mechanism for storage and retrieval of data that is modeled in means other than the tabular relations used in relational databases. </li>
-	<li> </li>
 </ul>
 
 
 <h2>Explain the classical non-relational data models</h2>
 <ul>		
 	<li>a database that does not incorporate the table/key model that relational database management systems (RDBMS) promote. </li>
-	<li> </li>
 </ul>
 
 
