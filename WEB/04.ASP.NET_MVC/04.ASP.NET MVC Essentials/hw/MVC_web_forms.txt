@@ -1,0 +1,20 @@
+Differences:
+	MVC:
+		follow MVC pattern based development model. 
+		does not support view state.
+		has route-based URLs means URLs are divided into controllers and actions and moreover it is based on controller not on physical file.
+		Views and logic are kept separately. 
+		has Layouts
+	WEB FORMS:
+		follow a traditional event driven development model.
+		supports view state for state management at client side.
+		has file-based URLs means file name exist in the URLs must have its physically existence.
+		views are tightly coupled to Code behind
+		has Master Pages
+Similarities:
+	Both:
+		Are built on the ASP.Net Framework
+		Are in the System.Web namespace.
+		Use .Net Framework supported languages.
+		Use an IIS and ASP.Net request Pipeline, for example HTTP Handler and HTTP Module.
+		Send the response back to the client in the form of HTML.
