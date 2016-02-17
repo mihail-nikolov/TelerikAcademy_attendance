@@ -1,0 +1,15 @@
+﻿
+@{
+    ViewBag.Title = "Categories";
+}
+
+<h2>Categories</h2>
+@{
+    using (Html.BeginForm("Categories", "Create"))
+    {
+        @*@Html.TextBoxFor(m => m.FirstName)
+            @Html.TextBoxFor(m => m.LastName)*@
+        <input type="submit" value="Add" />
+    }
+}
+

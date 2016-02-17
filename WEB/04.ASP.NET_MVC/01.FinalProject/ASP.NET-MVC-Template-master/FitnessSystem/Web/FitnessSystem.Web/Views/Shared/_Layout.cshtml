@@ -20,8 +20,17 @@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Home", "Index", "Home", new { area = string.Empty }, null)</li>
+                    <li>@Html.ActionLink("Articles", "Index", "Articles", new { area = string.Empty }, null)</li>
+                    <li>@Html.ActionLink("Exercises", "Index", "Exercises", new { area = string.Empty }, null)</li>
+                    <li>@Html.ActionLink("Videos", "Index", "Videos", new { area = string.Empty }, null)</li>
+                    @if (Request.IsAuthenticated)
+                    {
+                        <li>@Html.ActionLink("Categories", "Index", "Categories", new { area = string.Empty }, null)</li>
+                    }
                 </ul>
                 @Html.Partial("_LoginPartial")
+                @Html.Partial("_AdministrationPartial")
+                
             </div>
         </div>
     </div>

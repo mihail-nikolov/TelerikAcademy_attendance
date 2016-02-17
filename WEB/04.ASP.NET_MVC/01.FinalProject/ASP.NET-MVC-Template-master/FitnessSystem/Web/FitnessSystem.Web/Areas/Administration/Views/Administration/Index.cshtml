@@ -1,0 +1,17 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Hi Administartor</h2>
+<h3>Manage:</h3>
+<div class="row">
+    <ul>
+        <li>@Html.ActionLink("Articles", "Index", "Articles", new { area = "Administration" }, null)</li>
+        <li>@Html.ActionLink("Categories", "Index", "Categories", new { area = "Administration" }, null)</li>
+        <li>@Html.ActionLink("Exercises", "Index", "Exercises", new { area = "Administration" }, null)</li>
+        <li>@Html.ActionLink("Users", "Index", "Users", new { area = "Administration" }, null)</li>
+        <li>@Html.ActionLink("Videos", "Index", "Videos", new { area = "Administration" }, null)</li>
+    </ul>
+</div>
+

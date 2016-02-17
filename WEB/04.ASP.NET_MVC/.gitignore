@@ -10,6 +10,7 @@
 *.rar
 *.docx
 *ASP.NET-Web-Forms-master
+*ASP.NET-MVC-master
 
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
