@@ -17,7 +17,7 @@
         {
         }
 
-        public IDbSet<Joke> Jokes { get; set; }
+       // public IDbSet<Joke> Jokes { get; set; }
 
         public IDbSet<Category> JokesCategories { get; set; }
 

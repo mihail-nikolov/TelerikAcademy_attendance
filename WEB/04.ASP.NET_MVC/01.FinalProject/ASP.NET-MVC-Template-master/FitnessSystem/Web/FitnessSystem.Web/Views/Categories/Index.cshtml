@@ -4,12 +4,19 @@
 }
 
 <h2>Categories</h2>
-@{
-    using (Html.BeginForm("Categories", "Create"))
+<div id="toUpdate">
+    @Ajax.ActionLink("Create new", "Create", "Categories", new AjaxOptions
+{
+    UpdateTargetId = "toUpdate",
+    InsertionMode = InsertionMode.Replace
+},
+    new
     {
-        @*@Html.TextBoxFor(m => m.FirstName)
-            @Html.TextBoxFor(m => m.LastName)*@
-        <input type="submit" value="Add" />
-    }
-}
+        @class = "btn btn-primary"
+    })
+</div>
 
+<p>here are the categories</p>
+
+@Scripts.Render("~/bundles/jquery")
+<script src="@Url.Content("~/Scripts/jquery.unobtrusive-ajax.js")" type="text/javascript"></script>

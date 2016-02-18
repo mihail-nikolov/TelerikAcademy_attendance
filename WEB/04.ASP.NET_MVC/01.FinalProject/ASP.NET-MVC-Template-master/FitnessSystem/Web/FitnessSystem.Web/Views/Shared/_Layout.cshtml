@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - FitnessSystem</title>
     @Styles.Render("~/Content/css")
+    @Styles.Render("~/Content/kendo")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/modernizr")
+    @RenderSection("scripts", required: false)
+    @Styles.Render("~/Content/custom")
 </head>
 <body>
     <div class="navbar navbar-inverse navbar-fixed-top">
@@ -20,7 +25,7 @@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Home", "Index", "Home", new { area = string.Empty }, null)</li>
-                    <li>@Html.ActionLink("Articles", "Index", "Articles", new { area = string.Empty }, null)</li>
+                    @*<li>@Html.ActionLink("Articles", "Index", "Articles", new { area = string.Empty }, null)</li>*@
                     <li>@Html.ActionLink("Exercises", "Index", "Exercises", new { area = string.Empty }, null)</li>
                     <li>@Html.ActionLink("Videos", "Index", "Videos", new { area = string.Empty }, null)</li>
                     @if (Request.IsAuthenticated)
@@ -42,8 +47,7 @@
         </footer>
     </div>
 
-    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/kendo")
     @Scripts.Render("~/bundles/bootstrap")
-    @RenderSection("scripts", required: false)
 </body>
 </html>
