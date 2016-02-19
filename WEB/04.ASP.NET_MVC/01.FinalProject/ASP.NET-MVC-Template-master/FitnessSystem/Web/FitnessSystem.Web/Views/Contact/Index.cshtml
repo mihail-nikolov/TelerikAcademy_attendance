@@ -1,10 +1,17 @@
-﻿<h3>Create new category</h3>
+﻿
+@{
+    ViewBag.Title = "Contact";
+}
 
-@using (Html.BeginForm("Create", "Categories", new { area = string.Empty }, FormMethod.Post))
+<div class="row">
+    <h2>Contact</h2>
+</div>
+<div class="row">If you want to contact us, you can send an email to: <span class="text-primary">fitnessSystem@gmail.com</span></div>
+<div class="row">Or you can use the feedback form:</div>
+
+@using (Html.BeginForm("Feedback", "Contact", new { area = string.Empty }, FormMethod.Post))
 {
     @Html.ValidationSummary(true)
-    @Html.AntiForgeryToken()
-
     <div class="row">
         <div class="input-field">
             @*@Html.LabelFor(m => m.NewIdea.Title)
@@ -21,7 +28,7 @@
     </div>
     <div class="row">
         <div class="center">
-            <input type="submit" value="Create" class="btn" />
+            <input type="submit" value="Send" class="btn" />
         </div>
     </div>
 }

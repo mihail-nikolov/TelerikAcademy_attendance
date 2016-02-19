@@ -1,5 +1,6 @@
 ﻿namespace FitnessSystem.Services.Data
 {
+    using System;
     using System.Linq;
 
     using FitnessSystem.Data.Common;
@@ -14,23 +15,23 @@
             this.categories = categories;
         }
 
-        //public Category EnsureCategory(string name)
-        //{
-        //    var category = this.categories.All().FirstOrDefault(x => x.Name == name);
-        //    if (category != null)
-        //    {
-        //        return category;
-        //    }
-
-        //    category = new Category { Name = name };
-        //    this.categories.Add(category);
-        //    this.categories.Save();
-        //    return category;
-        //}
+        public void Create(Category newCategory)
+        {
+            this.categories.Add(newCategory);
+            this.categories.Save();
+        }
 
         public IQueryable<Category> GetAll()
         {
-            return this.categories.All().OrderBy(x => x.Name);
+            return this.categories.All().OrderByDescending(x => x.CreatedOn);
+        }
+
+        public void Update(Category categoryToUpdate)
+        {
+            var category = this.categories.GetById(categoryToUpdate.Id);
+            category.IsVisible = categoryToUpdate.IsVisible;
+            category.Name = categoryToUpdate.Name;
+            this.categories.Save();
         }
     }
 }

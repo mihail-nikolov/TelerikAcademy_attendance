@@ -5,14 +5,23 @@
     using System.Linq;
     using System.Web;
     using System.Web.Mvc;
+    using FitnessSystem.Services.Data;
 
     [Authorize]
     public class CategoriesController : Controller
     {
+        private readonly ICategoriesService categories;
+
+        public CategoriesController(ICategoriesService categories)
+        {
+            this.categories = categories;
+        }
+
         // GET: Categories
         public ActionResult Index()
         {
-            return this.View();
+            var categories = this.categories.GetAll().ToList();
+            return this.View(categories);
         }
 
         public ActionResult Create()

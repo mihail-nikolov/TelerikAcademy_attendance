@@ -17,9 +17,13 @@
         {
         }
 
-       // public IDbSet<Joke> Jokes { get; set; }
+        public IDbSet<Exercise> Exercises { get; set; }
 
-        public IDbSet<Category> JokesCategories { get; set; }
+        public IDbSet<Category> Categories { get; set; }
+
+        public IDbSet<Vote> Votes { get; set; }
+
+        public IDbSet<Feedback> FeedBacks { get; set; }
 
         public static ApplicationDbContext Create()
         {
@@ -30,6 +34,7 @@
         {
             this.ApplyAuditInfoRules();
             return base.SaveChanges();
+
         }
 
         private void ApplyAuditInfoRules()

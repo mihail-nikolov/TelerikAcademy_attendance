@@ -8,6 +8,8 @@
     {
         IQueryable<Category> GetAll();
 
-       // Category EnsureCategory(string name);
+        void Create(Category newCategory);
+
+        void Update(Category categoryToUpdate);
     }
 }

@@ -12,14 +12,11 @@
     public class HomeController : BaseController
     {
         //private readonly IJokesService jokes;
-      //  private readonly ICategoriesService jokeCategories;
 
         //public HomeController(
         //    IJokesService jokes,
-        //    ICategoriesService jokeCategories)
         //{
         //    this.jokes = jokes;
-        //    this.jokeCategories = jokeCategories;
         //}
 
         public ActionResult Index()
@@ -36,6 +33,11 @@
             //    Categories = categories
             //};
 
+            return this.View();
+        }
+
+        public ActionResult About()
+        {
             return this.View();
         }
     }
