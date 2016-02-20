@@ -1,12 +1,12 @@
 ﻿namespace FitnessSystem.Services.Data
 {
-    using System;
-    using System.Collections.Generic;
     using System.Linq;
-    using System.Text;
+    using FitnessSystem.Data.Models;
 
-    using System.Threading.Tasks;
     public interface IFeedbacksServices
     {
+        IQueryable<Feedback> GetAll();
+
+        void Create(Feedback newFeedback);
     }
 }

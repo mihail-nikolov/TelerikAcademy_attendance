@@ -1,4 +1,4 @@
-﻿
+﻿@model FitnessSystem.Web.ViewModels.Feedbacks.FeedbackCreateViewModel
 @{
     ViewBag.Title = "Contact";
 }
@@ -12,18 +12,22 @@
 @using (Html.BeginForm("Feedback", "Contact", new { area = string.Empty }, FormMethod.Post))
 {
     @Html.ValidationSummary(true)
+    @Html.AntiForgeryToken()
+
     <div class="row">
         <div class="input-field">
-            @*@Html.LabelFor(m => m.NewIdea.Title)
-            @Html.EditorFor(m => m.NewIdea.Title)
-            @Html.ValidationMessageFor(m => m.NewIdea.Title)*@
+            @Html.LabelFor(m => m.Title)
+            @Html.EditorFor(m => m.Title)
+            @Html.ValidationMessageFor(m => m.Title)
         </div>
     </div>
+    <br />
     <div class="row">
         <div class="input-field">
-            @*@Html.LabelFor(m => m.NewIdea.Description)
-            @Html.EditorFor(m => m.NewIdea.Description)
-            @Html.ValidationMessageFor(m => m.NewIdea.Description)*@
+            @Html.LabelFor(m => m.Content)
+            <br />
+            @Html.EditorFor(m => m.Content)
+            @Html.ValidationMessageFor(m => m.Content)
         </div>
     </div>
     <div class="row">
@@ -32,3 +36,5 @@
         </div>
     </div>
 }
+
+@Scripts.Render("~/bundles/jqueryval")

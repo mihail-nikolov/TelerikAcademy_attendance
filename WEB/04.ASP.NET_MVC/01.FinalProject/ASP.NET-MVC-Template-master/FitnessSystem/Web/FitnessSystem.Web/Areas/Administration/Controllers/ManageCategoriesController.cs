@@ -2,13 +2,14 @@
 {
     using System.Linq;
     using System.Web.Mvc;
+    using FitnessSystem.Data.Models;
+    using FitnessSystem.Services.Data;
+    using Infrastructure.Mapping;
     using Kendo.Mvc.Extensions;
     using Kendo.Mvc.UI;
-    using FitnessSystem.Data.Models;
-    using FitnessSystem.Web.ViewModels.Categories;
-    using FitnessSystem.Services.Data;
     using Web.Controllers;
-    using Infrastructure.Mapping;
+    using Web.ViewModels.Categories;
+
     public class ManageCategoriesController : BaseController
     {
         private readonly ICategoriesService categories;
@@ -30,6 +31,7 @@
             return this.Json(result);
         }
 
+        // TODO: map it
         [AcceptVerbs(HttpVerbs.Post)]
         public ActionResult Categories_Create([DataSourceRequest]DataSourceRequest request, ManageCategoriesSimpleViewModel category)
         {
@@ -48,6 +50,7 @@
             return this.Json(new[] { category }.ToDataSourceResult(request, this.ModelState));
         }
 
+        // TODO: map it
         [AcceptVerbs(HttpVerbs.Post)]
         public ActionResult Categories_Update([DataSourceRequest]DataSourceRequest request, ManageCategoriesSimpleViewModel category)
         {

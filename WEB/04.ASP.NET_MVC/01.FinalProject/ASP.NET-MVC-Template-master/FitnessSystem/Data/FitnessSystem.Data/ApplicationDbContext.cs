@@ -3,12 +3,9 @@
     using System;
     using System.Data.Entity;
     using System.Linq;
-
     using Common.Models;
-
     using Microsoft.AspNet.Identity.EntityFramework;
-
-    using FitnessSystem.Data.Models;
+    using Models;
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
@@ -57,6 +54,5 @@
                 }
             }
         }
-        
     }
 }

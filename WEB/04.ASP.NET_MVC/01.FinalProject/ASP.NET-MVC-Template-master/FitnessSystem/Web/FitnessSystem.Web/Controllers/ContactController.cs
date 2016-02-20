@@ -1,24 +1,41 @@
 ﻿namespace FitnessSystem.Web.Controllers
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Web;
+    using Data.Models;
+    using Services.Data;
     using System.Web.Mvc;
+    using ViewModels.Feedbacks;
 
-    public class ContactController : Controller
+    public class ContactController : BaseController
     {
-        // GET: Contact
-        [HttpGet]
+        private readonly IFeedbacksServices feedbacks;
+
+        public ContactController(IFeedbacksServices feedbacks)
+        {
+            this.feedbacks = feedbacks;
+        }
+
         public ActionResult Index()
         {
-            return View();
+            return this.View();
         }
 
         [HttpPost]
-        public ActionResult Feedback()
+        public ActionResult Feedback(FeedbackCreateViewModel newFeedBack)
         {
-            return View();
+            if (!this.ModelState.IsValid)
+            {
+                return this.RedirectToAction("Index");
+            }
+
+            var feedback = new Feedback()
+            {
+                Title = newFeedBack.Title,
+                Content = newFeedBack.Content
+            };
+            this.feedbacks.Create(feedback);
+
+            this.TempData["notification"] = "Your feedback is send and will be checked by the Admin";
+            return this.RedirectToAction("Index");
         }
     }
 }
