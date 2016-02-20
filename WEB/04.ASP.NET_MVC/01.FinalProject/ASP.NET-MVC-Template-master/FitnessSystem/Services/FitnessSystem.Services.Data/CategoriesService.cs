@@ -25,12 +25,11 @@
             this.categories.Save();
         }
 
-        public void Update(Category categoryToUpdate)
+        public void Update(Category updatedCategory)
         {
-            var category = this.categories.GetById(categoryToUpdate.Id);
-            category.IsVisible = categoryToUpdate.IsVisible;
-            category.Name = categoryToUpdate.Name;
-            this.categories.Update(category);
+            var category = this.categories.GetById(updatedCategory.Id);
+            category.IsVisible = updatedCategory.IsVisible;
+            category.Name = updatedCategory.Name;
             this.categories.Save();
         }
 

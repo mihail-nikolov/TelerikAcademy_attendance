@@ -1,17 +1,14 @@
 ﻿namespace FitnessSystem.Web.Areas.Administration.Controllers
 {
+    using System.Linq;
     using System.Web.Mvc;
-
-    using Common;
-    using Data.Models;
-    using Infrastructure.Mapping;
     using Kendo.Mvc.Extensions;
     using Kendo.Mvc.UI;
-    using Services.Data;
-    using ViewModels.Categories;
+    using FitnessSystem.Data.Models;
+    using FitnessSystem.Web.ViewModels.Categories;
+    using FitnessSystem.Services.Data;
     using Web.Controllers;
-
-    [Authorize(Roles = GlobalConstants.AdministratorRoleName)]
+    using Infrastructure.Mapping;
     public class ManageCategoriesController : BaseController
     {
         private readonly ICategoriesService categories;
@@ -28,7 +25,7 @@
 
         public ActionResult Categories_Read([DataSourceRequest]DataSourceRequest request)
         {
-            var categories = this.categories.GetAll().To<ManageCategoriesSimpleViewModel>();
+            var categories = this.categories.GetAll().To<ManageCategoriesSimpleViewModel>().ToList();
             DataSourceResult result = categories.ToDataSourceResult(request);
             return this.Json(result);
         }
@@ -41,7 +38,7 @@
                 var entity = new Category
                 {
                     Name = category.Name,
-                    IsVisible = true
+                    IsVisible = category.IsVisible
                 };
 
                 this.categories.Create(entity);
@@ -79,5 +76,6 @@
 
             return this.Json(new[] { category }.ToDataSourceResult(request, this.ModelState));
         }
+
     }
 }

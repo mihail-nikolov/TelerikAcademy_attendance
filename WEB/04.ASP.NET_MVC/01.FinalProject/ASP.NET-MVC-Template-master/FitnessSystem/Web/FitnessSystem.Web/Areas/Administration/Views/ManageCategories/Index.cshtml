@@ -5,29 +5,25 @@
       {
           columns.Bound(c => c.Name);
           columns.Bound(c => c.IsVisible);
-          columns.Bound(c => c.ModifiedOn);
-          columns.Bound(c => c.CreatedOn);
-          columns.Command(command => { command.Edit(); command.Destroy(); }).Width(180);
+         //columns.Bound(c => c.CreatedOn).Format("{0:yyyy-mm-dd hh:mm:ss.fff}");
+          columns.Command(command => command.Destroy());
+          columns.Command(command => command.Edit());
       })
-      .ToolBar(toolbar => {
+      .ToolBar(toolbar =>
+      {
           toolbar.Create();
       })
       .Editable(editable => editable.Mode(GridEditMode.InLine))
       .Pageable()
-      .Sortable(sortable => {
+      .Sortable(sortable =>
+      {
           sortable.SortMode(GridSortMode.SingleColumn);
       })
       .Filterable()
-      .Scrollable(scrollable => scrollable.Enabled(false))
       .DataSource(dataSource => dataSource
           .Ajax()
-          .PageSize(4)
-          .Model(model =>
-          {
-              model.Id(p => p.Id);
-              model.Field(p => p.CreatedOn).Editable(false);
-              model.Field(p => p.ModifiedOn).Editable(false);
-          })
+          .Model(model => model.Id(p => p.Id))
+          .PageSize(10)
           .Read(read => read.Action("Categories_Read", "ManageCategories"))
           .Create(create => create.Action("Categories_Create", "ManageCategories"))
           .Update(update => update.Action("Categories_Update", "ManageCategories"))

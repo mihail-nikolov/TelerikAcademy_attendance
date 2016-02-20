@@ -22,8 +22,8 @@
                         "~/Content/site.css"));
 
             bundles.Add(new StyleBundle("~/Content/kendo").Include(
-                     //"~/Content/kendo/kendo.bootstrap.min.css",
-                     "~/Content/kendo/kendo.black.min.css",
+                     "~/Content/kendo/kendo.bootstrap.min.css",
+                     "~/Content/kendo/kendo.fiori.min.css",
                      "~/Content/kendo/kendo.common.min.css"
                      ));
         }

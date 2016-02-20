@@ -45,11 +45,6 @@
             this.DbSet.Add(entity);
         }
 
-        public virtual void Update(T entityToUpdate)
-        {
-            this.DbSet.Attach(entityToUpdate);
-        }
-
         public void Delete(T entity)
         {
             entity.IsDeleted = true;

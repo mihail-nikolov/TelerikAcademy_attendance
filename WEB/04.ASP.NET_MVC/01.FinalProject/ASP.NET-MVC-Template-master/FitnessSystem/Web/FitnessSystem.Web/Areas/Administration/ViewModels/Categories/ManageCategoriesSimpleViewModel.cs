@@ -16,9 +16,9 @@
         [StringLength(10, ErrorMessage = "max len:{1}, min len: {2}.", MinimumLength = 3)]
         public string Name { get; set; }
 
-        public DateTime CreatedOn { get; set; }
+        //public DateTime CreatedOn { get; set; }
 
-        public DateTime? ModifiedOn { get; set; }
+        //public DateTime? ModifiedOn { get; set; }
 
         public bool IsVisible { get; set; }
     }
