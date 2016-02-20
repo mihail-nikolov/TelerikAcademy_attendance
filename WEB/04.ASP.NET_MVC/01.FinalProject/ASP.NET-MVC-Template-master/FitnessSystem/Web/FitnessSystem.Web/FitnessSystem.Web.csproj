@@ -202,8 +202,10 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Areas\Administration\AdministrationAreaRegistration.cs" />
     <Compile Include="Areas\Administration\Controllers\AdministrationController.cs" />
+    <Compile Include="Areas\Administration\Controllers\FeedbacksCheckController.cs" />
     <Compile Include="Areas\Administration\Controllers\ManageCategoriesController.cs" />
     <Compile Include="Areas\Administration\ViewModels\Categories\ManageCategoriesSimpleViewModel.cs" />
+    <Compile Include="Areas\Administration\ViewModels\Feedbacks\FeedbacksCheckViewModel.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\CategoriesController.cs" />
@@ -287,6 +289,7 @@
     <Content Include="Content\kendo\kendo.bootstrap.min.css.map" />
     <Content Include="Content\kendo\kendo.common.min.css.map" />
     <Content Include="Areas\Administration\Views\ManageCategories\Index.cshtml" />
+    <Content Include="Areas\Administration\Views\FeedbacksCheck\Index.cshtml" />
     <None Include="Scripts\jquery-2.2.0.intellisense.js" />
     <Content Include="Scripts\jquery-2.2.0.js" />
     <Content Include="Scripts\jquery-2.2.0.min.js" />
@@ -375,6 +378,7 @@
     <Folder Include="Scripts\kendo\cultures\" />
     <Folder Include="Scripts\kendo\messages\" />
     <Folder Include="ViewModels\Feedbacks\" />
+    <Folder Include="Views\FeedbacksCheck\" />
     <Folder Include="Views\ManageCategories\" />
   </ItemGroup>
   <ItemGroup>

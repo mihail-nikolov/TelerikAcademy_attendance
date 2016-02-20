@@ -67,28 +67,28 @@
 
         private void SeedFeedback(ApplicationDbContext context)
         {
-            if (!context.FeedBacks.Any())
+            if (!context.Feedbacks.Any())
             {
                 Feedback hateFeedBack1 = new Feedback()
                 {
                     Title = "pedali ste",
                     Content = "you suck!!!"
                 };
-                context.FeedBacks.Add(hateFeedBack1);
+                context.Feedbacks.Add(hateFeedBack1);
 
                 Feedback hateFeedBack2 = new Feedback()
                 {
                     Title = "fuck you",
                     Content = "super smotan SAIT"
                 };
-                context.FeedBacks.Add(hateFeedBack2);
+                context.Feedbacks.Add(hateFeedBack2);
 
                 Feedback goodFeedback = new Feedback()
                 {
                     Title = "I love it",
                     Content = "it is a very good idea to have fitness system with exercises!"
                 };
-                context.FeedBacks.Add(goodFeedback);
+                context.Feedbacks.Add(goodFeedback);
 
                 for (int i = 1; i <= 15; i++)
                 {
@@ -101,18 +101,10 @@
                         Content = content
                     };
 
-                    context.FeedBacks.Add(feedback);
+                    context.Feedbacks.Add(feedback);
                 }
+
                 context.SaveChanges();
-
-            }
-        }
-
-        private void SeedCategories(ApplicationDbContext context)
-        {
-            if (!context.Categories.Any())
-            {
-
             }
         }
 
