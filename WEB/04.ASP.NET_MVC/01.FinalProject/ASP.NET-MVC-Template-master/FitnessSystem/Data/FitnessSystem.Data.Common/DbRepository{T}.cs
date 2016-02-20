@@ -4,7 +4,7 @@
     using System.Data.Entity;
     using System.Linq;
 
-    using FitnessSystem.Data.Common.Models;
+    using Models;
 
     // TODO: Why BaseModel<int> instead BaseModel<TKey>?
     public class DbRepository<T> : IDbRepository<T>
@@ -43,6 +43,11 @@
         public void Add(T entity)
         {
             this.DbSet.Add(entity);
+        }
+
+        public virtual void Update(T entityToUpdate)
+        {
+            this.DbSet.Attach(entityToUpdate);
         }
 
         public void Delete(T entity)

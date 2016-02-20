@@ -2,7 +2,7 @@
 {
     using System.Linq;
 
-    using FitnessSystem.Data.Common.Models;
+    using Models;
 
     public interface IDbRepository<T> : IDbRepository<T, int>
         where T : BaseModel<int>
@@ -19,6 +19,8 @@
         T GetById(TKey id);
 
         void Add(T entity);
+
+        void Update(T entity);
 
         void Delete(T entity);
 

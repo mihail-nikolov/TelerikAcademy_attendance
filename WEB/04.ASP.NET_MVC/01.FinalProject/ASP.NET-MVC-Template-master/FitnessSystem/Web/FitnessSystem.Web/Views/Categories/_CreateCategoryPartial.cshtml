@@ -1,4 +1,5 @@
-﻿<h3>Create new category</h3>
+﻿@model FitnessSystem.Web.ViewModels.Categories.CategorySimpleViewModel
+<h3>Create new category</h3>
 
 @using (Html.BeginForm("Create", "Categories", new { area = string.Empty }, FormMethod.Post))
 {
@@ -7,16 +8,9 @@
 
     <div class="row">
         <div class="input-field">
-            @*@Html.LabelFor(m => m.NewIdea.Title)
-            @Html.EditorFor(m => m.NewIdea.Title)
-            @Html.ValidationMessageFor(m => m.NewIdea.Title)*@
-        </div>
-    </div>
-    <div class="row">
-        <div class="input-field">
-            @*@Html.LabelFor(m => m.NewIdea.Description)
-            @Html.EditorFor(m => m.NewIdea.Description)
-            @Html.ValidationMessageFor(m => m.NewIdea.Description)*@
+            @Html.LabelFor(m => m.Name)
+            @Html.EditorFor(m => m.Name)
+            @Html.ValidationMessageFor(m => m.Name)
         </div>
     </div>
     <div class="row">
@@ -25,3 +19,6 @@
         </div>
     </div>
 }
+
+@Scripts.Render("~/bundles/jqueryval")
+

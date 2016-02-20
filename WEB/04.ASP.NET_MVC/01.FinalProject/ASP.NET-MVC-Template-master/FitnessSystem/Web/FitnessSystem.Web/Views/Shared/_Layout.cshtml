@@ -41,6 +41,10 @@
             </div>
         </div>
     </div>
+    @if(this.TempData["notification"] != null)
+    {
+        <div class="alert alert-info" role="alert">@this.TempData["notification"]</div>
+    }
     <div class="container body-content">
         @RenderBody()
         <hr />

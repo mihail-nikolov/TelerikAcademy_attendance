@@ -12,11 +12,11 @@
         }
 
         [Required]
-        [MinLength(3, ErrorMessage = "min len: {0}")]
+        [MinLength(3, ErrorMessage = "min len: {1}")]
         public string Title { get; set; }
 
         [Required]
-        [MinLength(15, ErrorMessage = "min len: {0}")]
+        [MinLength(15, ErrorMessage = "min len: {1}")]
         public string Content { get; set; }
 
         public int CategoryId { get; set; }

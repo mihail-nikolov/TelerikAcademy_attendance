@@ -1,7 +1,29 @@
-﻿
+﻿@model FitnessSystem.Web.ViewModels.Categories.CategoryWithExercisesViewModel
+
 @{
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
+<h3>@Model.Name</h3>
+@if (Model.Exercises.Count != 0)
+{
+    foreach (var exercise in Model.Exercises)
+    {
+        <div class="row">
+            <h4><a href="~/Exercises/Details/@exercise.Id">@exercise.Title</a></h4>
+        </div>
+        <div class="row">
+            <i>rating:</i><strong class="text-danger">@exercise.Votes</strong>
+            <i>category:</i><a href="~/Exercises?categoryId=@exercise.CategoryId"><strong>@exercise.Category</strong></a>
+            <i>author:</i><a href="~/Exercises?authorId=@exercise.AuthorId"><strong>@exercise.Author</strong></a>
+        </div>
+        <br />
+    }
+}
+else
+{
+    <div class="row text-danger">
+        No Exercises Added in This category
+    </div>
+}
 

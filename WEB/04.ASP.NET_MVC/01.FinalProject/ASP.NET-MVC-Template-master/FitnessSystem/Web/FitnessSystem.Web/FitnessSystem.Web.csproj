@@ -202,13 +202,9 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Areas\Administration\AdministrationAreaRegistration.cs" />
     <Compile Include="Areas\Administration\Controllers\AdministrationController.cs" />
-    <Compile Include="Areas\Administration\Controllers\ArticlesController.cs" />
     <Compile Include="Areas\Administration\Controllers\ManageCategoriesController.cs" />
-    <Compile Include="Areas\Administration\Controllers\ManageExercisesController.cs" />
-    <Compile Include="Areas\Administration\Controllers\ManageUsersController.cs" />
-    <Compile Include="Areas\Administration\Controllers\ManageVideosController.cs" />
+    <Compile Include="Areas\Administration\ViewModels\Categories\ManageCategoriesSimpleViewModel.cs" />
     <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\ArticlesController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\CategoriesController.cs" />
     <Compile Include="Controllers\ContactController.cs" />
@@ -230,6 +226,9 @@
     <Compile Include="ViewModels\Account\ResetPasswordViewModel.cs" />
     <Compile Include="ViewModels\Account\SendCodeViewModel.cs" />
     <Compile Include="ViewModels\Account\VerifyCodeViewModel.cs" />
+    <Compile Include="ViewModels\Categories\CategorySimpleViewModel.cs" />
+    <Compile Include="ViewModels\Categories\CategoryWithExercisesViewModel.cs" />
+    <Compile Include="ViewModels\Exercises\ExerciseLinkModel.cs" />
     <Compile Include="ViewModels\Home\IndexViewModel.cs" />
     <Compile Include="ViewModels\Home\JokeCategoryViewModel.cs" />
     <Compile Include="ViewModels\Home\JokeViewModel.cs" />
@@ -284,14 +283,10 @@
     <Content Include="Areas\Administration\Views\web.config" />
     <Content Include="Areas\Administration\Views\_ViewStart.cshtml" />
     <Content Include="Areas\Administration\Views\Administration\Index.cshtml" />
-    <Content Include="Areas\Administration\Views\ManageArticles\Index.cshtml" />
-    <Content Include="Areas\Administration\Views\ManageCategories\Index.cshtml" />
-    <Content Include="Areas\Administration\Views\ManageExercises\Index.cshtml" />
-    <Content Include="Areas\Administration\Views\ManageUsers\Index.cshtml" />
-    <Content Include="Areas\Administration\Views\ManageVideos\Index.cshtml" />
     <Content Include="Content\kendo\kendo.black.min.css.map" />
     <Content Include="Content\kendo\kendo.bootstrap.min.css.map" />
     <Content Include="Content\kendo\kendo.common.min.css.map" />
+    <Content Include="Areas\Administration\Views\ManageCategories\Index.cshtml" />
     <None Include="Scripts\jquery-2.2.0.intellisense.js" />
     <Content Include="Scripts\jquery-2.2.0.js" />
     <Content Include="Scripts\jquery-2.2.0.min.js" />
@@ -343,7 +338,6 @@
     <Content Include="Views\Search\Index.cshtml" />
     <Content Include="Views\Exercises\Index.cshtml" />
     <Content Include="Views\Categories\Index.cshtml" />
-    <Content Include="Views\Articles\Index.cshtml" />
     <Content Include="Views\Shared\_AdministrationPartial.cshtml" />
     <Content Include="Views\Exercises\MyExercises.cshtml" />
     <Content Include="Views\Exercises\Create.cshtml" />
@@ -358,7 +352,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Areas\Administration\Models\" />
     <Folder Include="Areas\Administration\Views\Shared\" />
     <Folder Include="Content\kendo\BlueOpal\" />
     <Folder Include="Content\kendo\Bootstrap\" />
@@ -381,6 +374,8 @@
     <Folder Include="Content\kendo\Uniform\" />
     <Folder Include="Scripts\kendo\cultures\" />
     <Folder Include="Scripts\kendo\messages\" />
+    <Folder Include="ViewModels\Feedbacks\" />
+    <Folder Include="Views\ManageCategories\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
