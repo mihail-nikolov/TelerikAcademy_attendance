@@ -2,11 +2,11 @@
 {
     using System.Linq;
     using System.Web.Mvc;
-    using FitnessSystem.Web.Areas.Administration.ViewModels.Feedbacks;
     using Infrastructure.Mapping;
     using Kendo.Mvc.Extensions;
     using Kendo.Mvc.UI;
     using Services.Data;
+    using ViewModels.Feedbacks;
     using Web.Controllers;
 
     public class FeedbacksCheckController : BaseController

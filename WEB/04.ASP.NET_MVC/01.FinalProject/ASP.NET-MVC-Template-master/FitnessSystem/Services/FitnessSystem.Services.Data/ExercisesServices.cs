@@ -1,0 +1,60 @@
+﻿namespace FitnessSystem.Services.Data
+{
+    using System;
+    using System.Linq;
+
+    using FitnessSystem.Data.Common;
+    using FitnessSystem.Data.Models;
+
+    public class ExercisesServices : IExercisesServices
+    {
+        private readonly IDbRepository<Exercise> exercises;
+
+        public ExercisesServices(IDbRepository<Exercise> exercises)
+        {
+            this.exercises = exercises;
+        }
+
+        public IQueryable<Exercise> GetAll()
+        {
+            return this.exercises.All().OrderByDescending(x => x.CreatedOn);
+        }
+
+        public IQueryable<Exercise> Get(int number)
+        {
+            return this.exercises.All().OrderByDescending(x => x.Votes.Sum(v => v.Points)).Take(number);
+        }
+
+        public void Create(Exercise newExercise)
+        {
+            this.exercises.Add(newExercise);
+            this.exercises.Save();
+        }
+
+        public void Update(Exercise updatedExercise)
+        {
+            var exercise = this.exercises.GetById(updatedExercise.Id);
+            exercise.Title = exercise.Title;
+            exercise.Content = updatedExercise.Content;
+            exercise.CategoryId = updatedExercise.CategoryId;
+            this.exercises.Save();
+        }
+
+        public void Delete(int id)
+        {
+            var exercise = this.exercises.GetById(id);
+            this.exercises.Delete(exercise);
+            this.exercises.Save();
+        }
+
+        public Exercise GetById(int id)
+        {
+            return this.exercises.GetById(id);
+        }
+
+        public IQueryable<Exercise> GetByUser(string id)
+        {
+            return this.exercises.All().Where(x => x.AuthorId == id).OrderByDescending(x => x.CreatedOn);
+        }
+    }
+}

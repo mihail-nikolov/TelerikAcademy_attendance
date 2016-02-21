@@ -1,5 +1,6 @@
 ﻿namespace FitnessSystem.Services.Data
 {
+    using System;
     using System.Linq;
 
     using FitnessSystem.Data.Common;
@@ -59,6 +60,13 @@
             }
 
             return false;
+        }
+
+        public void AddExercise(Exercise newExercise)
+        {
+            var category = this.categories.GetById(newExercise.CategoryId);
+            category.Exercises.Add(newExercise);
+            this.categories.Save();
         }
     }
 }

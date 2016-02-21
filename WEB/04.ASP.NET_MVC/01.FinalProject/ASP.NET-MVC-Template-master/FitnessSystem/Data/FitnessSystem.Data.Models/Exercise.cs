@@ -16,6 +16,7 @@
         public string Title { get; set; }
 
         [Required]
+        [AllowHtml]
         [MinLength(15, ErrorMessage = "min len: {1}")]
         public string Content { get; set; }
 
@@ -26,7 +27,6 @@
         [Required]
         public string AuthorId { get; set; }
 
-        [Required]
         public virtual ApplicationUser Author { get; set; }
 
         public virtual ICollection<Vote> Votes { get; set; }

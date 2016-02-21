@@ -7,7 +7,7 @@
     using Data.Models;
     using Infrastructure.Mapping;
 
-    public class ManageCategoriesSimpleViewModel : IMapFrom<Category>
+    public class ManageCategoriesSimpleViewModel : IMapFrom<Category>, IMapTo<Category>
     {
         public int Id { get; set; }
 
@@ -15,10 +15,6 @@
         [Index(IsUnique = true)]
         [StringLength(20, ErrorMessage = "max len:{1}, min len: {2}.", MinimumLength = 3)]
         public string Name { get; set; }
-
-        //public DateTime CreatedOn { get; set; }
-
-        //public DateTime? ModifiedOn { get; set; }
 
         public bool IsVisible { get; set; }
     }

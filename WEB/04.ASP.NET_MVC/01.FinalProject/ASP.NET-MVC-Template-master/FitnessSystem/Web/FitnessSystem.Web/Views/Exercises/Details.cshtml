@@ -1,7 +1,31 @@
-﻿
+﻿@model  FitnessSystem.Web.ViewModels.Exercises.ExerciseFullViewModel
+@using Microsoft.AspNet.Identity
+
 @{
     ViewBag.Title = "Details";
 }
+<h3>@Model.Title</h3>
+<div class="row">
+    <i>by: </i><strong>@Model.Author</strong> <i>category: </i>
+    <strong class="text-danger"><a href="~/Categories/Details/@Model.CategoryId">@Model.Category</a></strong><br />
+    @if (Request.IsAuthenticated && Model.AuthorId == User.Identity.GetUserId())
+    {
+        @Ajax.ActionLink("Edit", "Edit", "Exercises", new AjaxOptions { HttpMethod = "GET" }, new { @class = "btn btn-primary" })
+        @Ajax.ActionLink("Delete", "Delete", "Exercises", new AjaxOptions { HttpMethod = "POST" }, new { @class = "btn btn-danger" })
+    }
+</div>
+<br />
+<div class="row">
+    <span>@Html.Raw(Model.Content)</span><br /><br />
+    <i>rating: </i><strong class="text-danger">@Model.Votes</strong><br />
+    @if (Request.IsAuthenticated && Model.AuthorId != User.Identity.GetUserId())
+    {
+        @Ajax.ActionLink("Vote+", "Edit", "Exercises", new AjaxOptions { HttpMethod = "POST" }, new { @class = "btn btn-primary" });
+        @Ajax.ActionLink("Vote-", "Delete", "Exercises", new AjaxOptions { HttpMethod = "POST" }, new { @class = "btn btn-primary" });
+    }
+</div>
 
-<h2>Details</h2>
-
+@section scripts{
+    @Scripts.Render("~/bundles/jquery")
+    <script src="@Url.Content("~/Scripts/jquery.unobtrusive-ajax.js")" type="text/javascript"></script>
+}

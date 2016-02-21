@@ -14,6 +14,8 @@
 
         void Update(Category categoryToUpdate);
 
+        void AddExercise(Exercise newExercise);
+
         bool IfExists(string name);
 
         void Delete(int id);

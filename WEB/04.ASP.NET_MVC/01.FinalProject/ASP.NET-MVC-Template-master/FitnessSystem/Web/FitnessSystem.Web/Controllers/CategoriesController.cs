@@ -1,5 +1,6 @@
 ﻿namespace FitnessSystem.Web.Controllers
 {
+    using System.Collections.Generic;
     using System.Linq;
     using System.Web.Mvc;
     using Data.Models;
@@ -17,10 +18,12 @@
             this.categories = categories;
         }
 
-        // TODO paging
         public ActionResult Index()
         {
-            var categories = this.categories.GetAllVisible().To<CategoryWithExercisesViewModel>().ToList();
+            var categories = this.Cache.Get(
+                "Categories_Main_Page",
+                () => this.categories.GetAllVisible().To<CategoriesPageViewModel>().ToList(),
+                10 * 60);
             return this.View(categories);
         }
 
@@ -29,11 +32,10 @@
             return this.PartialView("_CreateCategoryPartial");
         }
 
-        // TODO fix mappings
         [HttpGet]
         public ActionResult Details(int id)
         {
-            var category = this.categories.GetAllVisible().To<CategoryWithExercisesViewModel>().FirstOrDefault(c => c.Id == id);
+            var category = this.Mapper.Map<CategoryWithExercisesViewModel>(this.categories.GetById(id));
             return this.View(category);
         }
 
@@ -46,12 +48,10 @@
                 return this.RedirectToAction("Index");
             }
 
-            var category = new Category()
-            {
-                Name = newCategory.Name,
-                IsVisible = false
-            };
+            var category = this.Mapper.Map<Category>(newCategory);
+            category.IsVisible = false;
             this.categories.Create(category);
+
             string message = string.Format("Category with name {0} added, it will become visible when the Admin approves it", category.Name);
             this.TempData["notification"] = message;
             return this.RedirectToAction("Index");

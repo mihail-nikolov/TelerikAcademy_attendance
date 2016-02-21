@@ -7,33 +7,26 @@
 
     using Services.Data;
 
-    using ViewModels.Home;
+    using ViewModels.Exercises;
 
     public class HomeController : BaseController
     {
-        //private readonly IJokesService jokes;
+        private readonly IExercisesServices exercises;
 
-        //public HomeController(
-        //    IJokesService jokes,
-        //{
-        //    this.jokes = jokes;
-        //}
+        public HomeController(IExercisesServices exercises)
+        {
+            this.exercises = exercises;
+        }
 
         public ActionResult Index()
         {
-            //var jokes = this.jokes.GetRandomJokes(3).To<JokeViewModel>().ToList();
-            //var categories =
-            //    this.Cache.Get(
-            //        "categories",
-            //        () => this.jokeCategories.GetAll().To<JokeCategoryViewModel>().ToList(),
-            //        30 * 60);
-            //var viewModel = new IndexViewModel
-            //{
-            //    Jokes = jokes,
-            //    Categories = categories
-            //};
+            var exercisesViewModel =
+                this.Cache.Get(
+                    "categories",
+                    () => this.exercises.Get(5).To<ExerciseLinkModel>().ToList(),
+                    5 * 30);
 
-            return this.View();
+            return this.View(exercisesViewModel);
         }
 
         public ActionResult About()

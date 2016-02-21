@@ -9,7 +9,6 @@
       {
           columns.Bound(c => c.Name);
           columns.Bound(c => c.IsVisible);
-         //columns.Bound(c => c.CreatedOn).Format("{0:yyyy-mm-dd hh:mm:ss.fff}");
           columns.Command(command => command.Destroy());
           columns.Command(command => command.Edit());
       })

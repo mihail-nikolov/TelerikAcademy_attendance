@@ -59,6 +59,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AllowHtmlAttribute.cs" />
     <Compile Include="ApplicationUser.cs" />
     <Compile Include="Exercise.cs" />
     <Compile Include="Feedback.cs" />

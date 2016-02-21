@@ -1,34 +1,76 @@
 ﻿namespace FitnessSystem.Web.Controllers
 {
-    using System;
-    using System.Collections.Generic;
+    using Data.Models;
+    using Infrastructure.Mapping;
+    using Services.Data;
     using System.Linq;
-    using System.Web;
     using System.Web.Mvc;
-
-    public class ExercisesController : Controller
+    using ViewModels.Exercises;
+    using Microsoft.AspNet.Identity;
+    using Data;
+    using Microsoft.AspNet.Identity.EntityFramework;
+    public class ExercisesController : BaseController
     {
-        // GET: Exercises
+        private readonly IExercisesServices exercises;
+        private readonly ICategoriesService categories;
+
+        public ExercisesController(IExercisesServices exercises, ICategoriesService categories)
+        {
+            this.exercises = exercises;
+            this.categories = categories;
+        }
+
         public ActionResult Index()
         {
-            return this.View();
+            var exercises = this.exercises.GetAll().To<ExerciseLinkModel>().ToList();
+            return this.View(exercises);
         }
 
         [Authorize]
         public ActionResult MyExercises()
         {
+            var exercises = this.exercises.GetByUser(this.User.Identity.GetUserId()).To<ExerciseLinkModel>().ToList();
+            return this.View(exercises);
+        }
+
+        [Authorize]
+        [HttpGet]
+        public ActionResult CreateNew()
+        {
             return this.View();
         }
 
         [Authorize]
-        public ActionResult Create()
+        [HttpPost]
+        public ActionResult Create(ExerciseEditViewModel newModel)
         {
-            return this.View();
+            //var store = new UserStore<ApplicationUser>(new ApplicationDbContext());
+            //var userManager = new UserManager<ApplicationUser>(store);
+            //ApplicationUser user = userManager.FindByNameAsync(this.User.Identity.Name).Result;
+            ApplicationUser user;
+            string userId = this.User.Identity.GetUserId();
+            using (ApplicationDbContext db = new ApplicationDbContext())
+            {
+                user = db.Users.FirstOrDefault(u => u.Id == userId);
+            }
+
+            if (!this.ModelState.IsValid)
+            {
+                return this.RedirectToAction("Index");
+            }
+
+            var exercise = this.Mapper.Map<Exercise>(newModel);
+            exercise.AuthorId = userId;
+            exercise.Author = user;
+            this.categories.AddExercise(exercise);
+
+            return this.Redirect("/");
         }
 
         public ActionResult Details(int id)
         {
-            return this.View();
+            var exercise = this.Mapper.Map<ExerciseFullViewModel>(this.exercises.GetById(id));
+            return this.View(exercise);
         }
     }
 }

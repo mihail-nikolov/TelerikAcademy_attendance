@@ -5,7 +5,7 @@
     using Data.Models;
     using Infrastructure.Mapping;
 
-    public class ExerciseLinkModel : IMapFrom<Exercise>, IHaveCustomMappings
+    public class ExerciseFullViewModel : IMapFrom<Exercise>, IHaveCustomMappings
     {
         public int Id { get; set; }
 
@@ -15,6 +15,8 @@
 
         public string Category { get; set; }
 
+        public string Content { get; set; }
+
         public string AuthorId { get; set; }
 
         public virtual string Author { get; set; }
@@ -23,11 +25,11 @@
 
         public void CreateMappings(IMapperConfiguration configuration)
         {
-            configuration.CreateMap<Exercise, ExerciseLinkModel>()
+            configuration.CreateMap<Exercise, ExerciseFullViewModel>()
                 .ForMember(x => x.Category, opt => opt.MapFrom(x => x.Category.Name));
-            configuration.CreateMap<Exercise, ExerciseLinkModel>()
+            configuration.CreateMap<Exercise, ExerciseFullViewModel>()
                 .ForMember(x => x.Author, opt => opt.MapFrom(x => x.Author.UserName));
-            configuration.CreateMap<Exercise, ExerciseLinkModel>()
+            configuration.CreateMap<Exercise, ExerciseFullViewModel>()
                 .ForMember(x => x.Votes, opt => opt.MapFrom(x => x.Votes.Sum(v => v.Points)));
         }
     }

@@ -1,9 +1,9 @@
 ﻿namespace FitnessSystem.Web.ViewModels.Categories
 {
+    using System.Collections.Generic;
     using Data.Models;
     using Exercises;
     using Infrastructure.Mapping;
-    using System.Collections.Generic;
 
     public class CategoryWithExercisesViewModel : IMapFrom<Category>
     {

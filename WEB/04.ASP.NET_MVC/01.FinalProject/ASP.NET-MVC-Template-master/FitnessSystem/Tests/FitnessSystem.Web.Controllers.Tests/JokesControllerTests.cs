@@ -5,7 +5,6 @@
     using FitnessSystem.Data.Models;
     using FitnessSystem.Services.Data;
     using FitnessSystem.Web.Infrastructure.Mapping;
-    using FitnessSystem.Web.ViewModels.Home;
 
     using NUnit.Framework;
 

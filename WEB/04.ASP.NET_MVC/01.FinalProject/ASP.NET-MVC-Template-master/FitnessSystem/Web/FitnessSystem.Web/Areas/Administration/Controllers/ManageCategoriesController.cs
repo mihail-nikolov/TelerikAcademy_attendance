@@ -31,17 +31,12 @@
             return this.Json(result);
         }
 
-        // TODO: map it
         [AcceptVerbs(HttpVerbs.Post)]
         public ActionResult Categories_Create([DataSourceRequest]DataSourceRequest request, ManageCategoriesSimpleViewModel category)
         {
             if (this.ModelState.IsValid)
             {
-                var entity = new Category
-                {
-                    Name = category.Name,
-                    IsVisible = category.IsVisible
-                };
+                var entity = this.Mapper.Map<Category>(category);
 
                 this.categories.Create(entity);
                 category.Id = entity.Id;
@@ -50,19 +45,12 @@
             return this.Json(new[] { category }.ToDataSourceResult(request, this.ModelState));
         }
 
-        // TODO: map it
         [AcceptVerbs(HttpVerbs.Post)]
         public ActionResult Categories_Update([DataSourceRequest]DataSourceRequest request, ManageCategoriesSimpleViewModel category)
         {
             if (this.ModelState.IsValid)
             {
-                var entity = new Category
-                {
-                    Id = category.Id,
-                    Name = category.Name,
-                    IsVisible = category.IsVisible
-                };
-
+                var entity = this.Mapper.Map<Category>(category);
                 this.categories.Update(entity);
             }
 

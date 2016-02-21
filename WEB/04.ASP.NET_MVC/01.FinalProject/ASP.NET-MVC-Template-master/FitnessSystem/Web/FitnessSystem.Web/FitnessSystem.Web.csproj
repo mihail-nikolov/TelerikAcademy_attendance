@@ -227,13 +227,13 @@
     <Compile Include="ViewModels\Account\ResetPasswordViewModel.cs" />
     <Compile Include="ViewModels\Account\SendCodeViewModel.cs" />
     <Compile Include="ViewModels\Account\VerifyCodeViewModel.cs" />
+    <Compile Include="ViewModels\Categories\CategoriesPageViewModel.cs" />
     <Compile Include="ViewModels\Categories\CategorySimpleViewModel.cs" />
     <Compile Include="ViewModels\Categories\CategoryWithExercisesViewModel.cs" />
+    <Compile Include="ViewModels\Exercises\ExerciseEditViewModel.cs" />
+    <Compile Include="ViewModels\Exercises\ExerciseFullViewModel.cs" />
     <Compile Include="ViewModels\Exercises\ExerciseLinkModel.cs" />
     <Compile Include="ViewModels\Feedbacks\FeedbackCreateViewModel.cs" />
-    <Compile Include="ViewModels\Home\IndexViewModel.cs" />
-    <Compile Include="ViewModels\Home\JokeCategoryViewModel.cs" />
-    <Compile Include="ViewModels\Home\JokeViewModel.cs" />
     <Compile Include="ViewModels\Manage\AddPhoneNumberViewModel.cs" />
     <Compile Include="ViewModels\Manage\ChangePasswordViewModel.cs" />
     <Compile Include="ViewModels\Manage\FactorViewModel.cs" />
@@ -500,7 +500,7 @@
     <Content Include="Views\Categories\Index.cshtml" />
     <Content Include="Views\Shared\_AdministrationPartial.cshtml" />
     <Content Include="Views\Exercises\MyExercises.cshtml" />
-    <Content Include="Views\Exercises\Create.cshtml" />
+    <Content Include="Views\Exercises\CreateNew.cshtml" />
     <Content Include="Views\Categories\_CreateCategoryPartial.cshtml" />
     <Content Include="Scripts\kendo\jquery.min.map" />
     <Content Include="Scripts\kendo\kendo.all.min.js.map" />
@@ -546,7 +546,6 @@
     <Folder Include="Content\kendo\Uniform\" />
     <Folder Include="Scripts\kendo\cultures\" />
     <Folder Include="Scripts\kendo\messages\" />
-    <Folder Include="Views\FeedbacksCheck\" />
     <Folder Include="Views\ManageCategories\" />
   </ItemGroup>
   <ItemGroup>

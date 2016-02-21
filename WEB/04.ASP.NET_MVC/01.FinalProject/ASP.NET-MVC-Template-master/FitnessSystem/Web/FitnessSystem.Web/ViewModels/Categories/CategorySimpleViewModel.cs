@@ -5,7 +5,7 @@
     using Data.Models;
     using Infrastructure.Mapping;
 
-    public class CategorySimpleViewModel : IMapFrom<Category>
+    public class CategorySimpleViewModel : IMapFrom<Category>, IMapTo<Category>
     {
         public int Id { get; set; }
 

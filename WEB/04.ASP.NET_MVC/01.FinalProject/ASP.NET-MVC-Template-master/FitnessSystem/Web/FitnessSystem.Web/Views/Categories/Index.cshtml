@@ -1,4 +1,4 @@
-﻿@model IEnumerable<FitnessSystem.Web.ViewModels.Categories.CategoryWithExercisesViewModel>
+﻿@model IEnumerable<FitnessSystem.Web.ViewModels.Categories.CategoriesPageViewModel>
 @{
     ViewBag.Title = "Categories";
 }
@@ -18,32 +18,12 @@
 
 @foreach (var category in Model)
 {
-    <h3><a href="~/Categories/Details/@category.Id">@category.Name</a></h3>
-    if (category.Exercises.Count != 0)
-    {
-        foreach (var exercise in category.Exercises)
-        {
-            <div class="row">
-                <h4><a href="~/Exercises/Details/@exercise.Id">@exercise.Title</a></h4>
-            </div>
-            <div class="row">
-                <i>rating:</i><strong class="text-danger">@exercise.Votes</strong>
-                <i>category:</i><a href="~/Exercises?categoryId=@exercise.CategoryId"><strong>@exercise.Category</strong></a>
-                <i>author:</i><a href="~/Exercises?authorId=@exercise.AuthorId"><strong>@exercise.Author</strong></a>
-            </div>
-            <br />
-        }
-    }
-    else
-    {
-        <div class="row text-danger">
-            No Exercises Added in This category
-        </div>
-    }
+    <strong><a href="~/Categories/Details/@category.Id">@category.Name</a></strong><br />
+    <i>exercises: </i><strong>@category.Exercises</strong>
+    <br />
 }
-
 
 @section scripts{
     @Scripts.Render("~/bundles/jquery")
-<script src="@Url.Content("~/Scripts/jquery.unobtrusive-ajax.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/jquery.unobtrusive-ajax.js")" type="text/javascript"></script>
 }

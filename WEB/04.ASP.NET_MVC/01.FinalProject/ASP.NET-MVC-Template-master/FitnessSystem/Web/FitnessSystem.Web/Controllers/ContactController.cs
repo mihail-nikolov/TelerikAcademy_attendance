@@ -27,11 +27,7 @@
                 return this.RedirectToAction("Index");
             }
 
-            var feedback = new Feedback()
-            {
-                Title = newFeedBack.Title,
-                Content = newFeedBack.Content
-            };
+            var feedback = this.Mapper.Map<Feedback>(newFeedBack);
             this.feedbacks.Create(feedback);
 
             this.TempData["notification"] = "Your feedback is send and will be checked by the Admin";
