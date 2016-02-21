@@ -16,7 +16,7 @@
         public string Title { get; set; }
 
         [Required]
-        [AllowHtml]
+      //  [AllowHtml]
         [MinLength(15, ErrorMessage = "min len: {1}")]
         public string Content { get; set; }
 

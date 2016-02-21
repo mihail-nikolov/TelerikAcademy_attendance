@@ -31,7 +31,6 @@
         {
             this.ApplyAuditInfoRules();
             return base.SaveChanges();
-
         }
 
         private void ApplyAuditInfoRules()

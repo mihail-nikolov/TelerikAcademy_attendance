@@ -9,6 +9,8 @@
     using Microsoft.AspNet.Identity;
     using Data;
     using Microsoft.AspNet.Identity.EntityFramework;
+    using System;
+
     public class ExercisesController : BaseController
     {
         private readonly IExercisesServices exercises;
@@ -47,12 +49,7 @@
             //var store = new UserStore<ApplicationUser>(new ApplicationDbContext());
             //var userManager = new UserManager<ApplicationUser>(store);
             //ApplicationUser user = userManager.FindByNameAsync(this.User.Identity.Name).Result;
-            ApplicationUser user;
             string userId = this.User.Identity.GetUserId();
-            using (ApplicationDbContext db = new ApplicationDbContext())
-            {
-                user = db.Users.FirstOrDefault(u => u.Id == userId);
-            }
 
             if (!this.ModelState.IsValid)
             {
@@ -61,8 +58,8 @@
 
             var exercise = this.Mapper.Map<Exercise>(newModel);
             exercise.AuthorId = userId;
-            exercise.Author = user;
-            this.categories.AddExercise(exercise);
+            this.exercises.Create(exercise);
+            // this.categories.AddExercise(exercise);
 
             return this.Redirect("/");
         }

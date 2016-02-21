@@ -30,7 +30,7 @@
             configuration.CreateMap<Exercise, ExerciseFullViewModel>()
                 .ForMember(x => x.Author, opt => opt.MapFrom(x => x.Author.UserName));
             configuration.CreateMap<Exercise, ExerciseFullViewModel>()
-                .ForMember(x => x.Votes, opt => opt.MapFrom(x => x.Votes.Sum(v => v.Points)));
+                .ForMember(x => x.Votes, opt => opt.MapFrom(x => x.Votes.Any() ? x.Votes.Sum(v => v.Points) : 0));
         }
     }
 }

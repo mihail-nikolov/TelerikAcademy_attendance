@@ -133,7 +133,7 @@
                 Exercise exercise8 = new Exercise
                 {
                     Title = "7 Exercises to Work Your Legs to Exhaustion ",
-                    Author = this.usersCollection["user5@site.com"],
+                   // Author = this.usersCollection["user5@site.com"],
                     AuthorId = this.usersCollection["user5@site.com"].Id,
                     Content = @"Well, for one, they can hide weak development with 90's retro bodybuilding pants but the main reason is they don’t want to do the hard work. Tom Platz and Branch Warren have the two best sets of wheels to ever grace the bodybuilding stage and what do they have in common? Only being the two hardest-working bodybuilders of all-time.
 
