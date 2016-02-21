@@ -7,7 +7,9 @@
 <h3>@Model.Title</h3>
 <div class="row">
     <i>by: </i><strong>@Model.Author</strong> <i>category: </i>
-    <strong class="text-danger"><a href="~/Categories/Details/@Model.CategoryId">@Model.Category</a></strong><br />
+    <strong class="text-danger"><a href="~/Categories/Details/@Model.CategoryId">@Model.Category </a></strong>
+    <i>added: </i><strong>@Model.CreatedOn</strong>
+    <br />
     @if (Request.IsAuthenticated && Model.AuthorId == User.Identity.GetUserId())
     {
         @Html.ActionLink("Edit", "EditExercise", "Exercises",

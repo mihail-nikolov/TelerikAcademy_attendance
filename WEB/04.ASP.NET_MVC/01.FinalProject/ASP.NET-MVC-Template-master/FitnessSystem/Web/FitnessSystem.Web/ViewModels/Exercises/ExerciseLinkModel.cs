@@ -4,6 +4,7 @@
     using AutoMapper;
     using Data.Models;
     using Infrastructure.Mapping;
+    using System;
 
     public class ExerciseLinkModel : IMapFrom<Exercise>, IHaveCustomMappings
     {
@@ -20,6 +21,8 @@
         public virtual string Author { get; set; }
 
         public virtual int Votes { get; set; }
+
+        public DateTime CreatedOn { get; set; }
 
         public void CreateMappings(IMapperConfiguration configuration)
         {

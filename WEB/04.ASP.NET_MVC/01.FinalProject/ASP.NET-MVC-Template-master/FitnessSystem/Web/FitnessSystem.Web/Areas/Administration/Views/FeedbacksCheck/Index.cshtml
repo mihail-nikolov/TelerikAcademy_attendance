@@ -9,7 +9,7 @@
       {
           columns.Bound(c => c.Title);
           columns.Bound(c => c.Content);
-          columns.Bound(c => c.CreatedOn).Format("{0:yyyy-mm-dd hh:mm}"); ;
+          columns.Bound(c => c.CreatedOn).Format("{0:yyyy-mm-dd hh:mm}");
       })
       .Pageable()
       .Sortable(sortable => {

@@ -1,54 +1,43 @@
-﻿@model  IEnumerable<FitnessSystem.Web.ViewModels.Exercises.ExerciseLinkModel>
+﻿@model  FitnessSystem.Web.ViewModels.Exercises.ExerciseLinkModel
 @{
     ViewBag.Title = "Home Page";
-}
-<h3>Exercises</h3>
-<div class="row">
-    @foreach (var exercise in Model)
-    {
-        <div class="row">
-            <h4><a href="~/Exercises/Details/@exercise.Id">@exercise.Title</a></h4>
-        </div>
-        <div class="row">
-            <i>rating: </i><strong class="text-danger">@exercise.Votes</strong>
-            <i>author: </i><strong>@exercise.Author</strong>
-            <i>category: </i><strong><a href="~/Categories/Details/@exercise.CategoryId">@exercise.Category</a></strong>
-        </div>
-        <br />
-    }
-</div>
 
-@*@(Html.Kendo()
-        .Grid<LibrarySystem_Kendo.Models.BookViewModel>()
-        .Name("grid")
-        .Columns(columns =>
+
+}
+@*<div class="row">
+        @foreach (var exercise in Model)
         {
-            columns.Bound(col => col.ID);
-            columns.Bound(col => col.Title);
-            columns.Bound(col => col.Author);
-            columns.Bound(col => col.Category).EditorTemplateName("CategoryDropDownList");
-            columns.Bound(col => col.Description);
-            columns.Bound(col => col.WebSite);
-            columns.Bound(col => col.ISBN);
-            columns.Command(com => com.Edit());
-            columns.Command(com => com.Destroy());
-        })
-        .Sortable()
-        .Pageable()
-        .ToolBar(tools => tools.Create())
-        .Editable(editable => editable.Mode(GridEditMode.InLine))
-        .DataSource(data =>
-        {
-            data.Ajax()
-                .Read(read => read.Action("Read", "Books"))
-                .Model(m =>
-                {
-                    m.Id(book => book.ID);
-                    m.Field(b => b.Category).DefaultValue(
-                    ViewData["categories"] as CategoryGridViewModel);
-                })
-                .Create(create => create.Action("Create", "Books"))
-                .Update(update => update.Action("Update", "Books"))
-                .Destroy(destroy => destroy.Action("Destroy", "Books"));
-        })
-    )*@
+            <div class="row">
+                <h4><a href="~/Exercises/Details/@exercise.Id">@exercise.Title</a></h4>
+            </div>
+            <div class="row">
+                <i>rating: </i><strong class="text-danger">@exercise.Votes</strong>
+                <i>author: </i><strong>@exercise.Author</strong>
+                <i>category: </i><strong><a href="~/Categories/Details/@exercise.CategoryId">@exercise.Category</a></strong>
+            </div>
+            <br />
+        }
+    </div>*@
+<h3>Exercises</h3>
+@(Html.Kendo().Grid<FitnessSystem.Web.ViewModels.Exercises.ExerciseLinkModel>()
+      .Name("grid")
+      .Columns(columns =>
+      {
+          columns.Bound(p => p.Title).ClientTemplate("<a href='/Exercises/Details/#= Id #'>#= Title #</a>");
+          columns.Bound(col => col.Author);
+          columns.Bound(col => col.Category).ClientTemplate("<a href='/Categories/Details/#= CategoryId #'>#= Category #</a>");
+          columns.Bound(col => col.Votes);
+          columns.Bound(col => col.CreatedOn).Format("{0:yyyy-mm-dd hh:mm}").Title("Added");
+      })
+      .Pageable()
+      .Sortable(sortable =>
+      {
+          sortable.SortMode(GridSortMode.SingleColumn);
+      })
+      .Filterable()
+      .DataSource(dataSource => dataSource
+          .Ajax()
+          .PageSize(12)
+          .Read(read => read.Action("Read", "Exercises"))
+      )
+)
