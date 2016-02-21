@@ -25,15 +25,26 @@
 <br />
 <div class="row">
     <span>@Html.Raw(Model.Content)</span><br /><br />
-    <i>rating: </i><strong class="text-danger">@Model.Votes</strong><br />
+    <i>rating: </i><strong data-id ="@Model.Id" data-action="votesCount" class="text-danger">@Model.Votes</strong><br />
     @if (Request.IsAuthenticated && Model.AuthorId != User.Identity.GetUserId())
     {
-        @Ajax.ActionLink("Vote+", "Edit", "Exercises", new AjaxOptions { HttpMethod = "POST" }, new { @class = "btn btn-primary" });
-        @Ajax.ActionLink("Vote-", "Delete", "Exercises", new AjaxOptions { HttpMethod = "POST" }, new { @class = "btn btn-primary" });
+        <div class="btn btn-primary" data-action="up" data-id="@Model.Id">Like</div>
+        <div class="btn btn-danger" data-action="down" data-id="@Model.Id">DisLike</div>
     }
 </div>
 
 @section scripts{
+    <script>
+        $("div[data-action='up'").click(function () {
+            var id = $(this).attr("data-id");
+            $.post('/Votes/Vote/', { exId: id, points: 1 },
+                function (data) {
+                    var newVotes = data.Count;
+                    $("div[data-action='votesCount'][data-id]=" + id + "']")
+                        .html(newVotes);
+                });
+        });
+    </script>
     @Scripts.Render("~/bundles/jquery")
     <script src="@Url.Content("~/Scripts/jquery.unobtrusive-ajax.js")" type="text/javascript"></script>
 }

@@ -63,5 +63,17 @@
             exercise.CategoryId = exerciseToUpdate.CategoryId;
             this.exercises.Save();
         }
+
+        public int GetVotesById(int id)
+        {
+            int exerciseVotes = 0;
+            var exercise = this.exercises.GetById(id);
+            if (exercise.Votes.Any())
+            {
+                exerciseVotes = exercise.Votes.Sum(v => v.Points);
+            }
+
+            return exerciseVotes;
+        }
     }
 }

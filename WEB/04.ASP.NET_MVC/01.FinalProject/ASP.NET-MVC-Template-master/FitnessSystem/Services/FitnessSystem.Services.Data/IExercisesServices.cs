@@ -10,6 +10,10 @@
 
         IQueryable<Exercise> Get(int number);
 
+        Exercise GetById(int id);
+
+        int GetVotesById(int id);
+
         IQueryable<Exercise> GetByUser(string id);
 
         void Create(Exercise newExercise);
@@ -19,7 +23,5 @@
         void ChangeCategory(Exercise exerciseToUpdate);
 
         void Delete(int id);
-
-        Exercise GetById(int id);
     }
 }

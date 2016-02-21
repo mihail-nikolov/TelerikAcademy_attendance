@@ -111,9 +111,12 @@
         {
             for (int i = 1; i <= 50; i++)
             {
+                //var randomUser = this.usersCollection.ElementAt(this.rnd.Next(0, this.usersCollection.Count)).Value;
+                //this.rnd.Next(1, this.usersCollection.Count);
                 Vote vote = new Vote()
                 {
-                    Points = this.rnd.Next(-1, 2)
+                    Points = this.rnd.Next(-1, 2)//,
+                   // AuthorId = randomUser.Id
                 };
                 exercise.Votes.Add(vote);
             }

@@ -1,8 +1,8 @@
 ﻿namespace FitnessSystem.Data.Models
 {
-    using FitnessSystem.Data.Common.Models;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
+    using Common.Models;
 
     public class Exercise : BaseModel<int>
     {
@@ -16,7 +16,6 @@
         public string Title { get; set; }
 
         [Required]
-      //  [AllowHtml]
         [MinLength(15, ErrorMessage = "min len: {1}")]
         public string Content { get; set; }
 
