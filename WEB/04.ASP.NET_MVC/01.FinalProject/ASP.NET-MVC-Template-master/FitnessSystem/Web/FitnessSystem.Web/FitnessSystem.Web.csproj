@@ -204,7 +204,9 @@
     <Compile Include="Areas\Administration\Controllers\AdministrationController.cs" />
     <Compile Include="Areas\Administration\Controllers\FeedbacksCheckController.cs" />
     <Compile Include="Areas\Administration\Controllers\ManageCategoriesController.cs" />
+    <Compile Include="Areas\Administration\Controllers\ManageExercisesController.cs" />
     <Compile Include="Areas\Administration\ViewModels\Categories\ManageCategoriesSimpleViewModel.cs" />
+    <Compile Include="Areas\Administration\ViewModels\Exercises\ManageExerciseViewModel.cs" />
     <Compile Include="Areas\Administration\ViewModels\Feedbacks\FeedbacksCheckViewModel.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
@@ -289,6 +291,7 @@
     <Content Include="Content\kendo\kendo.common.min.css.map" />
     <Content Include="Areas\Administration\Views\ManageCategories\Index.cshtml" />
     <Content Include="Areas\Administration\Views\FeedbacksCheck\Index.cshtml" />
+    <Content Include="Areas\Administration\Views\ManageExercises\Index.cshtml" />
     <None Include="Scripts\jquery-2.2.0.intellisense.js" />
     <Content Include="Scripts\jquery-2.2.0.js" />
     <Content Include="Scripts\jquery-2.2.0.min.js" />
@@ -519,7 +522,7 @@
     <Content Include="Scripts\tinymce\langs\readme.md" />
     <Content Include="Views\Shared\EditorTemplates\tinymce_full.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\String.cshtml" />
-    <Content Include="Views\Exercises\EditorTemplates\CategoryDropDownList.cshtml" />
+    <Content Include="Areas\Administration\Views\ManageExercises\EditorTemplates\CategoryDropDownList.cshtml" />
     <Content Include="Views\Exercises\EditExercise.cshtml" />
   </ItemGroup>
   <ItemGroup>
@@ -547,6 +550,7 @@
     <Folder Include="Scripts\kendo\cultures\" />
     <Folder Include="Scripts\kendo\messages\" />
     <Folder Include="Views\ManageCategories\" />
+    <Folder Include="Views\ManageExercises\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

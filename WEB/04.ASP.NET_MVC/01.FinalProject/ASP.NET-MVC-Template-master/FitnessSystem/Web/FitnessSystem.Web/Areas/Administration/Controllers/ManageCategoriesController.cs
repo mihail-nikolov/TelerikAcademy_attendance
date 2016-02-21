@@ -2,14 +2,16 @@
 {
     using System.Linq;
     using System.Web.Mvc;
-    using FitnessSystem.Data.Models;
-    using FitnessSystem.Services.Data;
+    using Common;
+    using Data.Models;
     using Infrastructure.Mapping;
     using Kendo.Mvc.Extensions;
     using Kendo.Mvc.UI;
+    using Services.Data;
     using Web.Controllers;
     using Web.ViewModels.Categories;
 
+    [Authorize(Roles = GlobalConstants.AdministratorRoleName)]
     public class ManageCategoriesController : BaseController
     {
         private readonly ICategoriesService categories;

@@ -56,5 +56,12 @@
         {
             return this.exercises.All().Where(x => x.AuthorId == id).OrderByDescending(x => x.CreatedOn);
         }
+
+        public void ChangeCategory(Exercise exerciseToUpdate)
+        {
+            var exercise = this.exercises.GetById(exerciseToUpdate.Id);
+            exercise.CategoryId = exerciseToUpdate.CategoryId;
+            this.exercises.Save();
+        }
     }
 }

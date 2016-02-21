@@ -16,6 +16,8 @@
 
         void Update(Exercise exerciseToUpdate);
 
+        void ChangeCategory(Exercise exerciseToUpdate);
+
         void Delete(int id);
 
         Exercise GetById(int id);

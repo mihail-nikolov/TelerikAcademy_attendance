@@ -10,6 +10,7 @@
     using ViewModels.Categories;
     using Kendo.Mvc.UI;
     using Kendo.Mvc.Extensions;
+
     public class ExercisesController : BaseController
     {
         private readonly IExercisesServices exercises;
@@ -23,7 +24,6 @@
 
         public ActionResult Index()
         {
-           // var exercises = this.exercises.GetAll().To<ExerciseLinkModel>().ToList();
             return this.View();
         }
 

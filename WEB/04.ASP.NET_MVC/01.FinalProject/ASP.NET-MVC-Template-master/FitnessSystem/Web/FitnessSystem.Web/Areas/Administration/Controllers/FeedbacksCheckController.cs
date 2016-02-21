@@ -2,6 +2,7 @@
 {
     using System.Linq;
     using System.Web.Mvc;
+    using Common;
     using Infrastructure.Mapping;
     using Kendo.Mvc.Extensions;
     using Kendo.Mvc.UI;
@@ -9,6 +10,7 @@
     using ViewModels.Feedbacks;
     using Web.Controllers;
 
+    [Authorize(Roles = GlobalConstants.AdministratorRoleName)]
     public class FeedbacksCheckController : BaseController
     {
         private readonly IFeedbacksServices feedbacks;
