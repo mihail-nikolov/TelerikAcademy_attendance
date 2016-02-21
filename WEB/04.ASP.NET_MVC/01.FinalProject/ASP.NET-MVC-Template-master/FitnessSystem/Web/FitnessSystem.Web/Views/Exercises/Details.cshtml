@@ -10,8 +10,14 @@
     <strong class="text-danger"><a href="~/Categories/Details/@Model.CategoryId">@Model.Category</a></strong><br />
     @if (Request.IsAuthenticated && Model.AuthorId == User.Identity.GetUserId())
     {
-        @Ajax.ActionLink("Edit", "Edit", "Exercises", new AjaxOptions { HttpMethod = "GET" }, new { @class = "btn btn-primary" })
-        @Ajax.ActionLink("Delete", "Delete", "Exercises", new AjaxOptions { HttpMethod = "POST" }, new { @class = "btn btn-danger" })
+        @Html.ActionLink("Edit", "EditExercise", "Exercises",
+                             new { Model.Id }, new { @class = "btn btn-primary" })
+
+        using (Html.BeginForm("Delete", "Exercises", new { area = string.Empty, id = Model.Id }, FormMethod.Post))
+        {
+            @Html.HiddenFor(model => model.Id)
+            <input type="submit" value="Delete" class="btn btn-danger" />
+        }
     }
 </div>
 <br />

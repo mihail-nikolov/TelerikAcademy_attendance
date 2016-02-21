@@ -20,8 +20,6 @@
         [MinLength(15, ErrorMessage = "min len: {1}")]
         public string Content { get; set; }
 
-        public Category Category { get; set; }
-
         [Required]
         public int CategoryId { get; set; }
     }

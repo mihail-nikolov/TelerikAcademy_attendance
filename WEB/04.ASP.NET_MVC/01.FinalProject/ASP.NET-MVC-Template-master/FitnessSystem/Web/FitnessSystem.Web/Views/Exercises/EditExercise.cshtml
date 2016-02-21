@@ -1,15 +1,15 @@
 ﻿@model FitnessSystem.Web.ViewModels.Exercises.ExerciseEditViewModel
 @{
-    ViewBag.Title = "Create";
+    ViewBag.Title = "Edit";
 }
 
 <h3>Create a new exercise:</h3>
 
-@using (Html.BeginForm("Create", "Exercises", new { area = string.Empty }, FormMethod.Post))
+@using (Html.BeginForm("Edit", "Exercises", new { area = string.Empty }, FormMethod.Post))
 {
     @Html.ValidationSummary(true)
     @Html.AntiForgeryToken()
-
+    @Html.HiddenFor(model => model.Id)
     <div class="row">
         <div class="input-field">
             @Html.LabelFor(m => m.Title)
@@ -33,7 +33,7 @@
     <br />
     <div class="row">
         <div class="center">
-            <input type="submit" value="Create" class="btn" />
+            <input type="submit" value="Edit" class="btn" />
         </div>
     </div>
 }

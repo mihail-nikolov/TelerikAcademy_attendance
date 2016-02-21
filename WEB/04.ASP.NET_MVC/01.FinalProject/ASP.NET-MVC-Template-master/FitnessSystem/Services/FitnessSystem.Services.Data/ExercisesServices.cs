@@ -34,7 +34,7 @@
         public void Update(Exercise updatedExercise)
         {
             var exercise = this.exercises.GetById(updatedExercise.Id);
-            exercise.Title = exercise.Title;
+            exercise.Title = updatedExercise.Title;
             exercise.Content = updatedExercise.Content;
             exercise.CategoryId = updatedExercise.CategoryId;
             this.exercises.Save();
