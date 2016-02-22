@@ -5,14 +5,14 @@
     using Data.Models;
     using Infrastructure.Mapping;
 
-    public class ManageCommentsViewModel : IMapFrom<Comment>, IHaveCustomMappings
+    public class ManageCommentsViewModel : IMapFrom<Comment>, IHaveCustomMappings, IMapTo<Category>
     {
         public int Id { get; set; }
 
         public string Exercise { get; set; }
 
         [Required]
-        [MinLength(2, ErrorMessage = "min len: {1}")]
+        [StringLength(int.MaxValue, ErrorMessage = "max len:{1}, min len: {2}.", MinimumLength = 2)]
         public string Content { get; set; }
 
         public virtual string Author { get; set; }

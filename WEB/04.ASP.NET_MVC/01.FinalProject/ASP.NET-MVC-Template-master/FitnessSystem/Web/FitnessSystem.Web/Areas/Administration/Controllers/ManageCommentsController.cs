@@ -1,22 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Data.Entity;
-using System.Linq;
-using System.Net;
-using System.Web;
-using System.Web.Mvc;
-using Kendo.Mvc.Extensions;
-using Kendo.Mvc.UI;
-using FitnessSystem.Data.Models;
-using FitnessSystem.Data;
-using FitnessSystem.Web.Administration.ViewModels.Comments;
-using FitnessSystem.Services.Data;
-using FitnessSystem.Web.Infrastructure.Mapping;
-
-namespace FitnessSystem.Web.Areas.Administration.Controllers
+﻿namespace FitnessSystem.Web.Areas.Administration.Controllers
 {
-    public class ManageCommentsController : Controller
+    using System.Linq;
+    using System.Web.Mvc;
+    using Common;
+    using Data.Models;
+    using Infrastructure.Mapping;
+    using Kendo.Mvc.Extensions;
+    using Kendo.Mvc.UI;
+    using Services.Data;
+    using Web.Administration.ViewModels;
+    using Web.Administration.ViewModels.Comments;
+    using Web.Controllers;
+
+    [Authorize(Roles = GlobalConstants.AdministratorRoleName)]
+    public class ManageCommentsController : BaseController
     {
         private readonly ICommentsServices comments;
 
@@ -34,8 +31,34 @@ namespace FitnessSystem.Web.Areas.Administration.Controllers
         {
             var comments = this.comments.GetAll().To<ManageCommentsViewModel>().ToList();
             DataSourceResult result = comments.ToDataSourceResult(request);
-
             return this.Json(result);
+        }
+
+        [AcceptVerbs(HttpVerbs.Post)]
+        public ActionResult Comments_Update([DataSourceRequest]DataSourceRequest request, ManageCommentsViewModel comment)
+        {
+            if (this.ModelState.IsValid)
+            {
+                var entity = new Comment()
+                {
+                    Id = comment.Id,
+                    Content = comment.Content
+                };
+                this.comments.Update(entity);
+            }
+
+            return this.Json(new[] { comment }.ToDataSourceResult(request, this.ModelState));
+        }
+
+        [AcceptVerbs(HttpVerbs.Post)]
+        public ActionResult Comments_Destroy([DataSourceRequest]DataSourceRequest request, ManageCommentsViewModel comment)
+        {
+            if (this.ModelState.IsValid)
+            {
+                this.comments.Delete(comment.Id);
+            }
+
+            return this.Json(new[] { comment }.ToDataSourceResult(request, this.ModelState));
         }
     }
 }
