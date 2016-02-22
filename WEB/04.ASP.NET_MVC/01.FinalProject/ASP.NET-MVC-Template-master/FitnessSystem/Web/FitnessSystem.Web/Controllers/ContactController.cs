@@ -20,6 +20,7 @@
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Feedback(FeedbackCreateViewModel newFeedBack)
         {
             if (!this.ModelState.IsValid)

@@ -4,12 +4,12 @@
     using System.Web.Mvc;
     using Data.Models;
     using Infrastructure.Mapping;
+    using Kendo.Mvc.Extensions;
+    using Kendo.Mvc.UI;
     using Microsoft.AspNet.Identity;
     using Services.Data;
-    using ViewModels.Exercises;
     using ViewModels.Categories;
-    using Kendo.Mvc.UI;
-    using Kendo.Mvc.Extensions;
+    using ViewModels.Exercises;
 
     public class ExercisesController : BaseController
     {
@@ -45,7 +45,7 @@
         [HttpGet]
         public ActionResult CreateNew()
         {
-            var categories = this.categories.GetAll().To<CategorySimpleViewModel>().ToList();
+            var categories = this.categories.GetAllVisible().To<CategorySimpleViewModel>().ToList();
             var categoriesSelectList = new SelectList(categories, "Id", "Name");
 
             this.ViewBag.categories = categoriesSelectList;
@@ -54,6 +54,7 @@
 
         [Authorize]
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Create(ExerciseEditViewModel newModel)
         {
             string userId = this.User.Identity.GetUserId();
@@ -73,8 +74,13 @@
 
         [HttpGet]
         [Authorize]
-        public ActionResult EditExercise(int id)
+        public ActionResult EditExercise(int id = 0)
         {
+            if (id == 0)
+            {
+                return this.Redirect("~/Exercises");
+            }
+
             var exercise = this.exercises.GetById(id);
 
             if (this.User.Identity.GetUserId() != exercise.AuthorId)
@@ -83,7 +89,7 @@
                 return this.Redirect("~/Exercises/MyExercises");
             }
 
-            var categories = this.categories.GetAll().To<CategorySimpleViewModel>().ToList();
+            var categories = this.categories.GetAllVisible().To<CategorySimpleViewModel>().ToList();
             var categoriesSelectList = new SelectList(categories, "Id", "Name");
             this.ViewBag.categories = categoriesSelectList;
 
@@ -110,8 +116,13 @@
 
         [HttpPost]
         [Authorize]
-        public ActionResult Delete(int id)
+        public ActionResult Delete(int id = 0)
         {
+            if (id == 0)
+            {
+                return this.Redirect("~/Exercises");
+            }
+
             var exercise = this.exercises.GetById(id);
 
             if (this.User.Identity.GetUserId() != exercise.AuthorId)
@@ -126,8 +137,13 @@
             return this.Redirect("~/Exercises/MyExercises");
         }
 
-        public ActionResult Details(int id)
+        public ActionResult Details(int id = 0)
         {
+            if (id == 0)
+            {
+                return this.Redirect("~/Exercises");
+            }
+
             var exercise = this.Mapper.Map<ExerciseFullViewModel>(this.exercises.GetById(id));
             return this.View(exercise);
         }

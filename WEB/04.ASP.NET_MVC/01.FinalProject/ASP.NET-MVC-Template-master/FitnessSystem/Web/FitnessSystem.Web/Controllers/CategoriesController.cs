@@ -21,7 +21,7 @@
         {
             var categories = this.Cache.Get(
                 "Categories_Main_Page",
-                () => this.categories.GetAllVisible().To<CategoriesPageViewModel>().ToList(),
+                () => this.categories.GetAll().To<CategoriesPageViewModel>().ToList(),
                 10 * 60);
             return this.View(categories);
         }
@@ -32,13 +32,19 @@
         }
 
         [HttpGet]
-        public ActionResult Details(int id)
+        public ActionResult Details(int id = 0)
         {
+            if (id == 0)
+            {
+                return this.Redirect("~/Categories");
+            }
+
             var category = this.Mapper.Map<CategoryWithExercisesViewModel>(this.categories.GetById(id));
             return this.View(category);
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Create(CategorySimpleViewModel newCategory)
         {
             if (!this.ModelState.IsValid || this.categories.IfExists(newCategory.Name))

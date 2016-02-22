@@ -4,6 +4,9 @@
 @{
     ViewBag.Title = "Details";
 }
+
+@Html.ValidationSummary(true)
+
 <h3>@Model.Title</h3>
 <div class="row">
     <i>by: </i><strong>@Model.Author</strong> <i>category: </i>
@@ -28,30 +31,65 @@
     @if (Request.IsAuthenticated && Model.AuthorId != User.Identity.GetUserId())
     {
         <div class="btn btn-primary" data-action="up" data-id="@Model.Id">Like </div>
-    }
-    <br />
-    <div data-action="votesCount">@Model.Votes</div>
-    @if (Request.IsAuthenticated && Model.AuthorId != User.Identity.GetUserId())
-    {
+        <div data-action="votesCount">@Model.Votes</div>
         <div class="btn btn-danger" data-action="down" data-id="@Model.Id">DisLike</div>
+        <br /><br />
+    }
+    else
+    {
+        <i>rating: </i><strong class="text-danger">@Model.Votes</strong><br />
     }
 </div>
+@Html.Partial("_Comments")
 <style>
-    div[data-action='up'], div[data-action='down'] {
+    div[data-action='up'], div[data-action='down'], div[data-action='add-comment'] {
         cursor: pointer;
     }
 </style>
 
 <script>
+    $("div[data-action='add-comment']").click(function () {
+        var form = $('#__AjaxAntiForgeryForm');
+        var token = $('input[name="__RequestVerificationToken"]', form).val();
+        var id = @Model.Id;
+        var commentContent = $('#text-comment').val();
+        var data = {
+            __RequestVerificationToken: token,
+            exId: id, content: commentContent
+        }
+        $.ajax({
+            url: '/Comments/Comment/',
+            type: 'POST',
+            data: data,
+            success: function (data) {
+                var newComment = data.Content;
+                $("#addCommentHere").append("<div class='row'>" + newComment + "</div>");
+            },
+            error: function err(data) { alert('cannot send empty comments'); }
+        });
+    });
+
+    @*$("div[data-action='add-comment']").click(function () {
+        var id = @Model.Id;
+        var commentContent = $('#text-comment').val();
+        $.post('/Comments/Comment/', { exId: id, content: commentContent },
+           function (data) {
+               var newComment = data.Content;
+               $("#addCommentHere").append("<div class='row'>" + newComment + "</div>");
+           });
+
+    });*@
+
     $("div[data-action='up']").click(function () {
-        var id = $(this).attr("data-id");
+        var id = @Model.Id;
         voteClick(id, 1);
     });
 
     $("div[data-action='down']").click(function () {
-        var id = $(this).attr("data-id");
+        var id = @Model.Id;
         voteClick(id, -1);
     });
+
     function voteClick(id, type) {
         $.post('/Votes/Vote/', { exId: id, points: type },
             function (data) {
@@ -61,8 +99,9 @@
             });
     }
 </script>
+
 @section scripts{
     @Scripts.Render("~/bundles/jquery")
-
+    @Scripts.Render("~/bundles/jqueryval")
     <script src="@Url.Content("~/Scripts/jquery.unobtrusive-ajax.js")" type="text/javascript"></script>
 }

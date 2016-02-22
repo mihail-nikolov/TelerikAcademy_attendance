@@ -1,0 +1,17 @@
+﻿@model  FitnessSystem.Web.ViewModels.Exercises.ExerciseFullViewModel
+
+@if (Request.IsAuthenticated)
+{
+    using (Html.BeginForm(null, null, FormMethod.Post, new { id = "__AjaxAntiForgeryForm" }))
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true)
+        <div class="row">
+            <input type="text" id="text-comment" />
+        </div>
+        <div class="row">
+            <div class="btn btn-primary" data-action="add-comment">Add Comment</div>
+        </div>
+    }
+}
+<div id="addCommentHere"></div>

@@ -1,8 +1,8 @@
 ﻿namespace FitnessSystem.Web.Controllers
 {
     using System.Web.Mvc;
-    using FitnessSystem.Services.Data;
     using Microsoft.AspNet.Identity;
+    using Services.Data;
 
     [Authorize]
     public class VotesController : BaseController

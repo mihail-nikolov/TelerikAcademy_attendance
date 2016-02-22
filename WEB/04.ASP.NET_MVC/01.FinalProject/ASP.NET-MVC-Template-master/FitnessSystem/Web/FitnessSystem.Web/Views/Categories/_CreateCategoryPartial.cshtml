@@ -4,6 +4,7 @@
 @using (Html.BeginForm("Create", "Categories", new { area = string.Empty }, FormMethod.Post))
 {
     @Html.ValidationSummary(true)
+    @Html.AntiForgeryToken()
 
     <div class="row">
         <div class="input-field">
