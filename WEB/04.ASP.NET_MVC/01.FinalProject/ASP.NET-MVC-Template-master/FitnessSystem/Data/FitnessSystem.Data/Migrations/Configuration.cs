@@ -13,6 +13,7 @@
     {
         private Dictionary<string, ApplicationUser> usersCollection;
         private Random rnd = new Random();
+        private int[] votes = new int[] { -1, 1 };
 
         public Configuration()
         {
@@ -111,12 +112,13 @@
         {
             for (int i = 1; i <= 50; i++)
             {
-                //var randomUser = this.usersCollection.ElementAt(this.rnd.Next(0, this.usersCollection.Count)).Value;
-                //this.rnd.Next(1, this.usersCollection.Count);
+                int rndIndex = this.rnd.Next(0, 2);
+                var randomUser = this.usersCollection.ElementAt(this.rnd.Next(0, this.usersCollection.Count)).Value;
+                this.rnd.Next(1, this.usersCollection.Count);
                 Vote vote = new Vote()
                 {
-                    Points = this.rnd.Next(-1, 2)//,
-                   // AuthorId = randomUser.Id
+                    Points = this.votes[rndIndex],
+                    AuthorId = randomUser.Id
                 };
                 exercise.Votes.Add(vote);
             }

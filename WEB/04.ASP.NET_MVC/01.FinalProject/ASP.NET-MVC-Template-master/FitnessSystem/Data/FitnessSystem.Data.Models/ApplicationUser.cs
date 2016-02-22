@@ -7,16 +7,6 @@
 
     public class ApplicationUser : IdentityUser
     {
-        //public ApplicationUser()
-        //{
-        //    this.Exercises = new HashSet<Exercise>();
-        //    this.Votes = new HashSet<Vote>();
-        //}
-
-        //public virtual ICollection<Exercise> Exercises { get; set; }
-
-       // public virtual ICollection<Vote> Votes { get; set; }
-
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
         {
             // Note the authenticationType must match the one defined in CookieAuthenticationOptions.AuthenticationType

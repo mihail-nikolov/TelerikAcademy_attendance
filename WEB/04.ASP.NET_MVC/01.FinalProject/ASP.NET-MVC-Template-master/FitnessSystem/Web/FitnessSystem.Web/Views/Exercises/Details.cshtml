@@ -25,26 +25,44 @@
 <br />
 <div class="row">
     <span>@Html.Raw(Model.Content)</span><br /><br />
-    <i>rating: </i><strong data-id ="@Model.Id" data-action="votesCount" class="text-danger">@Model.Votes</strong><br />
     @if (Request.IsAuthenticated && Model.AuthorId != User.Identity.GetUserId())
     {
-        <div class="btn btn-primary" data-action="up" data-id="@Model.Id">Like</div>
+        <div class="btn btn-primary" data-action="up" data-id="@Model.Id">Like </div>
+    }
+    <br />
+    <div data-action="votesCount">@Model.Votes</div>
+    @if (Request.IsAuthenticated && Model.AuthorId != User.Identity.GetUserId())
+    {
         <div class="btn btn-danger" data-action="down" data-id="@Model.Id">DisLike</div>
     }
 </div>
+<style>
+    div[data-action='up'], div[data-action='down'] {
+        cursor: pointer;
+    }
+</style>
 
+<script>
+    $("div[data-action='up']").click(function () {
+        var id = $(this).attr("data-id");
+        voteClick(id, 1);
+    });
+
+    $("div[data-action='down']").click(function () {
+        var id = $(this).attr("data-id");
+        voteClick(id, -1);
+    });
+    function voteClick(id, type) {
+        $.post('/Votes/Vote/', { exId: id, points: type },
+            function (data) {
+                var newVotes = data.Count;
+                $("div[data-action='votesCount']")
+                    .html(newVotes);
+            });
+    }
+</script>
 @section scripts{
-    <script>
-        $("div[data-action='up'").click(function () {
-            var id = $(this).attr("data-id");
-            $.post('/Votes/Vote/', { exId: id, points: 1 },
-                function (data) {
-                    var newVotes = data.Count;
-                    $("div[data-action='votesCount'][data-id]=" + id + "']")
-                        .html(newVotes);
-                });
-        });
-    </script>
     @Scripts.Render("~/bundles/jquery")
+
     <script src="@Url.Content("~/Scripts/jquery.unobtrusive-ajax.js")" type="text/javascript"></script>
 }

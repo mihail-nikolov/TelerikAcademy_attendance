@@ -2,6 +2,6 @@
 {
     public interface IVotesServices
     {
-        //void AddOrUpdate(string authorId, int points, int exerciseId);
+        void AddOrUpdate(string authorId, int points, int exerciseId);
     }
 }
