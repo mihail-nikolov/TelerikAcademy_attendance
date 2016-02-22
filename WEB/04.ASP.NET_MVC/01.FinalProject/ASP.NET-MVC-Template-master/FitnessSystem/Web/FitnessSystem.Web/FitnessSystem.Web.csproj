@@ -204,8 +204,10 @@
     <Compile Include="Areas\Administration\Controllers\AdministrationController.cs" />
     <Compile Include="Areas\Administration\Controllers\FeedbacksCheckController.cs" />
     <Compile Include="Areas\Administration\Controllers\ManageCategoriesController.cs" />
+    <Compile Include="Areas\Administration\Controllers\ManageCommentsController.cs" />
     <Compile Include="Areas\Administration\Controllers\ManageExercisesController.cs" />
     <Compile Include="Areas\Administration\ViewModels\Categories\ManageCategoriesSimpleViewModel.cs" />
+    <Compile Include="Areas\Administration\ViewModels\Comments\ManageCommentsViewModel.cs" />
     <Compile Include="Areas\Administration\ViewModels\Exercises\ManageExerciseViewModel.cs" />
     <Compile Include="Areas\Administration\ViewModels\Feedbacks\FeedbacksCheckViewModel.cs" />
     <Compile Include="Controllers\AccountController.cs" />
@@ -296,6 +298,7 @@
     <Content Include="Areas\Administration\Views\ManageCategories\Index.cshtml" />
     <Content Include="Areas\Administration\Views\FeedbacksCheck\Index.cshtml" />
     <Content Include="Areas\Administration\Views\ManageExercises\Index.cshtml" />
+    <Content Include="Areas\Administration\Views\ManageComments\Index.cshtml" />
     <None Include="Scripts\jquery-2.2.0.intellisense.js" />
     <Content Include="Scripts\jquery-2.2.0.js" />
     <Content Include="Scripts\jquery-2.2.0.min.js" />
@@ -556,6 +559,7 @@
     <Folder Include="Scripts\kendo\cultures\" />
     <Folder Include="Scripts\kendo\messages\" />
     <Folder Include="Views\ManageCategories\" />
+    <Folder Include="Views\ManageComments\" />
     <Folder Include="Views\ManageExercises\" />
   </ItemGroup>
   <ItemGroup>

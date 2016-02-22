@@ -1,0 +1,23 @@
+﻿
+@(Html.Kendo().Grid<FitnessSystem.Web.Administration.ViewModels.Comments.ManageCommentsViewModel>()
+      .Name("grid")
+      .Columns(columns =>
+      {
+        columns.Bound(c => c.Content);
+        columns.Command(command => { command.Edit(); command.Destroy(); }).Width(180);
+      })
+      .Editable(editable => editable.Mode(GridEditMode.InLine))
+      .Pageable()
+      .Sortable(sortable => {
+          sortable.SortMode(GridSortMode.SingleColumn);
+      })
+      .Filterable()
+      .Scrollable(scrollable => scrollable.Enabled(false))
+      .DataSource(dataSource => dataSource
+          .Ajax()
+          .Model(model => model.Id(p => p.Id))
+          .Read(read => read.Action("Comments_Read", "ManageComments"))
+          .Update(update => update.Action("Comments_Update", "ManageComments"))
+          .Destroy(destroy => destroy.Action("Comments_Destroy", "ManageComments"))
+      )
+)

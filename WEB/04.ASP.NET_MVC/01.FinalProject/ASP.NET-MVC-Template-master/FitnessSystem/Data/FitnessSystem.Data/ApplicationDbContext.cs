@@ -55,5 +55,7 @@
                 }
             }
         }
+
+        public System.Data.Entity.DbSet<FitnessSystem.Data.Models.ApplicationUser> ApplicationUsers { get; set; }
     }
 }
