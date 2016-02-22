@@ -233,6 +233,8 @@
     <Compile Include="ViewModels\Categories\CategoriesPageViewModel.cs" />
     <Compile Include="ViewModels\Categories\CategorySimpleViewModel.cs" />
     <Compile Include="ViewModels\Categories\CategoryWithExercisesViewModel.cs" />
+    <Compile Include="ViewModels\Comments\CommentViewModel.cs" />
+    <Compile Include="ViewModels\Exercises\ExerciseAndNewCommentViewModel.cs" />
     <Compile Include="ViewModels\Exercises\ExerciseEditViewModel.cs" />
     <Compile Include="ViewModels\Exercises\ExerciseFullViewModel.cs" />
     <Compile Include="ViewModels\Exercises\ExerciseLinkModel.cs" />
@@ -527,6 +529,7 @@
     <Content Include="Areas\Administration\Views\ManageExercises\EditorTemplates\CategoryDropDownList.cshtml" />
     <Content Include="Views\Exercises\EditExercise.cshtml" />
     <Content Include="Views\Exercises\_Comments.cshtml" />
+    <Content Include="Views\Exercises\_AddComment.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

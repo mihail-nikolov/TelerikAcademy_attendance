@@ -1,17 +1,21 @@
-﻿@model  FitnessSystem.Web.ViewModels.Exercises.ExerciseFullViewModel
+﻿@model  FitnessSystem.Web.ViewModels.Exercises.ExerciseAndNewCommentViewModel
 
-@if (Request.IsAuthenticated)
+<h3>Comments</h3>
+<br />
+<div id="addCommentHere"></div>
+@if (Model.Exercise.Comments.Count == 0)
 {
-    using (Html.BeginForm(null, null, FormMethod.Post, new { id = "__AjaxAntiForgeryForm" }))
+    <div class="row text-danger">No comments for this exercise!</div>
+}
+else
+{
+    var comments = Model.Exercise.Comments.OrderByDescending(c => c.CreatedOn).ThenBy(c => c.Id);
+    foreach (var comment in comments)
     {
-        @Html.AntiForgeryToken()
-        @Html.ValidationSummary(true)
         <div class="row">
-            <input type="text" id="text-comment" />
+            <div class="row">@comment.Content</div>
+            <i>by: </i><strong>@comment.Author</strong>
         </div>
-        <div class="row">
-            <div class="btn btn-primary" data-action="add-comment">Add Comment</div>
-        </div>
+        <br />
     }
 }
-<div id="addCommentHere"></div>

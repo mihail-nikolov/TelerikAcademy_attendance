@@ -1,10 +1,13 @@
 ﻿namespace FitnessSystem.Data.Models
 {
+    using System.ComponentModel.DataAnnotations;
     using Common.Models;
 
-    public class Vote : BaseModel<int>
+    public class Comment : BaseModel<int>
     {
-        public int Points { get; set; }
+        [Required]
+        [MinLength(2, ErrorMessage = "min len: {1}")]
+        public string Content { get; set; }
 
         public int ExerciseId { get; set; }
 

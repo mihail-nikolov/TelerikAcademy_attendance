@@ -1,92 +1,75 @@
-﻿@model  FitnessSystem.Web.ViewModels.Exercises.ExerciseFullViewModel
+﻿@model  FitnessSystem.Web.ViewModels.Exercises.ExerciseAndNewCommentViewModel
 @using Microsoft.AspNet.Identity
 
 @{
     ViewBag.Title = "Details";
 }
 
-@Html.ValidationSummary(true)
-
-<h3>@Model.Title</h3>
+<h3>@Model.Exercise.Title</h3>
 <div class="row">
-    <i>by: </i><strong>@Model.Author</strong> <i>category: </i>
-    <strong class="text-danger"><a href="~/Categories/Details/@Model.CategoryId">@Model.Category </a></strong>
-    <i>added: </i><strong>@Model.CreatedOn</strong>
+    <i>by: </i><strong>@Model.Exercise.Author</strong> <i>category: </i>
+    <strong class="text-danger"><a href="~/Categories/Details/@Model.Exercise.CategoryId">@Model.Exercise.Category </a></strong>
+    <i>added: </i><strong>@Model.Exercise.CreatedOn</strong>
     <br />
-    @if (Request.IsAuthenticated && Model.AuthorId == User.Identity.GetUserId())
+    @if (Request.IsAuthenticated && Model.Exercise.AuthorId == User.Identity.GetUserId())
     {
         @Html.ActionLink("Edit", "EditExercise", "Exercises",
-                             new { Model.Id }, new { @class = "btn btn-primary" })
+                             new { Model.Exercise.Id }, new { @class = "btn btn-primary" })
 
-        using (Html.BeginForm("Delete", "Exercises", new { area = string.Empty, id = Model.Id }, FormMethod.Post))
+        using (Html.BeginForm("Delete", "Exercises", new { area = string.Empty, id = Model.Exercise.Id }, FormMethod.Post))
         {
-            @Html.HiddenFor(model => model.Id)
+            @Html.HiddenFor(model => model.Exercise.Id)
             <input type="submit" value="Delete" class="btn btn-danger" />
         }
     }
 </div>
 <br />
 <div class="row">
-    <span>@Html.Raw(Model.Content)</span><br /><br />
-    @if (Request.IsAuthenticated && Model.AuthorId != User.Identity.GetUserId())
+    <span>@Html.Raw(Model.Exercise.Content)</span><br /><br />
+    @if (Request.IsAuthenticated && Model.Exercise.AuthorId != User.Identity.GetUserId())
     {
-        <div class="btn btn-primary" data-action="up" data-id="@Model.Id">Like </div>
-        <div data-action="votesCount">@Model.Votes</div>
-        <div class="btn btn-danger" data-action="down" data-id="@Model.Id">DisLike</div>
+        <span class="glyphicon glyphicon-thumbs-up" data-action="up" data-id="@Model.Exercise.Id"></span>
+        <span data-action="votesCount">@Model.Exercise.Votes</span>
+        <span class="glyphicon glyphicon-thumbs-down" data-action="down" data-id="@Model.Exercise.Id"></span>
         <br /><br />
     }
     else
     {
-        <i>rating: </i><strong class="text-danger">@Model.Votes</strong><br />
+        <i>rating: </i><strong class="text-danger">@Model.Exercise.Votes</strong><br />
     }
 </div>
+
+<div class="row">
+    <div id="toUpdate">
+        @Ajax.ActionLink("Add Comment", "AddNewComment", "Exercises", new { id = Model.Exercise.Id }, new AjaxOptions
+{
+    UpdateTargetId = "toUpdate",
+    InsertionMode = InsertionMode.Replace
+},
+    new
+    {
+        @class = "btn btn-primary"
+    })
+    </div>
+</div>
+
 @Html.Partial("_Comments")
+
+
 <style>
-    div[data-action='up'], div[data-action='down'], div[data-action='add-comment'] {
+    span[data-action='up'], span[data-action='down'], div[data-action='add-comment'] {
         cursor: pointer;
     }
 </style>
 
 <script>
-    $("div[data-action='add-comment']").click(function () {
-        var form = $('#__AjaxAntiForgeryForm');
-        var token = $('input[name="__RequestVerificationToken"]', form).val();
-        var id = @Model.Id;
-        var commentContent = $('#text-comment').val();
-        var data = {
-            __RequestVerificationToken: token,
-            exId: id, content: commentContent
-        }
-        $.ajax({
-            url: '/Comments/Comment/',
-            type: 'POST',
-            data: data,
-            success: function (data) {
-                var newComment = data.Content;
-                $("#addCommentHere").append("<div class='row'>" + newComment + "</div>");
-            },
-            error: function err(data) { alert('cannot send empty comments'); }
-        });
-    });
-
-    @*$("div[data-action='add-comment']").click(function () {
-        var id = @Model.Id;
-        var commentContent = $('#text-comment').val();
-        $.post('/Comments/Comment/', { exId: id, content: commentContent },
-           function (data) {
-               var newComment = data.Content;
-               $("#addCommentHere").append("<div class='row'>" + newComment + "</div>");
-           });
-
-    });*@
-
-    $("div[data-action='up']").click(function () {
-        var id = @Model.Id;
+    $("span[data-action='up']").click(function () {
+        var id = @Model.Exercise.Id;
         voteClick(id, 1);
     });
 
-    $("div[data-action='down']").click(function () {
-        var id = @Model.Id;
+    $("span[data-action='down']").click(function () {
+        var id = @Model.Exercise.Id;
         voteClick(id, -1);
     });
 
@@ -94,7 +77,7 @@
         $.post('/Votes/Vote/', { exId: id, points: type },
             function (data) {
                 var newVotes = data.Count;
-                $("div[data-action='votesCount']")
+                $("span[data-action='votesCount']")
                     .html(newVotes);
             });
     }

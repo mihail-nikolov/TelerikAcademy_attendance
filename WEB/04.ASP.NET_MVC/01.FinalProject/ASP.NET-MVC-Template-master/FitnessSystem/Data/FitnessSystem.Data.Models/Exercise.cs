@@ -9,6 +9,7 @@
         public Exercise()
         {
             this.Votes = new HashSet<Vote>();
+            this.Comments = new HashSet<Comment>();
         }
 
         [Required]
@@ -29,5 +30,7 @@
         public virtual ApplicationUser Author { get; set; }
 
         public virtual ICollection<Vote> Votes { get; set; }
+
+        public virtual ICollection<Comment> Comments { get; set; }
     }
 }

@@ -1,23 +1,18 @@
-﻿using FitnessSystem.Services.Data;
-using Microsoft.AspNet.Identity;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
-
-namespace FitnessSystem.Web.Controllers
+﻿namespace FitnessSystem.Web.Controllers
 {
+    using System.Web.Mvc;
+    using Data.Models;
+    using Microsoft.AspNet.Identity;
+    using Services.Data;
+
     [Authorize]
     public class CommentsController : BaseController
     {
-        private readonly IExercisesServices exercises;
-       // private readonly IExercisesServices exercises;
+        private readonly ICommentsServices comments;
 
-        public CommentsController( IExercisesServices exercises)
+        public CommentsController(ICommentsServices comments)
         {
-           // this.votes = votes;
-            this.exercises = exercises;
+            this.comments = comments;
         }
 
         [HttpPost]
@@ -31,10 +26,16 @@ namespace FitnessSystem.Web.Controllers
             }
 
             var userId = this.User.Identity.GetUserId();
+            var userName = this.User.Identity.GetUserName();
+            var comment = new Comment()
+            {
+                AuthorId = userId,
+                Content = content,
+                ExerciseId = exId
+            };
+            this.comments.Create(comment);
 
-            //this.comments.Add(userId, points, exId);
-
-            return this.Json(new { Content = content });
+            return this.Json(new { Content = content, author = userName });
         }
     }
 }

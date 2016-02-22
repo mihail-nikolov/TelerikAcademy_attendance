@@ -20,6 +20,8 @@
 
         public IDbSet<Vote> Votes { get; set; }
 
+        public IDbSet<Comment> Comments { get; set; }
+
         public IDbSet<Feedback> Feedbacks { get; set; }
 
         public static ApplicationDbContext Create()

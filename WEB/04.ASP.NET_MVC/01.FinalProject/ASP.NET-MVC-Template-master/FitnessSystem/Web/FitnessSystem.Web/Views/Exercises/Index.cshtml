@@ -4,20 +4,6 @@
 
 
 }
-@*<div class="row">
-        @foreach (var exercise in Model)
-        {
-            <div class="row">
-                <h4><a href="~/Exercises/Details/@exercise.Id">@exercise.Title</a></h4>
-            </div>
-            <div class="row">
-                <i>rating: </i><strong class="text-danger">@exercise.Votes</strong>
-                <i>author: </i><strong>@exercise.Author</strong>
-                <i>category: </i><strong><a href="~/Categories/Details/@exercise.CategoryId">@exercise.Category</a></strong>
-            </div>
-            <br />
-        }
-    </div>*@
 <h3>Exercises</h3>
 @(Html.Kendo().Grid<FitnessSystem.Web.ViewModels.Exercises.ExerciseLinkModel>()
       .Name("grid")
@@ -27,6 +13,7 @@
           columns.Bound(col => col.Author);
           columns.Bound(col => col.Category).ClientTemplate("<a href='/Categories/Details/#= CategoryId #'>#= Category #</a>");
           columns.Bound(col => col.Votes);
+          columns.Bound(col => col.Comments);
           columns.Bound(col => col.CreatedOn).Format("{0:yyyy-mm-dd hh:mm}").Title("Added");
       })
       .Pageable()

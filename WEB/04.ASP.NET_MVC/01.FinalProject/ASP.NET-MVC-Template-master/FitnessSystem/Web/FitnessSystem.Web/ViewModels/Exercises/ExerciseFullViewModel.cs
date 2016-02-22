@@ -1,10 +1,12 @@
 ﻿namespace FitnessSystem.Web.ViewModels.Exercises
 {
+    using System;
+    using System.Collections.Generic;
     using System.Linq;
     using AutoMapper;
+    using Comments;
     using Data.Models;
     using Infrastructure.Mapping;
-    using System;
 
     public class ExerciseFullViewModel : IMapFrom<Exercise>, IHaveCustomMappings
     {
@@ -25,6 +27,8 @@
         public virtual int Votes { get; set; }
 
         public DateTime CreatedOn { get; set; }
+
+        public virtual ICollection<CommentViewModel> Comments { get; set; }
 
         public void CreateMappings(IMapperConfiguration configuration)
         {

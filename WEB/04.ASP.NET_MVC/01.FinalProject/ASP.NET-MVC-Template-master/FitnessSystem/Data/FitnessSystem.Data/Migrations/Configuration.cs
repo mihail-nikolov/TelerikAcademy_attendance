@@ -108,19 +108,31 @@
             }
         }
 
-        private void AddVotes(Exercise exercise)
+        private void AddVotesAndComments(Exercise exercise)
         {
             for (int i = 1; i <= 50; i++)
             {
                 int rndIndex = this.rnd.Next(0, 2);
                 var randomUser = this.usersCollection.ElementAt(this.rnd.Next(0, this.usersCollection.Count)).Value;
-                this.rnd.Next(1, this.usersCollection.Count);
+
                 Vote vote = new Vote()
                 {
                     Points = this.votes[rndIndex],
                     AuthorId = randomUser.Id
                 };
+                if (i % 5 == 0)
+                {
+                    string commentContent = string.Format("{0} : Here is the content, {1}", i, randomUser.Id);
+                    Comment comment = new Comment()
+                    {
+                        Content = commentContent,
+                        AuthorId = randomUser.Id
+                    };
+                    exercise.Comments.Add(comment);
+                }
+
                 exercise.Votes.Add(vote);
+
             }
         }
 
@@ -138,7 +150,7 @@
                 Exercise exercise8 = new Exercise
                 {
                     Title = "7 Exercises to Work Your Legs to Exhaustion ",
-                   // Author = this.usersCollection["user5@site.com"],
+                    // Author = this.usersCollection["user5@site.com"],
                     AuthorId = this.usersCollection["user5@site.com"].Id,
                     Content = @"Well, for one, they can hide weak development with 90's retro bodybuilding pants but the main reason is they don’t want to do the hard work. Tom Platz and Branch Warren have the two best sets of wheels to ever grace the bodybuilding stage and what do they have in common? Only being the two hardest-working bodybuilders of all-time.
 
@@ -148,7 +160,7 @@
 
                 Let’s take a look at seven exercises to work your legs to exhaustion."
                 };
-                this.AddVotes(exercise8);
+                this.AddVotesAndComments(exercise8);
                 categoryLegs.Exercises.Add(exercise8);
 
                 Exercise exercise9 = new Exercise
@@ -167,7 +179,7 @@
 
                 “The key to creating that V-taper look is to work on rounding out your shoulders, widening your lats, keeping a lean, tight waistline, and getting a bigger quad sweep. If you can keep your abs at least somewhat visible you are able to achieve that look year-round. But for that tight waist, your diet needs to be 90% perfect in the off-season. Focus on keeping your diet clean and eating carbs around your workout so your muscles can best utilize them.” "
                 };
-                this.AddVotes(exercise9);
+                this.AddVotesAndComments(exercise9);
                 categoryLegs.Exercises.Add(exercise9);
 
                 Exercise exercise10 = new Exercise
@@ -183,7 +195,7 @@
 
                 In fact, it has been proven that shorter workouts with varying levels of intensity can burn more fat than long steady state cardio routines. One study done by researchers at Laval University in Quebec, Canada found HIIT to be nine times more effective for losing fat than steady-state cardio. "
                 };
-                this.AddVotes(exercise10);
+                this.AddVotesAndComments(exercise10);
                 categoryLegs.Exercises.Add(exercise10);
 
                 context.Categories.Add(categoryLegs);
@@ -212,7 +224,7 @@
                 Quick Tip: Stretch the lats with front-lat spreads of 30 seconds between sets and hold the down position of one-arm rows for 15 seconds."
                 };
                 categoryBack.Exercises.Add(exercise4);
-                this.AddVotes(exercise4);
+                this.AddVotesAndComments(exercise4);
 
                 Exercise exercise5 = new Exercise
                 {
@@ -230,7 +242,7 @@
 
                 The three best backs of all - time in bodybuilding are Ronnie Coleman, Lee Haney and Dorian Yates.These three men have a combined 22 Sandows.As soon as the IFBB judges saw their backs, it was game over and the battle ensued for second place for everyone else. If size and / or strength are important to you, back development is fundamental and the best method for that next level back development is powerbuilding. "
                 };
-                this.AddVotes(exercise5);
+                this.AddVotesAndComments(exercise5);
                 categoryBack.Exercises.Add(exercise5);
 
                 context.Categories.Add(categoryBack);
@@ -254,7 +266,7 @@
 
                 Try mixing it up by performing these 8 exercises to hit the chest from all different angles. Once you begin incorporating these movements into your chest workout, you’ll be noticing a thicker, fuller, more developed chest in no time flat."
                 };
-                this.AddVotes(exercise6);
+                this.AddVotesAndComments(exercise6);
                 categoryChest.Exercises.Add(exercise6);
 
                 Exercise exercise7 = new Exercise
@@ -268,7 +280,7 @@
 
                 A: “Body fat tends to become much more stubborn as we get older, especially after age 35,” says Michelle Johnson, an IFBB bikini pro and trainer based in Washington, D.C. “Continue to train your upper pecs with presses and pec flyes on an incline bench.Try 12, 10, 8, and 12 reps to start, increasing weight each set except for the last,” she says.For this larger muscle group, heavier weights develop muscle better. “Also add in the pec deck or dumbbell flye and the lat pulldown machine to tone the upper body.Cable flyes also challenge those muscles and target the fleshy underarm area.” Plus, try doing iso flyes and iso pulldowns with a resistance band between sets, which recruit stabilizer muscles in a big way. “And to help with loose skin, try green tea extract and collagen supplements, which may boost elasticity,” Johnson adds. "
                 };
-                this.AddVotes(exercise7);
+                this.AddVotesAndComments(exercise7);
                 categoryChest.Exercises.Add(exercise7);
 
                 context.Categories.Add(categoryChest);
@@ -301,7 +313,7 @@
 
                 Here are 10 tricks to make your shoulders big and healthy at the same time"
                 };
-                this.AddVotes(exercise11);
+                this.AddVotesAndComments(exercise11);
                 categoryShoulders.Exercises.Add(exercise11);
 
                 Exercise exercise2 = new Exercise
@@ -315,7 +327,7 @@
 
                 Here are 10 tricks to make your shoulders big and healthy at the same time."
                 };
-                this.AddVotes(exercise2);
+                this.AddVotesAndComments(exercise2);
                 categoryShoulders.Exercises.Add(exercise2);
 
                 Exercise exercise3 = new Exercise
@@ -330,7 +342,7 @@
 
                 Both modifications should improve the comfort of your lateral raises."
                 };
-                this.AddVotes(exercise3);
+                this.AddVotesAndComments(exercise3);
                 categoryShoulders.Exercises.Add(exercise3);
 
                 Exercise exercise12 = new Exercise
@@ -344,7 +356,7 @@
 
                 Since you obviously can’t take a different career path to stay fit, you have to ensure that you don’t let your job stop you from staying active. If you don’t know how to begin, here are seven tips that are sure to help."
                 };
-                this.AddVotes(exercise12);
+                this.AddVotesAndComments(exercise12);
                 categoryShoulders.Exercises.Add(exercise12);
 
                 Exercise exercise13 = new Exercise
@@ -358,7 +370,7 @@
 
                 Since you obviously can’t take a different career path to stay fit, you have to ensure that you don’t let your job stop you from staying active. If you don’t know how to begin, here are seven tips that are sure to help."
                 };
-                this.AddVotes(exercise13);
+                this.AddVotesAndComments(exercise13);
                 categoryShoulders.Exercises.Add(exercise13);
 
                 Exercise exercise14 = new Exercise
@@ -370,7 +382,7 @@
 
                 Wrong again."
                 };
-                this.AddVotes(exercise14);
+                this.AddVotesAndComments(exercise14);
                 categoryShoulders.Exercises.Add(exercise14);
 
                 Exercise exercise15 = new Exercise
@@ -389,7 +401,7 @@
 
                 “The key to creating that V-taper look is to work on rounding out your shoulders, widening your lats, keeping a lean, tight waistline, and getting a bigger quad sweep. If you can keep your abs at least somewhat visible you are able to achieve that look year-round. But for that tight waist, your diet needs to be 90% perfect in the off-season. Focus on keeping your diet clean and eating carbs around your workout so your muscles can best utilize them.” "
                 };
-                this.AddVotes(exercise15);
+                this.AddVotesAndComments(exercise15);
                 categoryShoulders.Exercises.Add(exercise15);
                 context.Categories.Add(categoryShoulders);
                 context.SaveChanges();
@@ -417,7 +429,7 @@ The warmup may fatigue you so that you can’t train as heavy during your sessio
 Performing lighter versions of the lifts you’ll do in your workout, or for very low reps so they’re not taxing, prepares the muscles and joints for the ranges of motion you’ll use in the workout as specifically as possible.
 "
                 };
-                this.AddVotes(exercise1);
+                this.AddVotesAndComments(exercise1);
                 categoryPress.Exercises.Add(exercise1);
                 context.Categories.Add(categoryPress);
                 context.SaveChanges();

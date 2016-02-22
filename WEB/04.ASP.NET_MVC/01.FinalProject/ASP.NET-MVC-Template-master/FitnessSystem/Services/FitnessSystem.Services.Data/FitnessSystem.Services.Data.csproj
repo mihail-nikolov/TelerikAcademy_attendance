@@ -43,9 +43,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CategoriesService.cs" />
+    <Compile Include="CommentsServices.cs" />
     <Compile Include="ExercisesServices.cs" />
     <Compile Include="FeedbacksServices.cs" />
     <Compile Include="ICategoriesService.cs" />
+    <Compile Include="ICommentsServices.cs" />
     <Compile Include="IExercisesServices.cs" />
     <Compile Include="IFeedbacksServices.cs" />
     <Compile Include="IVotesServices.cs" />

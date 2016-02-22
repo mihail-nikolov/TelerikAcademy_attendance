@@ -24,6 +24,8 @@
 
         public DateTime CreatedOn { get; set; }
 
+        public int Comments { get; set; }
+
         public void CreateMappings(IMapperConfiguration configuration)
         {
             configuration.CreateMap<Exercise, ExerciseLinkModel>()
@@ -32,6 +34,8 @@
                 .ForMember(x => x.Author, opt => opt.MapFrom(x => x.Author.UserName));
             configuration.CreateMap<Exercise, ExerciseLinkModel>()
                 .ForMember(x => x.Votes, opt => opt.MapFrom(x => x.Votes.Any() ? x.Votes.Sum(v => v.Points) : 0));
+            configuration.CreateMap<Exercise, ExerciseLinkModel>()
+                .ForMember(x => x.Comments, opt => opt.MapFrom(x => x.Comments.Any() ? x.Comments.Count : 0));
         }
     }
 }

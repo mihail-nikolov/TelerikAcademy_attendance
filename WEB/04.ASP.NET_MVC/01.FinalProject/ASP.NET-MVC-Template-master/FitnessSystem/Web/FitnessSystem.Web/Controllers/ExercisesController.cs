@@ -9,6 +9,7 @@
     using Microsoft.AspNet.Identity;
     using Services.Data;
     using ViewModels.Categories;
+    using ViewModels.Comments;
     using ViewModels.Exercises;
 
     public class ExercisesController : BaseController
@@ -50,6 +51,14 @@
 
             this.ViewBag.categories = categoriesSelectList;
             return this.View();
+        }
+
+        [Authorize]
+        public ActionResult AddNewComment(int id)
+        {
+            var viewModel = new ExerciseAndNewCommentViewModel();
+            this.ViewData["exId"] = id;
+            return this.PartialView("_AddComment", viewModel);
         }
 
         [Authorize]
@@ -145,7 +154,11 @@
             }
 
             var exercise = this.Mapper.Map<ExerciseFullViewModel>(this.exercises.GetById(id));
-            return this.View(exercise);
+            var viewModel = new ExerciseAndNewCommentViewModel();
+            viewModel.Exercise = exercise;
+            viewModel.NewComment = new CommentViewModel();
+
+            return this.View(viewModel);
         }
     }
 }
