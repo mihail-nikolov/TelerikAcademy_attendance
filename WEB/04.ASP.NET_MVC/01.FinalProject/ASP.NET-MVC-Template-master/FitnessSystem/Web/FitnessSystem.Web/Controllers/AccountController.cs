@@ -4,13 +4,11 @@
     using System.Threading.Tasks;
     using System.Web;
     using System.Web.Mvc;
-
+    using FitnessSystem.Data.Models;
+    using FitnessSystem.Web.ViewModels.Account;
     using Microsoft.AspNet.Identity;
     using Microsoft.AspNet.Identity.Owin;
     using Microsoft.Owin.Security;
-
-    using FitnessSystem.Data.Models;
-    using FitnessSystem.Web.ViewModels.Account;
 
     [Authorize]
     public class AccountController : BaseController

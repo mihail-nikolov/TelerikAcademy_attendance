@@ -17,9 +17,9 @@
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Comment(int exId, string content)
+        public ActionResult Comment(string content, int exId = 0)
         {
-            if (content == string.Empty)
+            if (string.IsNullOrEmpty(content) || exId == 0)
             {
                 this.TempData["notification"] = "Cannot send an empty comment";
                 return this.Redirect("/Exercises");

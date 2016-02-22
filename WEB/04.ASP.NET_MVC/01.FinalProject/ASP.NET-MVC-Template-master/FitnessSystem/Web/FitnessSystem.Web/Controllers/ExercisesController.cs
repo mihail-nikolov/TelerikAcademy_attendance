@@ -54,8 +54,13 @@
         }
 
         [Authorize]
-        public ActionResult AddNewComment(int id)
+        public ActionResult AddNewComment(int id = 0)
         {
+            if (id == 0)
+            {
+                return this.Redirect("~/Exercises");
+            }
+
             var viewModel = new ExerciseAndNewCommentViewModel();
             this.ViewData["exId"] = id;
             return this.PartialView("_AddComment", viewModel);

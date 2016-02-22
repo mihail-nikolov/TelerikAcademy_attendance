@@ -17,8 +17,14 @@
         }
 
         [HttpPost]
-        public ActionResult Vote(int exId, int points)
+        public ActionResult Vote(int exId = 0, int points = 0)
         {
+            if (exId == 0)
+            {
+                this.TempData["notification"] = "no exercise with id = 0";
+                return this.Redirect("/Exercises");
+            }
+
             var userId = this.User.Identity.GetUserId();
             if (points > 1)
             {

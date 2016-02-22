@@ -69,6 +69,5 @@
 
             return this.Json(new[] { category }.ToDataSourceResult(request, this.ModelState));
         }
-
     }
 }

@@ -24,19 +24,18 @@
             bundles.Add(new StyleBundle("~/Content/kendo").Include(
                      "~/Content/kendo/kendo.bootstrap.min.css",
                      "~/Content/kendo/kendo.fiori.min.css",
-                     "~/Content/kendo/kendo.common.min.css"
-                     ));
+                     "~/Content/kendo/kendo.common.min.css"));
         }
 
         private static void RegisterScripts(BundleCollection bundles)
         {
             bundles.Add(new ScriptBundle("~/bundles/kendo").Include(
                 "~/Scripts/kendo/kendo.all.min.js",
-                "~/Scripts/kendo/kendo.aspnetmvc.min.js"
-              ));
+                "~/Scripts/kendo/kendo.aspnetmvc.min.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/jquery")
-                //.Include( "~/Scripts/jquery-{version}.js"));
+
+                // .Include( "~/Scripts/jquery-{version}.js"));
                 .Include("~/Scripts/kendo/jquery.min.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
@@ -48,7 +47,6 @@
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
                 "~/Scripts/bootstrap.js",
                 "~/Scripts/respond.js"));
-
         }
     }
 }

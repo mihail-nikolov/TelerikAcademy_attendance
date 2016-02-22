@@ -1,8 +1,8 @@
 ﻿namespace FitnessSystem.Web.Controllers
 {
+    using System.Web.Mvc;
     using Data.Models;
     using Services.Data;
-    using System.Web.Mvc;
     using ViewModels.Feedbacks;
 
     public class ContactController : BaseController

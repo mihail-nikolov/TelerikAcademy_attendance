@@ -6,13 +6,23 @@
     using AutoMapper;
     using Comments;
     using Data.Models;
+    using ForumSystem.Web.Infrastructure;
     using Infrastructure.Mapping;
 
     public class ExerciseFullViewModel : IMapFrom<Exercise>, IHaveCustomMappings
     {
+        private ISanitizer sanitizer;
+
+        public ExerciseFullViewModel()
+        {
+            this.sanitizer = new HtmlSanitizerAdapter();
+        }
+
         public int Id { get; set; }
 
         public string Title { get; set; }
+
+        public string SanitizedContent => this.sanitizer.Sanitize(this.Content);
 
         public int CategoryId { get; set; }
 

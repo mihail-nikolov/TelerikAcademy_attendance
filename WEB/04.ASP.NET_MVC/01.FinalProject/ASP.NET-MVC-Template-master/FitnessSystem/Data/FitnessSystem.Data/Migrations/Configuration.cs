@@ -25,14 +25,7 @@
         {
             this.SeedUsersAndAdmin(context);
             this.SeedFeedback(context);
-            try
-            {
-                this.SeedExercisesCategoriesVotes(context);
-            }
-            catch (Exception ex)
-            {
-
-            }
+            this.SeedExercisesCategoriesVotes(context);
         }
 
         private void SeedUsersAndAdmin(ApplicationDbContext context)
@@ -132,7 +125,6 @@
                 }
 
                 exercise.Votes.Add(vote);
-
             }
         }
 
@@ -150,7 +142,6 @@
                 Exercise exercise8 = new Exercise
                 {
                     Title = "7 Exercises to Work Your Legs to Exhaustion ",
-                    // Author = this.usersCollection["user5@site.com"],
                     AuthorId = this.usersCollection["user5@site.com"].Id,
                     Content = @"Well, for one, they can hide weak development with 90's retro bodybuilding pants but the main reason is they don’t want to do the hard work. Tom Platz and Branch Warren have the two best sets of wheels to ever grace the bodybuilding stage and what do they have in common? Only being the two hardest-working bodybuilders of all-time.
 
@@ -166,7 +157,6 @@
                 Exercise exercise9 = new Exercise
                 {
                     Title = "2 Best Methods to Build a Sexy V-Taper",
-                    Author = this.usersCollection["user5@site.com"],
                     AuthorId = this.usersCollection["user5@site.com"].Id,
                     Content = @"KEY MOVES
 
@@ -185,7 +175,6 @@
                 Exercise exercise10 = new Exercise
                 {
                     Title = "Jump Rope Workout to Burn More Fat in Less Time ",
-                    Author = this.usersCollection["user5@site.com"],
                     AuthorId = this.usersCollection["user5@site.com"].Id,
                     Content = @"When you think of a typical fat-burning workout, what’s the first thing that comes to mind?
 
@@ -229,7 +218,6 @@
                 Exercise exercise5 = new Exercise
                 {
                     Title = "The Ultimate Back Building Workout for 2016 ",
-                    Author = this.usersCollection["user3@site.com"],
                     AuthorId = this.usersCollection["user3@site.com"].Id,
                     Content = @"If you are looking to build a physique that screams alpha male physical prowess and drips with masculine virility,
                                 a well - developed back is the gateway to a truly dominant,
@@ -258,7 +246,6 @@
                 Exercise exercise6 = new Exercise
                 {
                     Title = "8 Best Non-Bench Chest Exercises ",
-                    Author = this.usersCollection["user4@site.com"],
                     AuthorId = this.usersCollection["user4@site.com"].Id,
                     Content = @"Just because it’s chest day doesn’t mean you're relegated to park your backside on a bench for your session. While the bench is a valuable tool for overall chest strength, it can place excess stress on the delts, which can be tough for those with injured shoulders. For pure pec muscle growth, there are several exercises that will get you off the bench and on your way to chest growth in PECtacular fashion.
 
@@ -272,7 +259,6 @@
                 Exercise exercise7 = new Exercise
                 {
                     Title = "Expert Q+A: How To Fight The Bra Bulge ",
-                    Author = this.usersCollection["user4@site.com"],
                     AuthorId = this.usersCollection["user4@site.com"].Id,
                     Content = @"Q: 'I've been working out for years, but now that I'm over age 40,
                                 I've noticed I'm getting some unsightly bulges around the front sides of my bra.What can I do? '
@@ -305,7 +291,6 @@
                 Exercise exercise11 = new Exercise
                 {
                     Title = "10 Tricks for Bigger, Healthier Shoulders  ",
-                    Author = this.usersCollection["user6@site.com"],
                     AuthorId = this.usersCollection["user6@site.com"].Id,
                     Content = @"There is no denying it, great shoulders complete a physique. They give you width and top off that coveted V-taper. Your waist can be as small as can be, but without a killer pair of delts it will just not look right. Sadly, great or even good shoulders are rare these days and it is not due to lack of effort. If one takes a look around in most gyms, they’ll find that most shoulders are slopped forward and/or injured. Rarely do your see a nice pair of cannonball delts so I made it my mission to change that sorry state of affairs.
 
@@ -319,7 +304,6 @@
                 Exercise exercise2 = new Exercise
                 {
                     Title = "10 Tricks for Bigger, Healthier Shoulders ",
-                    Author = this.usersCollection["user2@site.com"],
                     AuthorId = this.usersCollection["user2@site.com"].Id,
                     Content = @"There is no denying it, great shoulders complete a physique. They give you width and top off that coveted V-taper. Your waist can be as small as can be, but without a killer pair of delts it will just not look right. Sadly, great or even good shoulders are rare these days and it is not due to lack of effort. If one takes a look around in most gyms, they’ll find that most shoulders are slopped forward and/or injured. Rarely do your see a nice pair of cannonball delts so I made it my mission to change that sorry state of affairs.
 
@@ -333,7 +317,6 @@
                 Exercise exercise3 = new Exercise
                 {
                     Title = "Get More Out of Your Lateral Raises ",
-                    Author = this.usersCollection["user2@site.com"],
                     AuthorId = this.usersCollection["user2@site.com"].Id,
                     Content = @"There are some things in your training regimen you do because, well, everybody does them. Everyone benches for a big chest, and if you want big legs, you squat. But sometimes the masses seem more like lemmings -- they aren't sure what or why they're doing something. They just do it because they believe they should, which brings us to the dumbbell lateral raise. Just about anyone who does this exercise raises the weights to only shoulder level, arms about parallel to the floor, but no higher. Know why? Think it causes rotator-cuff impingement and is dangerous to go above that point? Uh-uh. Think the arms-parallel position is where the middle delt stops working?
 
@@ -348,7 +331,6 @@
                 Exercise exercise12 = new Exercise
                 {
                     Title = "7 Tips to Stay Fit at Work ",
-                    Author = this.usersCollection["user6@site.com"],
                     AuthorId = this.usersCollection["user6@site.com"].Id,
                     Content = @"Despite knowing that sitting all day at work can take a toll on our health, a lot of us do nothing about it. Sure, it certainly is tough to find the time to exercise regularly, but even if you work out religiously, the bad news is that sitting for prolonged periods of time daily can kill you slowly.  
 
@@ -362,7 +344,6 @@
                 Exercise exercise13 = new Exercise
                 {
                     Title = "7 Tips to Stay Fit at Work ",
-                    Author = this.usersCollection["user6@site.com"],
                     AuthorId = this.usersCollection["user6@site.com"].Id,
                     Content = @"Despite knowing that sitting all day at work can take a toll on our health, a lot of us do nothing about it. Sure, it certainly is tough to find the time to exercise regularly, but even if you work out religiously, the bad news is that sitting for prolonged periods of time daily can kill you slowly.  
 
@@ -376,7 +357,6 @@
                 Exercise exercise14 = new Exercise
                 {
                     Title = "Get More Out of Your Lateral Raises ",
-                    Author = this.usersCollection["user6@site.com"],
                     AuthorId = this.usersCollection["user6@site.com"].Id,
                     Content = @"There are some things in your training regimen you do because, well, everybody does them. Everyone benches for a big chest, and if you want big legs, you squat. But sometimes the masses seem more like lemmings -- they aren't sure what or why they're doing something. They just do it because they believe they should, which brings us to the dumbbell lateral raise. Just about anyone who does this exercise raises the weights to only shoulder level, arms about parallel to the floor, but no higher. Know why? Think it causes rotator-cuff impingement and is dangerous to go above that point? Uh-uh. Think the arms-parallel position is where the middle delt stops working?
 
@@ -388,7 +368,6 @@
                 Exercise exercise15 = new Exercise
                 {
                     Title = " 2 Best Methods to Build a Sexy V-Taper  ",
-                    Author = this.usersCollection["user6@site.com"],
                     AuthorId = this.usersCollection["user6@site.com"].Id,
                     Content = @"KEY MOVES
 
@@ -415,7 +394,6 @@
                 Exercise exercise1 = new Exercise
                 {
                     Title = "Instant Muscle: Press Pain Free",
-                    Author = this.usersCollection["user1@site.com"],
                     AuthorId = this.usersCollection["user1@site.com"].Id,
                     Content = @"Perform the exercises as a circuit, completing one set of each in sequence without rest in between. Afterward, rest 30 seconds and repeat for six to eight total circuits. Each time through, change your hand position slightly on the press, shrug, and pushup. For example, start with a shoulder-width grip on all three, then move it out an inch on subsequent sets.
 

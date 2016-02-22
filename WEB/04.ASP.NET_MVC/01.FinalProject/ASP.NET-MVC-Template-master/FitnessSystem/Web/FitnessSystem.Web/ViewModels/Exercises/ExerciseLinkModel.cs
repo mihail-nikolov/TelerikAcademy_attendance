@@ -1,10 +1,10 @@
 ﻿namespace FitnessSystem.Web.ViewModels.Exercises
 {
+    using System;
     using System.Linq;
     using AutoMapper;
     using Data.Models;
     using Infrastructure.Mapping;
-    using System;
 
     public class ExerciseLinkModel : IMapFrom<Exercise>, IHaveCustomMappings
     {

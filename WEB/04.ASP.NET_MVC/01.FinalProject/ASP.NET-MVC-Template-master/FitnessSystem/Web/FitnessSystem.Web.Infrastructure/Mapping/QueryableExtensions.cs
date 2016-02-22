@@ -3,8 +3,8 @@
     using System;
     using System.Linq;
     using System.Linq.Expressions;
-    using AutoMapper.QueryableExtensions;
     using AutoMapper;
+    using AutoMapper.QueryableExtensions;
 
     public static class QueryableExtensions
     {
@@ -15,7 +15,9 @@
 
         public static TDestination ToModel<TDestination>(this object source)
         {
+#pragma warning disable CS0618 // Type or member is obsolete
             return Mapper.Map<TDestination>(source);
+#pragma warning restore CS0618 // Type or member is obsolete
         }
     }
 }

@@ -13,29 +13,30 @@
     <br />
     @if (Request.IsAuthenticated && Model.Exercise.AuthorId == User.Identity.GetUserId())
     {
-    @Html.ActionLink("Edit", "EditExercise", "Exercises",
+        @Html.ActionLink("Edit", "EditExercise", "Exercises",
                              new { Model.Exercise.Id }, new { @class = "btn btn-primary" })
 
         using (Html.BeginForm("Delete", "Exercises", new { area = string.Empty, id = Model.Exercise.Id }, FormMethod.Post))
         {
-    @Html.HiddenFor(model => model.Exercise.Id)
-    <input type="submit" value="Delete" class="btn btn-danger" />
+            @Html.HiddenFor(model => model.Exercise.Id)
+            <input type="submit" value="Delete" class="btn btn-danger" />
         }
     }
 </div>
 <br />
 <div class="row">
+    @*<span>@Html.Raw(Model.Exercise.SanitizedContent)</span><br /><br />*@ @*sanitized version*@ 
     <span>@Html.Raw(Model.Exercise.Content)</span><br /><br />
     @if (Request.IsAuthenticated && Model.Exercise.AuthorId != User.Identity.GetUserId())
     {
-    <span class="glyphicon glyphicon-thumbs-up" data-action="up" data-id="@Model.Exercise.Id"></span>
-    <span data-action="votesCount">@Model.Exercise.Votes</span>
-    <span class="glyphicon glyphicon-thumbs-down" data-action="down" data-id="@Model.Exercise.Id"></span>
-    <br /><br />
+        <span class="glyphicon glyphicon-thumbs-up" data-action="up" data-id="@Model.Exercise.Id"></span>
+        <span data-action="votesCount">@Model.Exercise.Votes</span>
+        <span class="glyphicon glyphicon-thumbs-down" data-action="down" data-id="@Model.Exercise.Id"></span>
+        <br /><br />
     }
     else
     {
-    <i>rating: </i><strong class="text-danger">@Model.Exercise.Votes</strong><br />
+        <i>rating: </i><strong class="text-danger">@Model.Exercise.Votes</strong><br />
     }
 </div>
 
@@ -43,15 +44,11 @@
     <div id="toUpdate">
         @if (Request.IsAuthenticated && Model.Exercise.AuthorId != User.Identity.GetUserId())
         {
-            @Ajax.ActionLink("Add Comment", "AddNewComment", "Exercises", new { id = Model.Exercise.Id }, new AjaxOptions
+        @Ajax.ActionLink("Add Comment", "AddNewComment", "Exercises", new { id = Model.Exercise.Id }, new AjaxOptions
                 {
                     UpdateTargetId = "toUpdate",
                     InsertionMode = InsertionMode.Replace
-                },
-                 new
-                 {
-                     @class = "btn btn-primary"
-                 })
+                }, new {@class = "btn btn-primary" })
         }
     </div>
 </div>
