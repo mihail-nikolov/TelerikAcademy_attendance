@@ -1,95 +1,41 @@
-﻿namespace FitnessSystem.Web.Areas.Administration.Controllers
-{
-    using System.Data;
-    using System.Linq;
-    using System.Web.Mvc;
-    using Common;
-    using Data.Models;
-    using Infrastructure.Mapping;
-    using Kendo.Mvc.Extensions;
-    using Kendo.Mvc.UI;
-    using Services.Data;
-    using Web.Administration.ViewModels;
-    using Web.Controllers;
-    using Web.ViewModels.Categories;
+﻿using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Data.Entity;
+using System.Linq;
+using System.Net;
+using System.Web;
+using System.Web.Mvc;
+using Kendo.Mvc.Extensions;
+using Kendo.Mvc.UI;
+using FitnessSystem.Data.Models;
+using FitnessSystem.Data;
+using FitnessSystem.Web.Administration.ViewModels.Comments;
+using FitnessSystem.Services.Data;
+using FitnessSystem.Web.Infrastructure.Mapping;
 
-    [Authorize(Roles = GlobalConstants.AdministratorRoleName)]
+namespace FitnessSystem.Web.Areas.Administration.Controllers
+{
     public class ManageCommentsController : Controller
     {
-        private readonly IExercisesServices exercises;
-        private readonly ICategoriesService categories;
+        private readonly ICommentsServices comments;
 
-        public ManageExercisesController(IExercisesServices exercises, ICategoriesService categories)
+        public ManageCommentsController(ICommentsServices comments)
         {
-            this.exercises = exercises;
-            this.categories = categories;
+            this.comments = comments;
         }
 
         public ActionResult Index()
         {
-            return View();
+            return this.View();
         }
 
         public ActionResult Comments_Read([DataSourceRequest]DataSourceRequest request)
         {
-            IQueryable<Comment> comments = db.Comments;
-            DataSourceResult result = comments.ToDataSourceResult(request, c => new ManageCommentsViewModel 
-            {
-                Id = c.Id,
-                Exercise = c.Exercise,
-                Content = c.Content,
-                Author = c.Author
-            });
+            var comments = this.comments.GetAll().To<ManageCommentsViewModel>().ToList();
+            DataSourceResult result = comments.ToDataSourceResult(request);
 
-            return Json(result);
-        }
-
-        [AcceptVerbs(HttpVerbs.Post)]
-        public ActionResult Comments_Update([DataSourceRequest]DataSourceRequest request, ManageCommentsViewModel comment)
-        {
-            if (ModelState.IsValid)
-            {
-                var entity = new Comment
-                {
-                    Id = comment.Id,
-                    Exercise = comment.Exercise,
-                    Content = comment.Content,
-                    Author = comment.Author
-                };
-
-                db.Comments.Attach(entity);
-                db.Entry(entity).State = EntityState.Modified;
-                db.SaveChanges();
-            }
-
-            return Json(new[] { comment }.ToDataSourceResult(request, ModelState));
-        }
-
-        [AcceptVerbs(HttpVerbs.Post)]
-        public ActionResult Comments_Destroy([DataSourceRequest]DataSourceRequest request, ManageCommentsViewModel comment)
-        {
-            if (ModelState.IsValid)
-            {
-                var entity = new Comment
-                {
-                    Id = comment.Id,
-                    Exercise = comment.Exercise,
-                    Content = comment.Content,
-                    Author = comment.Author
-                };
-
-                db.Comments.Attach(entity);
-                db.Comments.Remove(entity);
-                db.SaveChanges();
-            }
-
-            return Json(new[] { comment }.ToDataSourceResult(request, ModelState));
-        }
-
-        protected override void Dispose(bool disposing)
-        {
-            db.Dispose();
-            base.Dispose(disposing);
+            return this.Json(result);
         }
     }
 }

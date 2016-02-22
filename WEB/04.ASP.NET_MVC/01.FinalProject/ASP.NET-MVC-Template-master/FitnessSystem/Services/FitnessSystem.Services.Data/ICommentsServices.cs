@@ -8,5 +8,9 @@
         IQueryable<Comment> GetAll();
 
         void Create(Comment newComment);
+
+        void Delete(int id);
+
+        void Update(Comment newComment);
     }
 }

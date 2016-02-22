@@ -25,9 +25,23 @@
             this.comments.Save();
         }
 
+        public void Update(Comment newComment)
+        {
+            var comment = this.comments.GetById(newComment.Id);
+            comment.Content = newComment.Content;
+            this.comments.Save();
+        }
+
+        public void Delete(int id)
+        {
+            var comment = this.comments.GetById(id);
+            this.comments.Delete(comment);
+            this.comments.Save();
+        }
+
         public IQueryable<Comment> GetAll()
         {
-            return this.comments.All().OrderByDescending(c => c.CreatedOn);
+            return this.comments.All();
         }
     }
 }

@@ -3,21 +3,13 @@
       .Name("grid")
       .Columns(columns =>
       {
-        columns.Bound(c => c.Content);
-        columns.Command(command => { command.Edit(); command.Destroy(); }).Width(180);
+          columns.Bound(col => col.Author);
+          columns.Bound(col => col.Content);
+          columns.Bound(col => col.Exercise);
       })
-      .Editable(editable => editable.Mode(GridEditMode.InLine))
-      .Pageable()
-      .Sortable(sortable => {
-          sortable.SortMode(GridSortMode.SingleColumn);
-      })
-      .Filterable()
-      .Scrollable(scrollable => scrollable.Enabled(false))
+      .Scrollable()
       .DataSource(dataSource => dataSource
           .Ajax()
-          .Model(model => model.Id(p => p.Id))
           .Read(read => read.Action("Comments_Read", "ManageComments"))
-          .Update(update => update.Action("Comments_Update", "ManageComments"))
-          .Destroy(destroy => destroy.Action("Comments_Destroy", "ManageComments"))
       )
 )
