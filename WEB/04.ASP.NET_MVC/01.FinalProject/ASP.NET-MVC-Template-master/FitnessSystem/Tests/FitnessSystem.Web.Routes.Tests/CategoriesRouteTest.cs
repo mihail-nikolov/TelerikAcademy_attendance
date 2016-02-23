@@ -1,5 +1,6 @@
 ﻿namespace FitnessSystem.Web.Routes.Tests
 {
+    using System.Net.Http;
     using System.Web.Routing;
     using Controllers;
     using MvcRouteTester;
@@ -21,7 +22,7 @@
         [Test]
         public void TestRouteAbout()
         {
-            const string Url = "/Categories/CreateNew";
+            const string Url = "/Categories/CreateNew/";
             var routeCollection = new RouteCollection();
             RouteConfig.RegisterRoutes(routeCollection);
             routeCollection.ShouldMap(Url).To<CategoriesController>(c => c.CreateNew());
@@ -30,11 +31,11 @@
         [Test]
         public void TestRouteCreate()
         {
-            var category = new CategorySimpleViewModel() { };
-            const string Url = "/Categories/Create";
+            var category = new CategorySimpleViewModel() { Id = 1 };
+            const string Url = "/Categories/Create/1";
             var routeCollection = new RouteCollection();
             RouteConfig.RegisterRoutes(routeCollection);
-            routeCollection.ShouldMap(Url).To<CategoriesController>(c => c.Create(category));
+            routeCollection.ShouldMap(Url).To<CategoriesController>(HttpMethod.Post, c => c.Create(category));
         }
 
         [Test]
@@ -49,10 +50,11 @@
         [Test]
         public void TestRouteDetailsWithNoValue()
         {
-            const string Url = "/Categories/Details/";
+            const string url = "/Categories/Details/";
             var routeCollection = new RouteCollection();
             RouteConfig.RegisterRoutes(routeCollection);
-            routeCollection.ShouldMap(Url).To<CategoriesController>(c => c.Index());
+            routeCollection.ShouldMap(url).ToNonIgnoredRoute();
+            routeCollection.ShouldMap(url).WithFormUrlBody("id=0");
         }
     }
 }

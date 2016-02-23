@@ -19,26 +19,21 @@
             autoMapperConfig.Execute(typeof(ExercisesController).Assembly);
             const string ExerciseContent = "SomeContent";
 
+            const string categoryName = "categoryname";
             var exercisesServiceMock = new Mock<IExercisesServices>();
             exercisesServiceMock.Setup(x => x.GetById(It.IsAny<int>()))
-                .Returns(new Exercise { Content = ExerciseContent, Category = new Category { Name = "asda" } });
+                .Returns(new Exercise { Content = ExerciseContent, Category = new Category { Name = categoryName } });
 
-            const string categoryName = "categoryname";
-            var newCategory = new Category()
-            {
-                Name = categoryName
-            };
             var categoriesServiceMock = new Mock<ICategoriesService>();
-            categoriesServiceMock.Setup(x => x.GetById(It.IsAny<int>()))
-                .Returns(newCategory);
 
             var controller = new ExercisesController(exercisesServiceMock.Object, categoriesServiceMock.Object);
             controller.WithCallTo(x => x.Details(1))
                 .ShouldRenderView("Details")
-                .WithModel<ExerciseFullViewModel>(
+                .WithModel<ExerciseAndNewCommentViewModel>(
                     viewModel =>
                     {
-                        Assert.AreEqual(ExerciseContent, viewModel.Content);
+                        Assert.AreEqual(ExerciseContent, viewModel.Exercise.Content);
+                        Assert.AreEqual(categoryName, viewModel.Exercise.Category);
                     }).AndNoModelErrors();
         }
 
@@ -47,25 +42,11 @@
         {
             var exercisesServiceMock = new Mock<IExercisesServices>();
             var categoriesServiceMock = new Mock<ICategoriesService>();
+            exercisesServiceMock.Setup(x => x.GetById(It.IsAny<int>()))
+                .Returns(new Exercise { Content = "new  exercise", Category = new Category { Name = "asda" } });
             var controller = new ExercisesController(exercisesServiceMock.Object, categoriesServiceMock.Object);
             controller.WithCallTo(x => x.Details(0))
-                .ShouldRenderView("Index")
-                .WithModel<ExerciseLinkModel>();
-        }
-
-        [Test]
-        public void MyExercisesShouldWorkCorrectly()
-        {
-            var autoMapperConfig = new AutoMapperConfig();
-            autoMapperConfig.Execute(typeof(ExercisesController).Assembly);
-
-            var exercisesServiceMock = new Mock<IExercisesServices>();
-            var categoriesServiceMock = new Mock<ICategoriesService>();
-
-            var controller = new ExercisesController(exercisesServiceMock.Object, categoriesServiceMock.Object);
-            controller.WithCallTo(x => x.MyExercises())
-                .ShouldRenderView("MyExercises")
-                .WithModel<ExerciseLinkModel>().AndNoModelErrors();
+                .ShouldRedirectTo("~/Exercises");
         }
 
         [Test]
@@ -79,7 +60,7 @@
 
             var controller = new ExercisesController(exercisesServiceMock.Object, categoriesServiceMock.Object);
             controller.WithCallTo(x => x.AddNewComment(1))
-                .ShouldRenderView("MyExercises")
+                .ShouldRenderPartialView("_AddComment")
                 .WithModel<ExerciseAndNewCommentViewModel>().AndNoModelErrors();
         }
 
@@ -94,22 +75,7 @@
 
             var controller = new ExercisesController(exercisesServiceMock.Object, categoriesServiceMock.Object);
             controller.WithCallTo(x => x.AddNewComment(0))
-                .ShouldRedirectTo("Index");
-        }
-
-        [Test]
-        public void EditExerciseShouldWorkCorrectly()
-        {
-            var autoMapperConfig = new AutoMapperConfig();
-            autoMapperConfig.Execute(typeof(ExercisesController).Assembly);
-
-            var exercisesServiceMock = new Mock<IExercisesServices>();
-            var categoriesServiceMock = new Mock<ICategoriesService>();
-
-            var controller = new ExercisesController(exercisesServiceMock.Object, categoriesServiceMock.Object);
-            controller.WithCallTo(x => x.EditExercise(1))
-                .ShouldRenderView("EditExercise")
-                .WithModel<ExerciseEditViewModel>().AndNoModelErrors();
+                .ShouldRedirectTo("~/Exercises");
         }
 
         [Test]
@@ -123,22 +89,7 @@
 
             var controller = new ExercisesController(exercisesServiceMock.Object, categoriesServiceMock.Object);
             controller.WithCallTo(x => x.EditExercise(0))
-                .ShouldRedirectTo("Index");
-        }
-
-        [Test]
-        public void DeleteShouldWorkCorrectly()
-        {
-            var autoMapperConfig = new AutoMapperConfig();
-            autoMapperConfig.Execute(typeof(ExercisesController).Assembly);
-
-            var exercisesServiceMock = new Mock<IExercisesServices>();
-            var categoriesServiceMock = new Mock<ICategoriesService>();
-
-            var controller = new ExercisesController(exercisesServiceMock.Object, categoriesServiceMock.Object);
-            controller.WithCallTo(x => x.Delete(1))
-                .ShouldRenderView("MyExercises")
-                .WithModel<ExerciseEditViewModel>().AndNoModelErrors();
+                .ShouldRedirectTo("~/Exercises");
         }
 
         [Test]
@@ -152,7 +103,7 @@
 
             var controller = new ExercisesController(exercisesServiceMock.Object, categoriesServiceMock.Object);
             controller.WithCallTo(x => x.Delete(0))
-                .ShouldRedirectTo("Index");
+                .ShouldRedirectTo("~/Exercises");
         }
     }
 }

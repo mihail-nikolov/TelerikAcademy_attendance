@@ -50,7 +50,7 @@
             if (!this.ModelState.IsValid || this.categories.IfExists(newCategory.Name))
             {
                 this.TempData["notification"] = "There is already existing category with this name (it also could not be visible yet)";
-                return this.RedirectToAction("Index");
+                return this.Redirect("~/Categories/Index");
             }
 
             var category = this.Mapper.Map<Category>(newCategory);
@@ -59,7 +59,7 @@
 
             string message = string.Format("Category with name {0} added, it will become visible when the Admin approves it", category.Name);
             this.TempData["notification"] = message;
-            return this.RedirectToAction("Index");
+            return this.Redirect("~/Categories/Index");
         }
     }
 }

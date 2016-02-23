@@ -117,7 +117,6 @@
         {
             if (!this.ModelState.IsValid)
             {
-                this.TempData["notification"] = "You are not the Author!";
                 return this.RedirectToAction("Index");
             }
 

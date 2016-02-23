@@ -9,6 +9,7 @@
 
     public class VotesControllerTests
     {
+        [Test]
         public void VoteShouldRedirectWithWrongParameters()
         {
             var votesService = new Mock<IVotesServices>();
@@ -18,17 +19,6 @@
             var controller = new VotesController(votesService.Object, exercisesServiceMock.Object);
             controller.WithCallTo(x => x.Vote(0, 0))
                 .ShouldRedirectTo("/Exercises");
-        }
-
-        public void CommentShouldWorkCorrectly()
-        {
-            var votesService = new Mock<IVotesServices>();
-
-            var exercisesServiceMock = new Mock<IExercisesServices>();
-
-            var controller = new VotesController(votesService.Object, exercisesServiceMock.Object);
-            controller.WithCallTo(x => x.Vote(0, 0))
-                .ShouldReturnJson();
         }
     }
 }

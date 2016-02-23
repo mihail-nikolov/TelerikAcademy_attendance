@@ -31,20 +31,11 @@
         [Test]
         public void TestRouteDetailsWithNoValue()
         {
-            const string Url = "/Categories/Details/";
+            const string Url = "/Exercises/Details/";
             var routeCollection = new RouteCollection();
             RouteConfig.RegisterRoutes(routeCollection);
-            routeCollection.ShouldMap(Url).To<ExercisesController>(c => c.Index());
-        }
-
-        [Test]
-        public void TestRouteCreate()
-        {
-            var exercise = new ExerciseEditViewModel() { };
-            const string Url = "/Exercises/Create";
-            var routeCollection = new RouteCollection();
-            RouteConfig.RegisterRoutes(routeCollection);
-            routeCollection.ShouldMap(Url).To<ExercisesController>(c => c.Create(exercise));
+            routeCollection.ShouldMap(Url).ToNonIgnoredRoute();
+            routeCollection.ShouldMap(Url).WithFormUrlBody("id=0");
         }
 
         [Test]
@@ -80,7 +71,8 @@
             const string Url = "/Exercises/AddNewComment/";
             var routeCollection = new RouteCollection();
             RouteConfig.RegisterRoutes(routeCollection);
-            routeCollection.ShouldMap(Url).To<ExercisesController>(c => c.AddNewComment(0));
+            routeCollection.ShouldMap(Url).ToNonIgnoredRoute();
+            routeCollection.ShouldMap(Url).WithFormUrlBody("id=0");
         }
 
         [Test]
@@ -95,20 +87,11 @@
         [Test]
         public void TestRouteEditExerciseWithNoValue()
         {
-            const string Url = "/Exercises/EditExercise";
+            const string url = "/Exercises/EditExercise";
             var routeCollection = new RouteCollection();
             RouteConfig.RegisterRoutes(routeCollection);
-            routeCollection.ShouldMap(Url).To<ExercisesController>(c => c.EditExercise(0));
-        }
-
-        [Test]
-        public void TestRouteEdit()
-        {
-            var newExercise = new ExerciseEditViewModel() { };
-            const string Url = "/Exercises/Edit";
-            var routeCollection = new RouteCollection();
-            RouteConfig.RegisterRoutes(routeCollection);
-            routeCollection.ShouldMap(Url).To<ExercisesController>(c => c.Edit(newExercise));
+            routeCollection.ShouldMap(url).ToNonIgnoredRoute();
+            routeCollection.ShouldMap(url).WithFormUrlBody("id=0");
         }
 
         [Test]
@@ -128,7 +111,8 @@
             const string Url = "/Exercises/Delete";
             var routeCollection = new RouteCollection();
             RouteConfig.RegisterRoutes(routeCollection);
-            routeCollection.ShouldMap(Url).To<ExercisesController>(c => c.Delete(0));
+            routeCollection.ShouldMap(Url).ToNonIgnoredRoute();
+            routeCollection.ShouldMap(Url).WithFormUrlBody("id=0");
         }
     }
 }
