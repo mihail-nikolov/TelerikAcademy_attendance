@@ -4,6 +4,12 @@
 }
 <h3>My Exercises</h3>
 <div class="row">
+    @if (!Model.Any())
+    {
+        <div class="row">
+            <strong>You have no exercises added, you can do it via the "CreateNew" button</strong>
+        </div>
+    }
     @foreach (var exercise in Model)
     {
         <div class="row">

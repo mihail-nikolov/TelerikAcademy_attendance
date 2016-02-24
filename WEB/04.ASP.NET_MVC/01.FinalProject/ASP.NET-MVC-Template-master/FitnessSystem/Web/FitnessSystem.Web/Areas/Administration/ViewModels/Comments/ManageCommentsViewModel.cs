@@ -20,7 +20,7 @@
         public void CreateMappings(IMapperConfiguration configuration)
         {
             configuration.CreateMap<Comment, ManageCommentsViewModel>()
-                .ForMember(x => x.Author, opt => opt.MapFrom(x => x.Author.UserName));
+                .ForMember(x => x.Author, opt => opt.MapFrom(x => x.Author.NickName));
             configuration.CreateMap<Comment, ManageCommentsViewModel>()
                .ForMember(x => x.Exercise, opt => opt.MapFrom(x => x.Exercise.Title));
         }

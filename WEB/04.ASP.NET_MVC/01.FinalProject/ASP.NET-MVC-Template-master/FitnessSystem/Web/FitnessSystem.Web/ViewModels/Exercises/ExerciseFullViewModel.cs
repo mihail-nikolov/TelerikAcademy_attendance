@@ -45,7 +45,7 @@
             configuration.CreateMap<Exercise, ExerciseFullViewModel>()
                 .ForMember(x => x.Category, opt => opt.MapFrom(x => x.Category.Name));
             configuration.CreateMap<Exercise, ExerciseFullViewModel>()
-                .ForMember(x => x.Author, opt => opt.MapFrom(x => x.Author.UserName));
+                .ForMember(x => x.Author, opt => opt.MapFrom(x => x.Author != null ? x.Author.NickName : "anonymous"));
             configuration.CreateMap<Exercise, ExerciseFullViewModel>()
                 .ForMember(x => x.Votes, opt => opt.MapFrom(x => x.Votes.Any() ? x.Votes.Sum(v => v.Points) : 0));
         }

@@ -35,6 +35,41 @@
             return base.SaveChanges();
         }
 
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            modelBuilder
+              .Entity<Exercise>()
+              .HasRequired(p => p.Category)
+              .WithMany(x => x.Exercises)
+              .WillCascadeOnDelete(true);
+
+            modelBuilder
+              .Entity<Exercise>()
+              .HasRequired(p => p.Author)
+              .WithMany(x => x.Exercises)
+              .WillCascadeOnDelete(false);
+
+            modelBuilder
+              .Entity<Comment>()
+              .HasRequired(p => p.Exercise)
+              .WithMany(x => x.Comments)
+              .WillCascadeOnDelete(true);
+
+            modelBuilder
+              .Entity<Comment>()
+              .HasRequired(p => p.Author)
+              .WithMany(x => x.Comments)
+              .WillCascadeOnDelete(false);
+
+            modelBuilder
+              .Entity<Vote>()
+              .HasRequired(p => p.Exercise)
+              .WithMany(x => x.Votes)
+              .WillCascadeOnDelete(true);
+
+            base.OnModelCreating(modelBuilder);
+        }
+
         private void ApplyAuditInfoRules()
         {
             // Approach via @julielerman: http://bit.ly/123661P

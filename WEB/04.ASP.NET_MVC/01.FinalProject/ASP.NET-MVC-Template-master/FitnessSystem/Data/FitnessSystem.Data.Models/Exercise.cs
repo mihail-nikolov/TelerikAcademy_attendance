@@ -2,6 +2,7 @@
 {
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations.Schema;
     using Common.Models;
 
     public class Exercise : BaseModel<int>
@@ -22,11 +23,13 @@
 
         public int CategoryId { get; set; }
 
+        [ForeignKey("CategoryId")]
         public virtual Category Category { get; set; }
 
         [Required]
         public string AuthorId { get; set; }
 
+        [ForeignKey("AuthorId")]
         public virtual ApplicationUser Author { get; set; }
 
         public virtual ICollection<Vote> Votes { get; set; }

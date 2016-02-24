@@ -16,10 +16,14 @@
         [UIHint("CategoryDropDownList")]
         public string Category { get; set; }
 
+        public string Author { get; set; }
+
         public void CreateMappings(IMapperConfiguration configuration)
         {
             configuration.CreateMap<Exercise, ManageExerciseViewModel>()
                .ForMember(x => x.Category, opt => opt.MapFrom(x => x.Category.Name));
+            configuration.CreateMap<Exercise, ManageExerciseViewModel>()
+               .ForMember(x => x.Author, opt => opt.MapFrom(x => x.Author.NickName));
         }
     }
 }

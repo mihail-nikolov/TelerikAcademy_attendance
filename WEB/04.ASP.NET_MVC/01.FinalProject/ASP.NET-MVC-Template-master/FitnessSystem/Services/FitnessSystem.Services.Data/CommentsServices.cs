@@ -41,7 +41,7 @@
 
         public IQueryable<Comment> GetAll()
         {
-            return this.comments.All();
+            return this.comments.All().Where(x => x.Author.IsDeleted == false);
         }
     }
 }

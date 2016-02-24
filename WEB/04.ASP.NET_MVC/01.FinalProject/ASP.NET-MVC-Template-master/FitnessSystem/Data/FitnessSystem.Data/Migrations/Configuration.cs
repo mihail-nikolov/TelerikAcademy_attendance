@@ -43,7 +43,7 @@
 
                 var userStore = new UserStore<ApplicationUser>(context);
                 var userManager = new UserManager<ApplicationUser>(userStore);
-                var admin = new ApplicationUser { UserName = AdministratorUserName, Email = AdministratorUserName };
+                var admin = new ApplicationUser { UserName = AdministratorUserName, Email = AdministratorUserName, NickName = "Admin" };
                 userManager.Create(admin, AdministratorPassword);
                 userManager.AddToRole(admin.Id, GlobalConstants.AdministratorRoleName);
 
@@ -51,7 +51,8 @@
                 {
                     string userName = string.Format("user{0}@site.com", i.ToString());
                     string password = userName;
-                    var user = new ApplicationUser { UserName = userName, Email = userName };
+                    string nickName = "Gosho" + i.ToString();
+                    var user = new ApplicationUser { UserName = userName, Email = userName, NickName = nickName };
                     userManager.Create(user, password);
                     this.usersCollection.Add(user.UserName, user);
                 }

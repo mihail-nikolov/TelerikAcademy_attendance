@@ -1,6 +1,5 @@
 ﻿namespace FitnessSystem.Services.Data
 {
-    using System;
     using System.Linq;
 
     using FitnessSystem.Data.Common;
@@ -17,12 +16,17 @@
 
         public IQueryable<Exercise> GetAll()
         {
-            return this.exercises.All().OrderByDescending(x => x.CreatedOn);
+            return this.exercises.All()
+                .Where(x => x.Category.IsDeleted == false && x.Author.IsDeleted == false)
+                .OrderByDescending(x => x.CreatedOn);
         }
 
         public IQueryable<Exercise> Get(int number)
         {
-            return this.exercises.All().OrderByDescending(x => x.Votes.Sum(v => v.Points)).Take(number);
+            return this.exercises.All()
+                .Where(x => x.Category.IsDeleted == false && x.Author.IsDeleted == false)
+                .OrderByDescending(x => x.Votes.Sum(v => v.Points))
+                .Take(number);
         }
 
         public void Create(Exercise newExercise)
@@ -54,7 +58,7 @@
 
         public IQueryable<Exercise> GetByUser(string id)
         {
-            return this.exercises.All().Where(x => x.AuthorId == id).OrderByDescending(x => x.CreatedOn);
+            return this.exercises.All().Where(x => x.AuthorId == id && x.Category.IsDeleted == false).OrderByDescending(x => x.CreatedOn);
         }
 
         public void ChangeCategory(Exercise exerciseToUpdate)

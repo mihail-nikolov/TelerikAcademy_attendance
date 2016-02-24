@@ -14,7 +14,9 @@
 
     using Services.Data;
     using Services.Web;
-
+    using Microsoft.AspNet.Identity.EntityFramework;
+    using Data.Models;
+    using Microsoft.AspNet.Identity;
     public static class AutofacConfig
     {
         public static void RegisterAutofac()
@@ -56,6 +58,10 @@
             builder.Register(x => new IdentifierProvider())
                 .As<IIdentifierProvider>()
                 .InstancePerRequest();
+
+            builder.RegisterType<UserStore<ApplicationUser>>()
+                 .As<IUserStore<ApplicationUser>>();
+            builder.RegisterType<UserManager<ApplicationUser>>();
 
             var servicesAssembly = Assembly.GetAssembly(typeof(ICategoriesService));
             builder.RegisterAssemblyTypes(servicesAssembly).AsImplementedInterfaces();

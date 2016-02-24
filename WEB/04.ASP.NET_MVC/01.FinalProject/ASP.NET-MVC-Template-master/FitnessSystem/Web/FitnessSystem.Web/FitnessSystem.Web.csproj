@@ -203,6 +203,7 @@
     <Compile Include="Areas\Administration\AdministrationAreaRegistration.cs" />
     <Compile Include="Areas\Administration\Controllers\AdministrationController.cs" />
     <Compile Include="Areas\Administration\Controllers\FeedbacksCheckController.cs" />
+    <Compile Include="Areas\Administration\Controllers\ManageUsersController.cs" />
     <Compile Include="Areas\Administration\Controllers\ManageCategoriesController.cs" />
     <Compile Include="Areas\Administration\Controllers\ManageCommentsController.cs" />
     <Compile Include="Areas\Administration\Controllers\ManageExercisesController.cs" />
@@ -210,6 +211,7 @@
     <Compile Include="Areas\Administration\ViewModels\Comments\ManageCommentsViewModel.cs" />
     <Compile Include="Areas\Administration\ViewModels\Exercises\ManageExerciseViewModel.cs" />
     <Compile Include="Areas\Administration\ViewModels\Feedbacks\FeedbacksCheckViewModel.cs" />
+    <Compile Include="Areas\Administration\ViewModels\Users\UserViewModel.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\CategoriesController.cs" />
@@ -255,6 +257,7 @@
   <ItemGroup>
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap-def.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\kendo\Black\editor.png" />
@@ -299,6 +302,7 @@
     <Content Include="Areas\Administration\Views\FeedbacksCheck\Index.cshtml" />
     <Content Include="Areas\Administration\Views\ManageExercises\Index.cshtml" />
     <Content Include="Areas\Administration\Views\ManageComments\Index.cshtml" />
+    <Content Include="Areas\Administration\Views\ManageUsers\Index.cshtml" />
     <None Include="Scripts\jquery-2.2.0.intellisense.js" />
     <Content Include="Scripts\jquery-2.2.0.js" />
     <Content Include="Scripts\jquery-2.2.0.min.js" />

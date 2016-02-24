@@ -31,7 +31,7 @@
             configuration.CreateMap<Exercise, ExerciseLinkModel>()
                 .ForMember(x => x.Category, opt => opt.MapFrom(x => x.Category.Name));
             configuration.CreateMap<Exercise, ExerciseLinkModel>()
-                .ForMember(x => x.Author, opt => opt.MapFrom(x => x.Author.UserName));
+                .ForMember(x => x.Author, opt => opt.MapFrom(x => x.Author != null ? x.Author.NickName : "anonymous"));
             configuration.CreateMap<Exercise, ExerciseLinkModel>()
                 .ForMember(x => x.Votes, opt => opt.MapFrom(x => x.Votes.Any() ? x.Votes.Sum(v => v.Points) : 0));
             configuration.CreateMap<Exercise, ExerciseLinkModel>()
