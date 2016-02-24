@@ -50,12 +50,6 @@
     <Compile Include="VotesTests.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Services\FitnessSystem.Services.Web\FitnessSystem.Services.Web.csproj">
-      <Project>{deab17a2-58c1-448c-8a66-d49c3af7fc6c}</Project>
-      <Name>FitnessSystem.Services.Web</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
@@ -70,6 +64,16 @@
     <AdditionalFiles Include="..\..\stylecop.json">
       <Link>stylecop.json</Link>
     </AdditionalFiles>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Data\FitnessSystem.Data.Models\FitnessSystem.Data.Models.csproj">
+      <Project>{048df115-fad9-4bd4-9ba0-d99dfd32a2b2}</Project>
+      <Name>FitnessSystem.Data.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Services\FitnessSystem.Services.Data\FitnessSystem.Services.Data.csproj">
+      <Project>{90fe4c4d-122a-406d-8a40-79c561fb8184}</Project>
+      <Name>FitnessSystem.Services.Data</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

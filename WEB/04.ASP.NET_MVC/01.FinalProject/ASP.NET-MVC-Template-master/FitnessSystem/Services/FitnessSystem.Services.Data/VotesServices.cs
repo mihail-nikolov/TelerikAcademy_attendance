@@ -9,6 +9,10 @@
     {
         private readonly IDbRepository<Vote> votes;
 
+        public VotesServices()
+        {
+        }
+
         public VotesServices(IDbRepository<Vote> votes)
         {
             this.votes = votes;
@@ -30,17 +34,25 @@
             }
             else
             {
-                if (vote.Points == 0)
-                {
-                    vote.Points = points;
-                }
-                else if (vote.Points != points)
-                {
-                    vote.Points = 0;
-                }
+                vote.Points = this.PointsToAdd(vote, points);
             }
 
             this.votes.Save();
+        }
+
+        public int PointsToAdd(Vote vote, int givenPoints)
+        {
+            int pointsToadd = vote.Points;
+            if (pointsToadd == 0)
+            {
+                pointsToadd = givenPoints;
+            }
+            else if (vote.Points != givenPoints)
+            {
+                pointsToadd = 0;
+            }
+
+            return pointsToadd;
         }
     }
 }
