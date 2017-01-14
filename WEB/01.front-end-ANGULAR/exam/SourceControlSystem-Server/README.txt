@@ -1,0 +1,1 @@
+before running the api change the connection string in server/SourceControlSystem.Api/web.config

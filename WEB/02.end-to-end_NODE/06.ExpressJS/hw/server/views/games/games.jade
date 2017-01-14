@@ -1,0 +1,37 @@
+﻿extends ../shared/layout
+block main-content
+    .jumbotron.text-center
+        .panel.panel-primary
+            .panel-heading
+                h1.panel-title Games
+            .panel-body
+                if(currentUser)
+                    form(method="post")    
+                        input(type="submit" class="btn btn-lg text-center" value="Create New Game")
+                .row
+                    .col-md-3
+                        h3 GameState
+                    .col-md-3
+                        h3 Red player
+                    .col-md-3
+                        h3 Black player
+                    if(currentUser)
+                        .col-md-3
+                            h3 Available games
+                each game in games
+                    .row
+                        .col-md-3
+                            h3= game.gameState
+                        .col-md-3
+                            h3= game.redPlayer
+                        .col-md-3
+                            h3= game.blackPlayer
+                        if(game.gameState === 'WonByRed' || game.gameState === 'WonByBlack')
+                            .col-md-3
+                                a(href="/games/" + game._id class="btn btn-view") View
+                        else if(currentUser && !game.blackPlayer)
+                            .col-md-3
+                                a(href="/games/" + game._id + "/join" class="btn btn-primary" ) Join
+                        else if(currentUser && (currentUser.username === game.redPlayer || currentUser.username === game.blackPlayer))
+                            .col-md-3
+                                a(href="/games/" + game._id class="btn btn-lg") Play

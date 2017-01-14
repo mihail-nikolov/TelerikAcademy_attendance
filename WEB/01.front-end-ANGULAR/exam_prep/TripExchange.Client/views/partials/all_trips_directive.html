@@ -1,0 +1,24 @@
+﻿<table class="table table-bordered">
+    <th>
+        Driver
+    </th>
+    <th>
+        From
+    </th>
+    <th>
+        To
+    </th>
+    <th>
+        Departure Time
+    </th>
+    <th ng-if="vm.identity && vm.identity.isAuthenticated()">
+            Is Mine
+    </th>
+    <tr ng-repeat="trip in vm.trips">
+        <td>{{trip.driverName}}</td>
+        <td>{{trip.from}}</td>
+        <td>{{trip.to}}</td>
+        <td>{{trip.departureDate}}</td>
+        <td ng-if="vm.identity && vm.identity.isAuthenticated()">{{trip.isMine ? 'YES' : 'NO'}}</td>
+    </tr>
+</table>

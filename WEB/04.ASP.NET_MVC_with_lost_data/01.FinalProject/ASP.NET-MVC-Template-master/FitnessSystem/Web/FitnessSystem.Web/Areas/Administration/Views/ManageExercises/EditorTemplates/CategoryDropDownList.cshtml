@@ -1,0 +1,9 @@
+﻿@using System.Collections
+@model FitnessSystem.Web.ViewModels.Categories.ManageCategoriesSimpleViewModel
+
+@(Html.Kendo().DropDownList()
+    .Name("Category")
+    .DataValueField("Name")
+    .DataTextField("Name") 
+    .BindTo((IEnumerable)ViewData["categories"])
+)

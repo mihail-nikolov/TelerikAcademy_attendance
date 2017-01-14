@@ -1,0 +1,1 @@
+ArmyOfCreatures.Tests.BattleManagerTests.AddCreatures_ShouldThrowArgumentNullException_WhenNullCreatureIdentifier

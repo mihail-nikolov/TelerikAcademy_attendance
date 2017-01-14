@@ -1,0 +1,66 @@
+﻿@model IEnumerable<Movies.ViewModels.MovieViewModel>
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="card-panel">
+
+    <div class="row">
+        <h2 class="center">Movies</h2>
+        <a href="/Movies/Create" class="waves-effect waves-light btn-large">Create movie</a>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <table class="striped">
+                <thead>
+                    <tr>
+                        <th class="center">Name </th>
+                        <th class="center">Year </th>
+                        <th class="center">Studio </th>
+                        <th class="center">StudioAdress </th>
+                        <th class="center">Director </th>
+                        <th class="center">DirectorAge </th>
+                        <th class="center">Actress</th>
+                        <th class="center">ActressAge </th>
+                        <th class="center">Actor </th>
+                        <th class="center">ActorAge </th>
+                        <th class="center">Actions </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var movie in Model)
+                    {
+                        <tr>
+                            <td class="left">@movie.Title</td>
+                            <td class="left">@movie.Year</td>
+                            <td class="left">@movie.Studio.Name</td>
+                            <td class="left">@movie.Studio.Address</td>
+                            <td class="left">@movie.Director.Name</td>
+                            <td class="left">@movie.Director.Age</td>
+                            <td class="left">@movie.LeadingFemaleRole.Name</td>
+                            <td class="left">@movie.LeadingFemaleRole.Age</td>
+                            <td class="left">@movie.LeadingMaleRole.Name</td>
+                            <td class="left">@movie.LeadingMaleRole.Age</td>
+                            <td class="left">
+                                @Ajax.ActionLink("Edit", "Edit", new { id = movie.Id },
+                new AjaxOptions
+                {
+                    UpdateTargetId = "ajax-container",
+                    HttpMethod = "GET",
+                    InsertionMode = InsertionMode.Replace
+                }, new { @class = "btn green" })
+                                @Ajax.ActionLink("Delete", "Delete", new { id = movie.Id },
+                new AjaxOptions
+                {
+                    UpdateTargetId = "ajax-container",
+                    HttpMethod = "GET",
+                    InsertionMode = InsertionMode.Replace
+                }, new { @class = "btn red" })
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

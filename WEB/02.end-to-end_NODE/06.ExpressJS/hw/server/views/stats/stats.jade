@@ -1,0 +1,30 @@
+﻿extends ../shared/layout
+block main-content
+    .jumbotron.text-center
+        .panel.panel-primary
+            .panel-heading
+                h1.panel-title Games
+            .panel-body
+                .row
+                    .col-md-2
+                        h3 Rank
+                    .col-md-4
+                        h3 Avatar
+                    .col-md-2
+                        h3 Username
+                    .col-md-2
+                        h3 Wins
+                    .col-md-2
+                        h3 Losses 
+                each user in users
+                    .row
+                        .col-md-2
+                            h3 #{++index}
+                        .col-md-4
+                            img(src=user.img class="stats-img")
+                        .col-md-2
+                            h3 #{user.username}
+                        .col-md-2
+                            h3 #{user.wins}
+                        .col-md-2
+                            h3 #{user.losses}

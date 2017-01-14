@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Fortune-Cookie</title>
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="bower_components/toastr/toastr.css">
+</head>
+
+<body>
+    <header>
+        <div class="row">
+            <h1 class="page-header col-sm-9">Fortune-Cookie</h1>
+            <div id="login-controls" class="col-md-3">
+                <a id="login_reg_btn" class="btn btn-default btn-lg" href="#/login">Login or Register</a>
+                <button id="logout_btn" class="btn btn-default btn-lg">Logout</button>
+            </div>
+        </div>
+        <nav class="navbar navbar-default row">
+            <ul class="nav navbar-nav col-md-8">
+                <li><a href="#/home">HOME</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div id="content"></div>
+    <!-- Libs -->
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/jquery-ui/jquery-ui.js"></script>
+    <script src="bower_components/jt.timepicker/jquery.timepicker.js"></script>
+    <script src="bower_components/sammy/lib/sammy.js"></script>
+    <script src="bower_components/handlebars/handlebars.js"></script>
+    <script src="bower_components/sha1/index.js"></script>
+    <script src="bower_components/lodash/lodash.js"></script>
+    <script src="bower_components/moment/moment.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="bower_components/toastr/toastr.js"></script>
+    <!-- App -->
+    <script src="js/data.js"></script>
+    <script src="js/templates.js"></script>
+    <script src="app.js"></script>
+    <!-- App: Controllers -->
+</body>
+
+</html>

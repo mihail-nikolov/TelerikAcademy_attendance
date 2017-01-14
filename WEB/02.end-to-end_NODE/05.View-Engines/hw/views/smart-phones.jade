@@ -1,0 +1,35 @@
+doctype html
+html(lang="en")
+    head
+        title
+            | Mobile Devices
+        link(href="/bootstrap/dist/css/bootstrap.css", rel="stylesheet")
+        script(src="/jquery/dist/jquery.js")
+        script(src="/bootstrap/dist/js/bootstrap.js")
+    body
+        .container.text-center
+            header.nav.navbar-inverse.navbar-fixed-top
+                .navbar-header
+                    a.navbar-brand(href="/") Home
+                .navbar-collapse.collapse
+                    ul.nav.navbar-nav
+                        each val in ['Smart phones', 'Tablets', 'Wearables']
+                            li  
+                                a(href='/' + val)= val
+            .row
+                .col-md-12
+                    .panel.panel-primary
+                        .panel-heading
+                            h3.panel-title
+                                | Smart phones
+                    table.table-striped.table-hover
+                        each name in ['EYEPhone', 'Samun', 'Sory']
+                            tr
+                                each params in [{storage: '8GB', model: '4d', price: $600}, {storage: '4GB', model: 'plus', price: $450}, {storage: '2GB', model: '3g', price: $500}]
+                                    td
+                                        .jumbotron
+                                            img(src='http://allandroid-phones.com/wp-content/uploads/2015/08/archos-smartphone-telephone.jpg?w=72&h=70&crop=1', style='width: 100%')
+                                            div= name
+                                            div= params.storage 
+                                            div= params.model
+                                            div= params.price

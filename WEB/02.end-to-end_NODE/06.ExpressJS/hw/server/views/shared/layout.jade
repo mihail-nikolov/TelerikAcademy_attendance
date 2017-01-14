@@ -1,0 +1,39 @@
+doctype
+html
+    head
+        title Telerik File Upload System
+        link(rel="stylesheet" href="/lib/bootstrap-3.3.0/css/bootstrap.min.css")
+        link(rel="stylesheet" href="/css/site.css")
+    body
+        .navbar.navbar-primary
+            .container
+                .navbar-header
+                    a.navbar-brand(href="/") Home
+                .navbar-collapse.collapse
+                    ul.nav.navbar-nav
+                        li
+                            a(href="/games") Games
+                        li
+                            a(href="/stats") Stats
+                        if (currentUser)
+                            li
+                                a(href="/profile") #{currentUser.username}
+                            li
+                                a(href="/logout") Logout
+                        else
+                            li
+                                a(href="/register") Register
+                            li
+                                a(href="/login") Login
+
+        .container
+            if (errorMessage)
+                .alert.alert-danger #{errorMessage}
+
+            block main-content
+
+        footer
+            p.text-center
+                | TicTacTOeFooter
+
+                include scripts

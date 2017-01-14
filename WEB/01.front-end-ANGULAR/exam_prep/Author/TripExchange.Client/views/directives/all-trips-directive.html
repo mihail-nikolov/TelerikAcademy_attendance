@@ -1,0 +1,22 @@
+﻿<table class="table table-bordered">
+    <tr>
+        <th>Driver</th>
+        <th >From</th>
+        <th>To</th>
+        <th> Departure Time </th>
+        <th class="text-center" ng-if="vm.identity && vm.identity.isAuthenticated()">
+            Is Mine
+        </th>
+    </tr>
+    <tr ng-repeat="trip in vm.trips" ng-class-even="'even-class'" ng-class-odd="'odd-class'">
+        <td>
+            <a href="#/trips/details/{{trip.id}}/{{trip.driverName}}">{{trip.driverName}}</a>
+        </td>
+        <td > {{trip.from}} </td>
+        <td>  {{trip.to}} </td>
+        <td>{{trip.departureDate | beautifulDate}}</td>
+        <td class="text-center" ng-if="vm.identity && vm.identity.isAuthenticated()">
+            <img ng-src="/img/{{trip.isMine ? 'ok.jpg' : 'no-ok.png'}}"
+        </td>
+    </tr>
+</table>

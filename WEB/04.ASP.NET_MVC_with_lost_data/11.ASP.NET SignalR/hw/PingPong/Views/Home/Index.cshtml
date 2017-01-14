@@ -1,0 +1,90 @@
+﻿@{
+    ViewBag.Title = "PingPong";
+}
+<h1 class="text-center">PingPongGame</h1>
+<button onclick="connectToGame()">Connect</button>
+
+
+<div id="field">
+    <div id="player1">
+
+    </div>
+    <div id="ball"></div>
+    <div id="player2">
+
+    </div>
+</div>
+
+<div id="score">
+    p1 :<span id="p1Score"></span>
+    <br />
+    p2:<span id="p2Score"></span>
+</div>
+
+<script src="~/Scripts/rsvp.js"></script>
+<script>
+
+    function checkForUser(user) {
+        return user;
+    }
+
+    function connectToGame() {
+    }
+
+ 
+    function gameWinConditions() {
+        if ($ball.x < 200 || $ball.x > 700) {
+            if ($ball.moveLeft) {
+                game.server.gameWon(0);
+            }
+            else {
+                game.server.gameWon(1);
+            }
+        }
+    }
+
+    function resetGame(player) {
+    }
+
+    var game = $.connection.game;
+    $.connection.hub.start();
+
+    originalValues = {
+        p1x: 200,
+        p2x: 700,
+        py: 50,
+        bx: 400,
+        by: 100
+    };
+
+    $player1 = {
+        jquery: $("#player1"),
+        x: 200,
+        y: 50        
+    };
+
+    $player2 = {
+        jquery: $("#player2"),
+        x: 700,
+        y: 50
+    };
+
+    $ball = {
+        jquery: $("#ball"),
+        x: 400,
+        y: 100,
+        moveLeft: 0,
+        move: function () {
+            if (this.moveLeft) {
+                this.x -= 10;
+            }
+            else
+            {
+                this.x += 10;
+            }
+        },
+        changeDirection: function () {
+            this.moveLeft = !this.moveLeft;
+        }
+    }
+</script>

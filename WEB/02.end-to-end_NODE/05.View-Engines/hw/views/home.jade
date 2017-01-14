@@ -1,0 +1,23 @@
+doctype html
+html(lang="en")
+    head
+        title
+            | Mobile Devices
+        link(href="/bootstrap/dist/css/bootstrap.css", rel="stylesheet")
+        script(src="/jquery/dist/jquery.js")
+        script(src="/bootstrap/dist/js/bootstrap.js")
+    body
+        .container.text-center
+            header.nav.navbar-inverse.navbar-fixed-top
+                .navbar-header
+                    a.navbar-brand(href="/") Home
+                .navbar-collapse.collapse
+                    ul.nav.navbar-nav
+                        each val in ['Smart phones', 'Tablets', 'Wearables']
+                            li  
+                                a(href='/' + val)= val
+            .jumbotron
+                h1
+                    | Welcome to our site! 
+                h2
+                    | Be the first and win the new EYEPhone!

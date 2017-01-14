@@ -1,0 +1,186 @@
+{
+  "users": [
+    {
+      "username": "Minkov",
+      "passHash": "da39a3ee5e6b4b0d3255bfef95601890afd80709",
+      "usernameToLower": "minkov",
+      "id": "16655985-e510-43d4-ad1c-2388c76d1ef6",
+      "authKey": "16655985-e510-43d4-ad1c-2388c76d1ef6FwHCPd*bP:.;Fu&:evl)RPGg"
+    },
+    {
+      "username": "Minkov3",
+      "passHash": "1234567890123456789012345678901234567890",
+      "usernameToLower": "minkov3",
+      "id": "bd04b3b8-5586-47ad-bf8f-db6c531dbb73",
+      "authKey": "bd04b3b8-5586-47ad-bf8f-db6c531dbb73erxSIAJyVOzIEIrpMFbanscO"
+    },
+    {
+      "username": "mnikolov",
+      "passHash": "7110eda4d09e062aa5e4a390b0a572ac0d2c0220",
+      "usernameToLower": "mnikolov",
+      "id": "723253a6-fe17-477b-bd88-3257e53c741f"
+    },
+    {
+      "username": "goshkata",
+      "passHash": "40bd001563085fc35165329ea1ff5c5ecbdbbeef",
+      "usernameToLower": "goshkata",
+      "id": "57187350-08b6-40b7-b2d6-fbd88743ff65"
+    },
+    {
+      "username": "mihail",
+      "passHash": "40bd001563085fc35165329ea1ff5c5ecbdbbeef",
+      "usernameToLower": "mihail",
+      "id": "fe545ba8-0778-46bd-a896-b84496343d59",
+      "authKey": "fe545ba8-0778-46bd-a896-b84496343d59FDXFRHOOAFsRgxgaeiqoeNpE"
+    },
+    {
+      "username": "misho",
+      "passHash": "40bd001563085fc35165329ea1ff5c5ecbdbbeef",
+      "usernameToLower": "misho",
+      "id": "be755198-66f9-4556-b359-437cec81adb2"
+    },
+    {
+      "username": "peshkata",
+      "passHash": "40bd001563085fc35165329ea1ff5c5ecbdbbeef",
+      "usernameToLower": "peshkata",
+      "id": "426d8016-cf08-4ddb-aac9-aa08b24c37e8",
+      "authKey": "426d8016-cf08-4ddb-aac9-aa08b24c37e8IPJrAIfhjuKdWNOWgCtDTxhS"
+    },
+    {
+      "username": "pesho23",
+      "passHash": "40bd001563085fc35165329ea1ff5c5ecbdbbeef",
+      "usernameToLower": "pesho23",
+      "id": "5d74f4be-6193-42da-8b72-24c2d3de5b61",
+      "authKey": "5d74f4be-6193-42da-8b72-24c2d3de5b61cwNUTzXRfjcLZDhXYKPTlORr"
+    },
+    {
+      "username": "georgi",
+      "passHash": "40bd001563085fc35165329ea1ff5c5ecbdbbeef",
+      "usernameToLower": "georgi",
+      "id": "df64fb27-682f-4be0-af35-74a102f6126f"
+    },
+    {
+      "username": "gogo",
+      "passHash": "40bd001563085fc35165329ea1ff5c5ecbdbbeef",
+      "usernameToLower": "gogo",
+      "id": "3a09259a-0741-41c9-b6c9-ac163a8cb8c9"
+    },
+    {
+      "username": "eli",
+      "passHash": "40bd001563085fc35165329ea1ff5c5ecbdbbeef",
+      "usernameToLower": "eli",
+      "id": "fbc76f83-7508-4d83-9c57-8651576c2104",
+      "authKey": "fbc76f83-7508-4d83-9c57-8651576c2104GwJOgcUwIooMcFHGFStHqvLr"
+    },
+    {
+      "username": "djingibi",
+      "passHash": "7110eda4d09e062aa5e4a390b0a572ac0d2c0220",
+      "usernameToLower": "djingibi",
+      "id": "482821a5-4cfd-4ed4-9665-27bf501959b6",
+      "authKey": "482821a5-4cfd-4ed4-9665-27bf501959b6bysChpEHaGsrLcSypUzDnSpg"
+    },
+    {
+      "username": "venci",
+      "passHash": "40bd001563085fc35165329ea1ff5c5ecbdbbeef",
+      "usernameToLower": "venci",
+      "id": "3cbdf110-028a-4528-b9bc-8dc4e88667fe",
+      "authKey": "3cbdf110-028a-4528-b9bc-8dc4e88667fehMHwroYRxOCFTnBucwTcRqAF"
+    },
+    {
+      "username": "gyza",
+      "passHash": "40bd001563085fc35165329ea1ff5c5ecbdbbeef",
+      "usernameToLower": "gyza",
+      "id": "3c463a66-24a9-4a8b-9382-7a2496830d85",
+      "authKey": "3c463a66-24a9-4a8b-9382-7a2496830d85CKoCwCkhuDrYvvzWnAFiSpng"
+    },
+    {
+      "username": "goshkata56",
+      "passHash": "40bd001563085fc35165329ea1ff5c5ecbdbbeef",
+      "usernameToLower": "goshkata56",
+      "id": "e9fb52d9-5dcc-4437-8c69-85535bd70c96",
+      "authKey": "e9fb52d9-5dcc-4437-8c69-85535bd70c96gVjekRKXaTWxWnSLCXorgHVw"
+    }
+  ],
+  "cookies": [
+    {
+      "text": "mycoockie",
+      "category": "spiderman",
+      "img": "http://vignette1.wikia.nocookie.net/deathbattle/images/4/4b/Spiderman_png_by_captainjackharkness-d5cbru1.png/revision/latest?cb=20141120012050",
+      "userId": "fbc76f83-7508-4d83-9c57-8651576c2104",
+      "likes": 5,
+      "dislikes": 4,
+      "shareDate": "2015-09-10T15:20:29.589Z",
+      "id": "a3b988d3-11a9-465e-bf6e-89c44a43eed6"
+    },
+    {
+      "text": "mycoockie",
+      "category": "spiderman",
+      "img": "http://vignette1.wikia.nocookie.net/deathbattle/images/4/4b/Spiderman_png_by_captainjackharkness-d5cbru1.png/revision/latest?cb=20141120012050",
+      "userId": "3cbdf110-028a-4528-b9bc-8dc4e88667fe",
+      "likes": 0,
+      "dislikes": 0,
+      "shareDate": "2015-09-10T17:36:14.263Z",
+      "id": "81c6fc24-1c2f-4777-b19c-a4af23d26c76"
+    },
+    {
+      "text": "dupeto",
+      "category": "spiderman",
+      "img": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQJmWePm3ccquKiYByj3cvH5rWDO7x0tVak-ZCV00wygOltJbX6",
+      "userId": "3c463a66-24a9-4a8b-9382-7a2496830d85",
+      "likes": 1,
+      "dislikes": 1,
+      "shareDate": "2015-09-10T17:42:35.035Z",
+      "id": "ab85d56e-ff4c-4a37-9382-827472e336da"
+    },
+    {
+      "text": "asda",
+      "category": "spiderman",
+      "img": "https://www.google.bg/search?q=spiderman&source=lnms&tbm=isch&sa=X&ved=0CAcQ_AUoAWoVChMIg4jEyvjsxwIVJL1yCh3KlgFu&biw=1525&bih=707&dpr=0.9#imgrc=zNoRyLcesxfYGM%3A",
+      "userId": "3c463a66-24a9-4a8b-9382-7a2496830d85",
+      "likes": 0,
+      "dislikes": 0,
+      "shareDate": "2015-09-10T17:43:37.297Z",
+      "id": "0ad21ccc-3a14-4c41-8c12-520f7dac3e49"
+    },
+    {
+      "text": "new",
+      "category": "spidi",
+      "img": "https://dayinthelifeofapurpleminion.files.wordpress.com/2014/12/batman-exam.jpg",
+      "userId": "3c463a66-24a9-4a8b-9382-7a2496830d85",
+      "likes": 0,
+      "dislikes": 0,
+      "shareDate": "2015-09-10T17:44:22.435Z",
+      "id": "b39ce472-30ec-4929-bc52-1ec290e7e96b"
+    },
+    {
+      "text": "dupeto",
+      "category": "spiderman",
+      "img": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQJmWePm3ccquKiYByj3cvH5rWDO7x0tVak-ZCV00wygOltJbX6",
+      "userId": "3c463a66-24a9-4a8b-9382-7a2496830d85",
+      "likes": 0,
+      "dislikes": 0,
+      "shareDate": "2015-09-10T18:19:31.182Z",
+      "id": "57942f57-d6a3-4d59-a77f-ea385c9747f7"
+    },
+    {
+      "text": "eafasf",
+      "category": "nqma",
+      "img": "https://dayinthelifeofapurpleminion.files.wordpress.com/2014/12/batman-exam.jpg",
+      "userId": "3c463a66-24a9-4a8b-9382-7a2496830d85",
+      "likes": 1,
+      "dislikes": 0,
+      "shareDate": "2015-09-10T18:19:48.407Z",
+      "id": "8b620a78-b39c-40d4-991c-1ba4608955b8"
+    },
+    {
+      "text": "spiderman",
+      "category": "spiderman",
+      "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQW6snykrpV6eYUODmsKmCYXQbJz75Uq0h_GQjRxoDgakmIE3mA",
+      "userId": "e9fb52d9-5dcc-4437-8c69-85535bd70c96",
+      "likes": 1,
+      "dislikes": 0,
+      "shareDate": "2015-09-10T19:15:51.362Z",
+      "id": "7401fe8c-0e0b-4740-91be-5de79e844d47"
+    }
+  ]
+}

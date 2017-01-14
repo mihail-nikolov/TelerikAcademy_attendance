@@ -1,0 +1,35 @@
+doctype html
+html(lang="en")
+    head
+        title
+            | Mobile Devices
+        link(href="/bootstrap/dist/css/bootstrap.css", rel="stylesheet")
+        script(src="/jquery/dist/jquery.js")
+        script(src="/bootstrap/dist/js/bootstrap.js")
+    body
+        .container.text-center
+            header.nav.navbar-inverse.navbar-fixed-top
+                .navbar-header
+                    a.navbar-brand(href="/") Home
+                .navbar-collapse.collapse
+                    ul.nav.navbar-nav
+                        each val in ['Smart phones', 'Tablets', 'Wearables']
+                            li
+                                a(href='/' + val)= val
+            .row
+                .col-md-12
+                    .panel.panel-primary
+                        .panel-heading
+                            h3.panel-title
+                                | Wearables
+                    table.table-striped.table-hover
+                        each name in ['Haveu', 'Simuens', 'Elcatul']
+                            tr
+                                each params in [{storage: '32GB', model: '4ddsf', price: $2600}, {storage: '16GB', model: 'GJHSNDF', price: $1450}, {storage: '8GB', model: 'dsfsdf', price: $1000}]
+                                    td
+                                        .jumbotron
+                                            img(src='https://www.jebbit.com/wp-content/uploads/2015/03/wearables.jpg', style='width: 100%')
+                                            div= name
+                                            div= params.storage
+                                            div= params.model
+                                            div= params.price

@@ -1,0 +1,128 @@
+{
+  "users": [
+    {
+      "username": "mnikolov",
+      "passHash": "40bd001563085fc35165329ea1ff5c5ecbdbbeef",
+      "usernameLower": "mnikolov",
+      "authKey": "undefinedrXT%KRK$fZ_wl+NBlZYyeMkLiZjVxJsj(tUa*Sl$N+ccn@mTfZu",
+      "id": "050d17f0-450c-4a73-9cb1-7ae52b3ad40c",
+      "todos": [
+        {
+          "id": 997732,
+          "text": "123",
+          "state": false,
+          "category": "22"
+        },
+        {
+          "id": 69333,
+          "text": "1231",
+          "state": false,
+          "category": "123"
+        }
+      ]
+    },
+    {
+      "username": "lisa",
+      "passHash": "40bd001563085fc35165329ea1ff5c5ecbdbbeef",
+      "usernameLower": "lisa",
+      "authKey": "undefinedJUAILTB#pirB=rVq-$p-Q(@D#BAZez@vHe@qxxxa((g_!N@&MRM",
+      "id": "6847d5b9-0aee-45f4-92ba-7b3144dc0f1d",
+      "todos": [
+        {
+          "id": 119741,
+          "text": "1",
+          "state": false,
+          "category": "1"
+        },
+        {
+          "id": 143414,
+          "text": "2",
+          "state": false,
+          "category": "2"
+        },
+        {
+          "id": 246062,
+          "text": "123",
+          "state": false,
+          "category": "1123"
+        }
+      ]
+    },
+    {
+      "username": "11",
+      "passHash": "12c6fc06c99a462375eeb3f43dfd832b08ca9e17",
+      "usernameLower": "11",
+      "authKey": "undefineddkh-h%X#!IzUn&P+W*q+xl-pW@Pkos#jBoI^YlBi#CCeNF-betl",
+      "id": "316d4f9c-ece0-4bc7-b791-ab13a87ca09f"
+    },
+    {
+      "username": "jiko",
+      "passHash": "d87c6919102588b08ec7cd4da1064324856ccfb2",
+      "usernameLower": "jiko",
+      "authKey": "undefinedhLV&l%OOF@e@DgoovV$Mfkn^CZJaODlX#EmHBbY=BlF$crKtDxM",
+      "id": "331d6762-e786-416c-8956-c3b756efe5c7",
+      "todos": [
+        {
+          "id": 576300,
+          "text": "12",
+          "state": false,
+          "category": "12"
+        }
+      ]
+    },
+    {
+      "username": "lisicata",
+      "passHash": "40bd001563085fc35165329ea1ff5c5ecbdbbeef",
+      "usernameLower": "lisicata",
+      "authKey": "undefinedUmvoXb%T##VUTluUkG@fYq&+cY@ssl(H_SQ##KjMrXAjOqHGcgW",
+      "id": "5ec094a3-9e71-40dc-929b-fced73f91246",
+      "todos": [
+        {
+          "id": 336480,
+          "text": "myTODO",
+          "state": false,
+          "category": "TODOlisa"
+        }
+      ]
+    },
+    {
+      "username": "mni",
+      "passHash": "40bd001563085fc35165329ea1ff5c5ecbdbbeef",
+      "usernameLower": "mni",
+      "authKey": "undefinedIbA!zEZ=YIVoIgqZpUKv+GuOJUsQYanVx)$YExHOf-hcy^a(*Mw",
+      "id": "4785d653-12ab-48f2-af8e-499db5eb7b6d",
+      "todos": [
+        {
+          "id": 119501,
+          "text": "123",
+          "state": true,
+          "category": "45"
+        },
+        {
+          "id": 137878,
+          "text": "1234",
+          "state": false,
+          "category": "5555"
+        },
+        {
+          "id": 214074,
+          "text": "abv",
+          "state": false,
+          "category": "123"
+        },
+        {
+          "id": 832491,
+          "text": "newone",
+          "state": true,
+          "category": "123"
+        },
+        {
+          "id": 902479,
+          "text": "asdasdasd",
+          "state": true,
+          "category": "123"
+        }
+      ]
+    }
+  ]
+}

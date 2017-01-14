@@ -1,0 +1,29 @@
+﻿@model IEnumerable<FitnessSystem.Web.ViewModels.Categories.CategoriesPageViewModel>
+@{
+    ViewBag.Title = "Categories";
+}
+
+<h2>Categories</h2>
+<div id="toUpdate">
+    @Ajax.ActionLink("Create new", "CreateNew", "Categories", new AjaxOptions
+{
+    UpdateTargetId = "toUpdate",
+    InsertionMode = InsertionMode.Replace
+},
+    new
+    {
+        @class = "btn btn-primary"
+    })
+</div>
+
+@foreach (var category in Model)
+{
+    <strong><a href="~/Categories/Details/@category.Id">@category.Name</a></strong><br />
+    <i>exercises: </i><strong>@category.Exercises</strong>
+    <br />
+}
+
+@section scripts{
+    @Scripts.Render("~/bundles/jquery")
+    <script src="@Url.Content("~/Scripts/jquery.unobtrusive-ajax.js")" type="text/javascript"></script>
+}

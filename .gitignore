@@ -107,6 +107,9 @@ csx
 AppPackages/
 
 # Others
+*telerikAcademyMaster/
+*node_modules
+*bower_components
 sql/
 *.Cache
 ClientBin/

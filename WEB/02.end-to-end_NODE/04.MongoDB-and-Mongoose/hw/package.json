@@ -1,0 +1,14 @@
+{
+  "name": "mongo-chat-db",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "author": "mjn",
+  "license": "MIT",
+  "dependencies": {
+    "mongodb": "^2.1.3"
+  }
+}

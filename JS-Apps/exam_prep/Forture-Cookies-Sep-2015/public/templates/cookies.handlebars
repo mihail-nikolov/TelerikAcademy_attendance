@@ -1,0 +1,39 @@
+
+<h2>Coockies</h2>
+<h3>filter By category:</h3>
+<div class="row">
+	<input placeholder="category" type="text" id="catToFilter"  />
+</div>
+<div class="row">
+    <button id="category-filter" class="btn btn-default col-sm-1 col-sm-1">Filter</button>
+</div>
+<h3>Sort By:</h3>
+<div class="row">
+    <button id="like-sort" class="btn btn-default col-sm-1 col-sm-1">Likes</button>
+    <button id="like-sort" class="btn btn-default col-sm-1 col-sm-1">DisLikes</button>
+</div>
+<h3>Click home to go see again all cookies</h3>
+<a href="#/cookies/add">Add new</a>
+
+{{#each this}}
+<h3>
+  <a href="#/cookies?category={{category}}">{{category}}</a>
+</h3>
+
+<div class="cookie-box">
+	<div class="row">
+		<img src="{{img}}" alt="Mountain View" style="width:254px;height:158px;">
+	</div>
+	<div class="row">
+		<div class="col-sm-1 col-md-3">
+		<strong>{{text}}. </strong>likes: <strong>{{likes}} </strong>dislikes: <strong>{{dislikes}} </strong>
+		</div>
+	</div>
+    <div class="row">
+    	<button id="{{id}}" class="btn btn-default col-sm-1 col-sm-1 btn-like">Like</button>
+    	<button  id="{{id}}" class="btn btn-default col-sm-1 col-sm-1 btn-dislike">DisLike</button>
+    	<button  id="{{id}}" class="btn btn-default col-sm-1 col-sm-1 btn-share">Share</button>
+	</div>
+</div>
+
+{{/each}}

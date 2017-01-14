@@ -1,0 +1,16 @@
+﻿<table class="table table-bordered">
+    <tr>
+        <th>Name</th>
+        <th> License </th>
+        <th> TotalUsers </th>
+        <th>CreatedOn</th>
+    </tr>
+    <tr ng-repeat="project in vm.projects" ng-class-even="'even-class'" ng-class-odd="'odd-class'">
+        <td>
+            <a href="#/projects/{{project.Id}}">{{project.Name}}</a>
+        </td>
+        <td > {{project.License}} </td>
+        <td>  {{project.TotalUsers}} </td>
+        <td>{{project.CreatedOn | beautifulDate}}</td>
+    </tr>
+</table>

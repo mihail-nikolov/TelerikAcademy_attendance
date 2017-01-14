@@ -1,0 +1,41 @@
+extends ../shared/layout
+block main-content
+    .container
+        .row
+            h3 title: #{playlist.title}
+            h3 creator: #{playlist.creator}
+            h3 date: #{playlist.date}
+            h3 description: #{playlist.description}
+            h3 category: #{playlist.category}
+            h3 rating: #{playlist.rating}
+            if currentUser.username != playlist.creator
+                label(for="rating") Add your rating
+                    input(id="rating" class="form-control" type="number" name="rating" step=1 min="1" max="5")
+                    input(type="submit" class="btn btn-lg" value="rate")
+                    br
+            if currentUser.username == playlist.creator
+                form(method="put" id="form-upload" enctype="multipart/form-data" action="/playlists/details/#{playlist._id}/addAccessor").row
+                    .col-md-10
+                        label(for="username") Add user that can see playlist
+                        input(id="username" class="form-control" type="text" name="username" placeholder="enter userName here")
+                        br
+                        input(type="submit" class="btn btn-lg" value="addUser")
+                br
+                label(for="video") Enter link to video you want to add
+                br
+                input(id="video" class="form-control" type="text" name="video" placeholder="link here")
+                br
+                input(type="submit" class="btn btn-lg" value="AddVideo")
+                br
+
+            each video in playlist.videos
+                p link : #{video}
+            br
+            each comment in playlist.comments
+                p #{comment.username} : #{comment.content}
+            br
+            label(for="comment") You can write your comment here:
+            br
+            input(id="comment" class="form-control" type="text" name="comment" placeholder="Enter your comment here")
+            br
+            input(type="submit" class="btn btn-lg" value="AddComment")

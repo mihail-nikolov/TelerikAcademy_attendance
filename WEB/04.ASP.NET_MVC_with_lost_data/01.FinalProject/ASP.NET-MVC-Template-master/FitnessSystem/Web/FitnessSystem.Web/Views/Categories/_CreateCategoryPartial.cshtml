@@ -1,0 +1,24 @@
+﻿@model FitnessSystem.Web.ViewModels.Categories.CategorySimpleViewModel
+<h3>Create new category</h3>
+
+@using (Html.BeginForm("Create", "Categories", new { area = string.Empty }, FormMethod.Post))
+{
+    @Html.ValidationSummary(true)
+    @Html.AntiForgeryToken()
+
+    <div class="row">
+        <div class="input-field">
+            @Html.LabelFor(m => m.Name)
+            @Html.EditorFor(m => m.Name)
+            @Html.ValidationMessageFor(m => m.Name)
+        </div>
+    </div>
+    <div class="row">
+        <div class="center">
+            <input type="submit" value="Create" class="btn" />
+        </div>
+    </div>
+}
+
+@Scripts.Render("~/bundles/jqueryval")
+

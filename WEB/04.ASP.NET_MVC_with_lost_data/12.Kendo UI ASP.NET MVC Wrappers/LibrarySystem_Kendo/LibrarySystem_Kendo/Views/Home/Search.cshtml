@@ -1,0 +1,14 @@
+﻿@model IEnumerable<LibrarySystem_Kendo.Models.Book>
+
+@if (!Model.Any())
+{
+    <h3 class="text-error">No items matched your search query!</h3>
+}
+else
+{
+    <h2>search results</h2>
+    foreach (var book in Model)
+    {
+        <a href=@string.Format("/Books/Details/{0}", book.ID)> @book.Title</a><br />
+    }
+}

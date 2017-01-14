@@ -1,0 +1,17 @@
+CREATE PROCEDURE AddColors
+AS
+	DECLARE @colorsCount int
+	SET @colorsCount = (SELECT Count(*) FROM Colors c)
+	
+	IF @colorsCount=0
+		BEGIN
+			INSERT INTO Colors Values
+				('Black'),
+				('White'),
+				('Red'),
+				('Mixed')
+		END
+GO
+
+EXEC AddColors
+GO

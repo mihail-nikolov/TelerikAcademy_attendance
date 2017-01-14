@@ -1,0 +1,20 @@
+Connection string for "PetStore" database:
+metadata=res://*/PetStoreEntities.csdl|res://*/PetStoreEntities.ssdl|res://*/PetStoreEntities.msl;provider=System.Data.SqlClient;provider connection string="data source=MIHAIL\SQLEXPRESS;initial catalog=PetStore;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework"
+
+Connection string for "SocialNetwork" database:
+	(fill in here)
+BEFORE RUNNIG the consoleApp for Pets run the PROC ( from task 2.) to fill in the colors
+Relationships for "PetStore" database: 
+	Pets -> Colors
+	Pets -> Species
+	Species -> Countries
+	Species <- ProductsSpecies ->Products
+	Products -> ProductCategories
+	
+
+Relationships for "SocialNetwork" database: 
+	(fill in here)
+	
+JSON Result files location: (fill in here)
+
+

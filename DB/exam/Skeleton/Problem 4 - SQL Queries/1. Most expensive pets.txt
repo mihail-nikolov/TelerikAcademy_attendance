@@ -1,0 +1,5 @@
+USE PetStore;
+
+SELECT TOP 5 p.Price, p.Breed, DATEPART(yyyy,p.DateBirth) AS BirthYEAR
+	FROM Pets p WHERE DATEPART(yyyy,p.DateBirth) >= '2012' 
+ORDER BY p.Price DESC

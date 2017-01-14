@@ -1,0 +1,17 @@
+extends ../shared/layout
+block main-content
+    .well.bs-component.text-center
+        form(method="post").form-horizontal
+            legend Login
+            fieldset
+                .form-group
+                    label(for="username").col-lg-2.control-label Username
+                    .col-lg-10
+                        input(id="username" class="form-control" type="text" name="username" placeholder="Username")
+                .form-group    
+                    label(for="password").col-lg-2.control-label Password
+                    .col-lg-10    
+                        input(id="password" class="form-control" type="password" name="password" placeholder="Password")
+                .form-group      
+                    .col-lg-12
+                        input(type="submit" class="btn btn-primary" value="Login").pull-right

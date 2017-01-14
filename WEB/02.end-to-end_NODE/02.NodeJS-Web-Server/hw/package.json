@@ -1,0 +1,13 @@
+{
+  "name": "a",
+  "version": "1.0.0",
+  "description": "web server for uploading files",
+  "main": "server.js",
+  "author": "mihail",
+  "license": "ISC",
+  "dependencies": {
+    "formidable": "^1.0.17",
+    "fs-extra": "^0.26.3",
+    "uuid": "^2.0.1"
+  }
+}

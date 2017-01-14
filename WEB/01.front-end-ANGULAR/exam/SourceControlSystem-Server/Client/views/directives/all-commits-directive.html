@@ -1,0 +1,12 @@
+﻿<table class="table table-bordered">
+    <tr>
+        <th>UserName</th>
+        <th>CreatedOn</th>
+    </tr>
+    <tr ng-repeat="commit in vm.publicCommits" ng-class-even="'even-class'" ng-class-odd="'odd-class'">
+        <td>
+            <a href="#/commits/{{commit.Id}}">{{commit.UserName }}</a>
+        </td>
+        <td>{{commit.CreatedOn | beautifulDate}}</td>
+    </tr>
+</table>

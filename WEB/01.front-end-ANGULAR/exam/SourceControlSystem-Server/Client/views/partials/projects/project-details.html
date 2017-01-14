@@ -1,0 +1,15 @@
+﻿<div class="container">
+    <div ng-show="vm.identity.isAuthenticated()">
+        <h2 class="text-center">
+            Project Details
+        </h2>
+        <p>name: {{vm.project.Name}}</p>
+        <p>license: {{vm.project.License}}</p>
+        <p>totalUsers: {{vm.project.TotalUsers}}</p>
+        <p>CreatedOn: {{vm.project.CreatedOn | beautifulDate}}</p>
+        <a href="#/commits/add" ng-show="vm.identity.isAuthenticated()" class="btn btn-sm btn-primary pull-right">Add</a>
+    </div>
+    <div ng-hide="vm.identity.isAuthenticated()">
+        <h2 class="text-center">Not Authorized!</h2>
+    </div>
+</div>

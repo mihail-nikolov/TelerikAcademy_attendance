@@ -1,0 +1,82 @@
+Blank Solution
+	Add Class library (SolutionName.Models)
+		Add Classes for each Table
+	
+			Foreign key ONE TO MANY:	1/In the 'ONE' Class:
+										field - private ICollection<Type> manySomething;
+										add property - public virtual ICollection<Type> ManySomething 
+														{
+															get {return this.manySomething;}
+															set {this.manySomething = value;}
+														}
+										in constructor - this.manySomething = new HashSet<Type>();
+										
+										
+										2/In the 'MANY' Class:
+										add property - 	public int OneSomethingId {get;set;}
+														public virtual OneSomething OneSomething {get;set;}
+														
+			Foreign key MANY TO MANY:	like the previous one, but add the first part in the both classes.
+											
+	Add Class library (SolutionName.Data)
+		Add EF
+		Add Class (NameDbContext) : DbContext
+		In this one reference the above Class library (SolutionName.Models)
+		Add property for each Models.Class:		public virtual IDbSet<Album> Albums {get;set;} (virtual is only when writing Mocking Tests)
+		
+	Add Console Application (SolutionName.ConsoleClient)
+		Set as Startup Project
+		Reference the above two projects .Models and .Data
+		
+		Right-click on the Solution --> Manage NuGet Packages --> Filter:Installed --> Choose EF to be installed in both .Models and .ConsoleClient
+			
+			var db = new NameDbContext();
+			db.Database.CreateIfNotExists(); ???????? maybe
+			...
+			
+	App.config, where the app starts (Data Source = server, Initial Catalog = database,Integrated Security=true == Windows Authentication)
+ <connectionStrings>
+    <add name="StudentsDb" connectionString="Data Source=.\SQLEXPRESS;Initial Catalog=StudentsSystem;Integrated Security=True" providerName="System.Data.SqlClient"/>
+  </connectionStrings>
+		
+		and in Class NameDbContext initialize constructor inheriting the base one - public NameDbContext(): base("ConnectionString.Name"){}
+		
+	Code First Migration 
+		Open Package Manager Console and on Default Project: [..].Data run: Enable-Migrations
+		In folder Migrations, Change Class Configuration to be public
+			In its constructor set:
+									this.AutomaticMigrationsEnabled = true;
+									this.AutomaticMigrationDataLossAllowed = true; (for making data loss changes/deleting something on purpose, but it is safer to set it to false)
+			In Seed() Method(use to add initial data): context.Something
+																.AddOrUpdate(
+																s => s.Name, 
+																new Something{blablbla}, 
+																new Something{blbalba});	
+								
+		In the Startup Main() method add at the top:
+			Database.SetInitializer(new MigrateDatabaseToLatestVersion<NameDbContext, Configuration>());
+			
+	Mapping - Annotations
+		Reference System.ComponentModel.DataAnnotations (If not already auto-ref by the EF)
+		Setting different attributes for the properties in the Models Classes
+			[Key] == Primary Key (Use when you want the primary key to be with some random name and not 'Id' or 'ClassNameId')
+			[Required] == NOT NULL (If the type does not accept null by default, EF detects that and auto-sets them to NOT NULL)
+			[MaxLength(number)]
+			[MinLength(number)] - Only validates in the EF, does not mean nothing for the database
+			[Range(number,number)] - for int
+			[NotMapped] - the column will not go into DB
+			[ComplexType], 
+			[Column("ColumnName", TypeName="someDBtype")]
+			[Index(IsUnique=true/false)]
+			[ForeignKey] - If EF does not figure this out by itself
+			[InverseProperty()] - useful when making relations to itself (self-relations)
+			
+		OR with in NameDbContext.cs:
+					protected override OnModelCreating() Method 
+					{
+						modelBuilder.Entity<Type>().Property...
+						
+						base.OnModel.Creating(modelBuilder);
+					}
+			
+	

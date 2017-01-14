@@ -1,0 +1,72 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+@model IEnumerable<LibrarySystem_Kendo.Models.Category>
+
+
+<div class="jumbotron">
+    <h1>Books</h1>
+</div>
+@*@using (Ajax.BeginForm("Search", "Home", FormMethod.Post,
+                                                new AjaxOptions
+                                                {
+                                                    InsertionMode = InsertionMode.Replace,
+                                                    HttpMethod = "POST"
+                                                }))
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true)
+        <div>
+            @Html.TextBox("query")
+            <input type="submit" value="Search" />
+        </div>
+    }*@
+<div>
+    <form action="/Home/Search" method="post">
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true)
+        @(Html.Kendo()
+            .AutoComplete()
+            .Name("search")
+            .DataTextField("Title")
+            .MinLength(2)
+            .Placeholder("Enter book")
+            .DataSource(data =>
+            {
+                data.Read(read =>
+                {
+                    read.Action("GetAutocompleteData", "Home").Data("onAdditionalData");
+                })
+                    .ServerFiltering(true);
+            }))
+        <input type="submit" />
+    </form>
+</div>
+<div class="row">
+    @foreach (var category in Model)
+    {
+        <h3>@category.Name</h3>
+        if (!category.Books.Any())
+        {
+            <div>no books</div>
+        }
+        else
+        {
+            foreach (var book in category.Books)
+            {
+                <ul>
+                    <li>
+                        <a href=@string.Format("/Books/Details/{0}", book.ID)> @string.Format(@"""{0}"" by {1}", book.Title, book.Author)</a>
+                    </li>
+                </ul>
+            }
+        }
+    }
+</div>
+<script>
+    function onAdditionalData() {
+        return {
+            text: $('#search').val(),
+        }
+    }
+</script>

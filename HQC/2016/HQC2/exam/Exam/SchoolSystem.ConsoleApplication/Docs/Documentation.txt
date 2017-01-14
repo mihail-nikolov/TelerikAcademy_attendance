@@ -1,0 +1,16 @@
+﻿Bottleneck description: --------------------
+#1:in Engine, Writeline -> the whole method is a bottleneck and not needed at all.
+note: the implementation is changed -> the WriteLine Method is removed and for writing is used IWriter Writer.Write()
+
+
+Bug reports: --------------------
+Format: #Bug number - Class name - Bug description
+Example: #1 - PartnerBankingService - The variable "money" at line 36 overflows when you try to add more than 2.1 billion dollars.
+--------
+#1 - CreateStudentCommand - did not inherit ICommand => creating student was not succesfull
+#2 - In Student - ListMarks() - when has no marks prints empty string.
+#3 - Engine - Run() - the "while" should "break" when nullOrEmpty line (not "End")
+#4 - Student - ListMarsk - do not print "The student has these marks"
+#5? - CreateStudentCommand - did not list Sixth(but 6)?
+
+failing tests have threading issues with another and should be run separately

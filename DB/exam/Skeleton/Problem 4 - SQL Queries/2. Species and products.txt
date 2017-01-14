@@ -1,0 +1,6 @@
+SELECT s.Name, COUNT(ps.ProductID) AS CountPerSpecies
+	FROM Species s 
+		JOIN ProductsSpecies ps
+			ON s.SpeciesID = ps.SpeciesID
+GROUP BY s.Name, ps.ProductID
+ORDER BY CountPerSpecies ASC

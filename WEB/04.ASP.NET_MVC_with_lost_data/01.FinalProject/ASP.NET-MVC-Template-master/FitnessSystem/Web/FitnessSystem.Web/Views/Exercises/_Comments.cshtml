@@ -1,0 +1,21 @@
+﻿@model  FitnessSystem.Web.ViewModels.Exercises.ExerciseAndNewCommentViewModel
+
+<h3>Comments</h3>
+<br />
+<div id="addCommentHere"></div>
+@if (Model.Exercise.Comments.Count == 0)
+{
+    <div class="row text-danger">No comments for this exercise!</div>
+}
+else
+{
+    var comments = Model.Exercise.Comments.OrderByDescending(c => c.CreatedOn).ThenBy(c => c.Id);
+    foreach (var comment in comments)
+    {
+        <div class="row">
+            <div class="row">@comment.Content</div>
+            <i>by: </i><strong>@comment.Author</strong>
+        </div>
+        <br />
+    }
+}

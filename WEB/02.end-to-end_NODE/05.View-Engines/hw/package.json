@@ -1,0 +1,17 @@
+{
+  "name": "view-engines",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "jade views/home.jade && jade ./views/smart-phones.jade && jade ./views/tablets.jade && jade ./views/wearables.jade && node app.js"
+  },
+  "author": "mjn",
+  "license": "MIT",
+  "dependencies": {
+    "bootstrap": "^3.3.6",
+    "express": "^4.13.3",
+    "jade": "^1.11.0",
+    "jquery": "^2.1.4"
+  }
+}

@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01.FriendsOfPesho", "01.FriendsOfPesho\01.FriendsOfPesho.csproj", "{1A486984-6786-49E8-9354-5A25B5746DD6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02.Salaries", "02.Salaries\02.Salaries.csproj", "{87A5D257-1A74-4B45-BC3F-299A9ECB0590}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03.TVCables", "03.TVCables\03.TVCables.csproj", "{53D87A2B-D6E6-4148-8713-EF21FEB2BAE1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1A486984-6786-49E8-9354-5A25B5746DD6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1A486984-6786-49E8-9354-5A25B5746DD6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1A486984-6786-49E8-9354-5A25B5746DD6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1A486984-6786-49E8-9354-5A25B5746DD6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{87A5D257-1A74-4B45-BC3F-299A9ECB0590}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{87A5D257-1A74-4B45-BC3F-299A9ECB0590}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{87A5D257-1A74-4B45-BC3F-299A9ECB0590}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{87A5D257-1A74-4B45-BC3F-299A9ECB0590}.Release|Any CPU.Build.0 = Release|Any CPU
+		{53D87A2B-D6E6-4148-8713-EF21FEB2BAE1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{53D87A2B-D6E6-4148-8713-EF21FEB2BAE1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{53D87A2B-D6E6-4148-8713-EF21FEB2BAE1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{53D87A2B-D6E6-4148-8713-EF21FEB2BAE1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

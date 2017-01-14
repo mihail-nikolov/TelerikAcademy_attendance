@@ -1,0 +1,21 @@
+﻿@model  IEnumerable<FitnessSystem.Web.ViewModels.Exercises.ExerciseLinkModel>
+@{
+    ViewBag.Title = "Home Page";
+}
+<h2>Top 5 Exercises</h2>
+<div class="row">
+    @foreach (var exercise in Model)
+    {
+        <div class="row">
+            <h4><a href="~/Exercises/Details/@exercise.Id">@exercise.Title</a></h4>
+        </div>
+        <div class="row">
+            <i>rating: </i><strong class="text-danger">@exercise.Votes</strong>
+            <i>comments: </i><strong class="text-danger">@exercise.Comments </strong>
+            <i>author: </i><strong>@exercise.Author</strong>
+            <i>category: </i><strong><a href="~/Categories/Details/@exercise.CategoryId">@exercise.Category </a></strong>
+            <i>added: </i><strong>@exercise.CreatedOn</strong>
+        </div>
+        <br />
+    }
+</div>

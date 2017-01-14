@@ -1,0 +1,34 @@
+extends ../shared/layout
+block main-content
+    .jumbotron
+        h1.text-center #{currentUser.username}
+        .row
+            .col-md-6
+            if currentUser.avatar != ''
+                img(src=currentUser.avatar id="avatar")
+            else
+                img(src='https://lh3.googleusercontent.com/-hoI3rXz7oy0/AAAAAAAAAAI/AAAAAAAAAAA/UBf8PfFVAsQ/photo.jpg' id="defaultAvatar")
+                br
+            .col-md-6
+                form(method="put" id="form-upload" enctype="multipart/form-data" action="/profile").row
+                    label(for="avatar") avatar
+                    input(id="avatar" class="form-control" type="text" name="avatar" value=currentUser.avatar)
+                    br
+                    label(for="email") email
+                    input(id="email" class="form-control" type="text" name="email" value=currentUser.email)
+                    br
+                    label(for="firstName") firstName
+                    input(id="firstName" class="form-control" type="text" name="firstName" value=currentUser.firstName)
+                    br
+                    label(for="lastName") lastName
+                    input(id="lastName" class="form-control" type="text" name="lastName" value=currentUser.lastName)
+                    br
+                    label(for="facebook") facebook
+                    input(id="facebook" class="form-control" type="text" name="facebook" value=currentUser.facebook)
+                    br
+                    label(for="youtube") youtube
+                    input(id="youtube" class="form-control" type="text" name="youtube" value=currentUser.youtube)
+                    br
+                    h3 rating: #{currentUser.rating}
+                    .col-md-2
+                        input(type="submit" class="btn btn-primary")

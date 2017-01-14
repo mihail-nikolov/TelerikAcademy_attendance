@@ -1,0 +1,90 @@
+﻿@model  FitnessSystem.Web.ViewModels.Exercises.ExerciseAndNewCommentViewModel
+@using Microsoft.AspNet.Identity
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h3>@Model.Exercise.Title</h3>
+<div class="row">
+    <i>by: </i><strong>@Model.Exercise.Author</strong> <i>category: </i>
+    <strong class="text-danger"><a href="~/Categories/Details/@Model.Exercise.CategoryId">@Model.Exercise.Category </a></strong>
+    <i>added: </i><strong>@Model.Exercise.CreatedOn</strong>
+    <br />
+    @if (Request.IsAuthenticated && Model.Exercise.AuthorId == User.Identity.GetUserId())
+    {
+        @Html.ActionLink("Edit", "EditExercise", "Exercises",
+                             new { Model.Exercise.Id }, new { @class = "btn btn-primary" })
+
+        using (Html.BeginForm("Delete", "Exercises", new { area = string.Empty, id = Model.Exercise.Id }, FormMethod.Post))
+        {
+            @Html.HiddenFor(model => model.Exercise.Id)
+            <input type="submit" value="Delete" class="btn btn-danger" />
+        }
+    }
+</div>
+<br />
+<div class="row">
+    @*<span>@Html.Raw(Model.Exercise.SanitizedContent)</span><br /><br />*@ @*sanitized version*@ 
+    <span>@Html.Raw(Model.Exercise.Content)</span><br /><br />
+    @if (Request.IsAuthenticated && Model.Exercise.AuthorId != User.Identity.GetUserId())
+    {
+        <span class="glyphicon glyphicon-thumbs-up" data-action="up" data-id="@Model.Exercise.Id"></span>
+        <span data-action="votesCount">@Model.Exercise.Votes</span>
+        <span class="glyphicon glyphicon-thumbs-down" data-action="down" data-id="@Model.Exercise.Id"></span>
+        <br /><br />
+    }
+    else
+    {
+        <i>rating: </i><strong class="text-danger">@Model.Exercise.Votes</strong><br />
+    }
+</div>
+
+<div class="row">
+    <div id="toUpdate">
+        @if (Request.IsAuthenticated)
+        {
+        @Ajax.ActionLink("Add Comment", "AddNewComment", "Exercises", new { id = Model.Exercise.Id }, new AjaxOptions
+                {
+                    UpdateTargetId = "toUpdate",
+                    InsertionMode = InsertionMode.Replace
+                }, new {@class = "btn btn-primary" })
+        }
+    </div>
+</div>
+
+@Html.Partial("_Comments")
+
+
+<style>
+    span[data-action='up'], span[data-action='down'], div[data-action='add-comment'] {
+        cursor: pointer;
+    }
+</style>
+
+<script>
+    $("span[data-action='up']").click(function () {
+        var id = @Model.Exercise.Id;
+        voteClick(id, 1);
+    });
+
+    $("span[data-action='down']").click(function () {
+        var id = @Model.Exercise.Id;
+        voteClick(id, -1);
+    });
+
+    function voteClick(id, type) {
+        $.post('/Votes/Vote/', { exId: id, points: type },
+            function (data) {
+                var newVotes = data.Count;
+                $("span[data-action='votesCount']")
+                    .html(newVotes);
+            });
+    }
+</script>
+
+@section scripts{
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jqueryval")
+    <script src="@Url.Content("~/Scripts/jquery.unobtrusive-ajax.js")" type="text/javascript"></script>
+}

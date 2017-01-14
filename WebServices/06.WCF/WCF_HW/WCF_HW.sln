@@ -1,0 +1,46 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DayOfWeekServiceProvider", "DayOfWeekServiceProvider\DayOfWeekServiceProvider.csproj", "{E06B7D08-4368-46F7-A300-EA035D61FF54}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServiceConsoleConsumer", "ServiceConsoleConsumer\ServiceConsoleConsumer.csproj", "{D84916F4-3D8F-4F02-8150-77EB8880731E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StringsOperationLibrary", "StringsOperationLibrary\StringsOperationLibrary.csproj", "{D34829E7-97DE-4574-BE38-4529C02D045E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StringsOperatorHost", "StringsOperatorHost\StringsOperatorHost.csproj", "{2DE3285D-D6EB-462C-89AB-EF604DDCE3F7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StringsOperatorConsoleClient", "StringsOperatorConsoleClient\StringsOperatorConsoleClient.csproj", "{A6C7DFE2-2722-43B3-8584-57EF7AADDDCC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E06B7D08-4368-46F7-A300-EA035D61FF54}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E06B7D08-4368-46F7-A300-EA035D61FF54}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E06B7D08-4368-46F7-A300-EA035D61FF54}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E06B7D08-4368-46F7-A300-EA035D61FF54}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D84916F4-3D8F-4F02-8150-77EB8880731E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D84916F4-3D8F-4F02-8150-77EB8880731E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D84916F4-3D8F-4F02-8150-77EB8880731E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D84916F4-3D8F-4F02-8150-77EB8880731E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D34829E7-97DE-4574-BE38-4529C02D045E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D34829E7-97DE-4574-BE38-4529C02D045E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D34829E7-97DE-4574-BE38-4529C02D045E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D34829E7-97DE-4574-BE38-4529C02D045E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2DE3285D-D6EB-462C-89AB-EF604DDCE3F7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2DE3285D-D6EB-462C-89AB-EF604DDCE3F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2DE3285D-D6EB-462C-89AB-EF604DDCE3F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2DE3285D-D6EB-462C-89AB-EF604DDCE3F7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A6C7DFE2-2722-43B3-8584-57EF7AADDDCC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A6C7DFE2-2722-43B3-8584-57EF7AADDDCC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A6C7DFE2-2722-43B3-8584-57EF7AADDDCC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A6C7DFE2-2722-43B3-8584-57EF7AADDDCC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

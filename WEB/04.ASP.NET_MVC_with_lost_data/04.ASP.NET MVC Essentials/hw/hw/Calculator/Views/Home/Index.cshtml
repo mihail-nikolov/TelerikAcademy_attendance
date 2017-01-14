@@ -1,0 +1,46 @@
+﻿@{
+    ViewBag.Title = "Calculator";
+}
+
+<div class="row">
+    <div class="col-xs-10">
+        <h3>Calculator</h3>
+
+        @using (Html.BeginForm("Index", "Home", FormMethod.Post))
+        {
+            <div>
+                @Html.Label("Quantity", "Quantity: ")
+                @Html.TextBox("Quantity", "1", new { @class = "form-control" })
+            </div>
+
+            <div>
+                @Html.Label("Type", "Type: ")
+                @Html.DropDownList("Type", null, new { @class = "form-control" })
+            </div>
+
+            <div>
+                @Html.Label("Kilo", "Kilo: ")
+                @Html.DropDownList("Kilo", null, new { @class = "form-control" })
+            </div>
+            <input type="submit" value="submit" class="btn btn-primary" />
+        }
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-10">
+        <p>@ViewBag.Storage</p>
+        @if (ViewBag.Result != null)
+            {
+            <table class="table">
+                @for (int i = 0; i < ViewBag.Result.Count; i++)
+                {
+                    <tr>
+                        <td>@ViewBag.Result[i].Name</td>
+                        <td>@ViewBag.Result[i].Size</td>
+                    </tr>
+                }
+            </table>
+        }
+    </div>
+</div>

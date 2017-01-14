@@ -1,0 +1,40 @@
+﻿@model FitnessSystem.Web.ViewModels.Exercises.ExerciseEditViewModel
+@{
+    ViewBag.Title = "Create";
+}
+
+<h3>Create a new exercise:</h3>
+
+@using (Html.BeginForm("Create", "Exercises", new { area = string.Empty }, FormMethod.Post))
+{
+    @Html.ValidationSummary(true)
+    @Html.AntiForgeryToken()
+
+    <div class="row">
+        <div class="input-field">
+            @Html.LabelFor(m => m.Title)
+            @Html.EditorFor(m => m.Title)
+            @Html.ValidationMessageFor(m => m.Title)
+        </div>
+    </div>
+    <div class="row">
+        <div class="input-field">
+            @Html.LabelFor(m => m.Content)
+            @Html.EditorFor(m => m.Content)
+            @Html.ValidationMessageFor(m => m.Content)
+        </div>
+    </div>
+    <div class="row">
+        <div class="input-field">
+            <span>Category:</span>
+            @Html.DropDownListFor(m => m.CategoryId, (SelectList)this.ViewBag.categories)
+        </div>
+    </div>
+    <br />
+    <div class="row">
+        <div class="center">
+            <input type="submit" value="Create" class="btn" />
+        </div>
+    </div>
+}
+@Scripts.Render("~/bundles/jqueryval")

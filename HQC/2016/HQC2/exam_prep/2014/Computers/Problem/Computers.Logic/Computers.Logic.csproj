@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{CA7A539D-6A6F-4072-ACA7-445D313EE946}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Computers.Logic</RootNamespace>
+    <AssemblyName>Computers.Logic</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="StyleCop, Version=4.7.1000.0, Culture=neutral, PublicKeyToken=f904653c63bc2738, processorArchitecture=MSIL">
+      <HintPath>..\packages\StyleCop.4.7.49.0\lib\net35\StyleCop.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="StyleCop.CSharp, Version=4.7.1000.0, Culture=neutral, PublicKeyToken=f904653c63bc2738, processorArchitecture=MSIL">
+      <HintPath>..\packages\StyleCop.4.7.49.0\lib\net35\StyleCop.CSharp.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Components\ColorfulVideoCard.cs" />
+    <Compile Include="Components\Contracts\ICPU.cs" />
+    <Compile Include="Components\Contracts\IHardDrive.cs" />
+    <Compile Include="Components\Contracts\IMotherboard.cs" />
+    <Compile Include="Components\Contracts\IVideoCard.cs" />
+    <Compile Include="Components\CPU128.cs" />
+    <Compile Include="Components\CPU32.cs" />
+    <Compile Include="Components\CPU64.cs" />
+    <Compile Include="Components\HDD.cs" />
+    <Compile Include="Components\MonochromeVideoCard.cs" />
+    <Compile Include="Components\MotherBoard.cs" />
+    <Compile Include="Components\RaidArray.cs" />
+    <Compile Include="Components\VideoCard.cs" />
+    <Compile Include="Components\CPU.cs" />
+    <Compile Include="Components\HardDrive.cs" />
+    <Compile Include="Components\LaptopBattery.cs" />
+    <Compile Include="Components\RAM.cs" />
+    <Compile Include="ComputerTypes\Computer.cs" />
+    <Compile Include="ComputerTypes\Laptop.cs" />
+    <Compile Include="ComputerTypes\PersonalComputer.cs" />
+    <Compile Include="ComputerTypes\Server.cs" />
+    <Compile Include="Factories\Contracts\IFactory.cs" />
+    <Compile Include="Factories\DellFactory.cs" />
+    <Compile Include="Factories\Factory.cs" />
+    <Compile Include="Factories\HPFactory.cs" />
+    <Compile Include="Factories\LenovoFactory.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

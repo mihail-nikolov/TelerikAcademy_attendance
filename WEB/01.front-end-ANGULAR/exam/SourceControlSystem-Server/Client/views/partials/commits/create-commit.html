@@ -1,0 +1,30 @@
+﻿<div class="container">
+    <div class="well">
+        <form name="createCommitForm" class="form-horizontal">
+            <fieldset>
+                <legend>Create New Commit</legend>
+                <div class="form-group">
+                    <label for="SourceCode" class="col-md-2 control-label">SourceCode</label>
+                    <div class="col-md-10">
+                        <input id="SourceCode" type="text" placeholder="SourceCode" ng-model="commit.SourceCode" required="required" class="form-control" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="SourceCode" class="col-md-2 control-label">projectId</label>
+                    <div class="col-md-10">
+                        <select class="form-control" required="required"  ng-model="commit.ProjectId" id="project">
+                            <option ng-repeat="project in vm.projects" value="{{project.Id}}">{{project.Name}}</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="pull-right">
+                    <button ng-click="vm.createCommit(commit)" ng-disabled="createCommitForm.$invalid" class="btn btn-primary">
+                        Create
+                    </button>
+                    <a href="#/" class="btn btn-primary">Cancel</a>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+</div>

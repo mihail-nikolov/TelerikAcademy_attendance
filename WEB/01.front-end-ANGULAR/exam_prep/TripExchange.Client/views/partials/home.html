@@ -1,0 +1,65 @@
+<div class="container">
+    <div class="jumbotron text-center">
+        <h1>Welcome Home</h1>
+        <h4>Find you way home</h4>
+    </div>
+    <div class="row">
+        <div class="col-md-3">
+            <div>Trips</div>
+            <div>{{vm.stats.trips}}</div>
+        </div>
+        <div class="col-md-3">
+            <div>Finisged Trips</div>
+            <div>{{vm.stats.finishedTrips}}</div>
+        </div>
+        <div class="col-md-3">
+            <div>Users</div>
+            <div>{{vm.stats.users}}</div>
+        </div>
+        <div class="col-md-3">
+            <div>Drivers</div>
+            <div>{{vm.stats.drivers}}</div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Latest Trips</h3>
+                </div>
+                <div class="panel-body">
+                    <div all-trips/>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Latest drivers</h3>
+                </div>
+                <div class="panel-body">
+                    <table class="table table-bordered">
+                        <th>
+                            Name
+                        </th>
+                        <th>
+                            Upcoming
+                        </th>
+                        <th>
+                            Total trips
+                        </th>
+                        <tr ng-repeat="publicDriver in vm.publicDriversInfo">
+                            <td>{{publicDriver.name}}</td>
+                            <td>{{publicDriver.numberOfUpcomingTrips}}</td>
+                            <td>{{publicDriver.numberOfTotalTrips}}</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>

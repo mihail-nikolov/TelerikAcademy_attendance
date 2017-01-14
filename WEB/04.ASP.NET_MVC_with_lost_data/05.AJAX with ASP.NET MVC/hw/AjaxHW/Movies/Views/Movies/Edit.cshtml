@@ -1,0 +1,93 @@
+﻿@model Movies.ViewModels.MovieViewModel
+@using Movies.Data
+@{
+    ViewBag.Title = "Edit";
+}
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    var dbContext = new MoviesDbContext();
+    var actors = dbContext.Actors.ToList();
+    var actresses = dbContext.Actresses.ToList();
+    var directors = dbContext.Directors.ToList();
+    var studios = dbContext.Studios.ToList();
+
+    var actorsDropDownList = new List<System.Web.Mvc.SelectListItem>();
+
+    foreach (var act in actors)
+    {
+        actorsDropDownList.Add(new SelectListItem { Value = act.Name, Text = act.Name });
+    }
+
+    var actressesDropDownList = new List<System.Web.Mvc.SelectListItem>();
+    foreach (var act in actresses)
+    {
+        actressesDropDownList.Add(new SelectListItem { Value = act.Name, Text = act.Name });
+    }
+
+    var directorsDropDownList = new List<System.Web.Mvc.SelectListItem>();
+    foreach (var dir in directors)
+    {
+        directorsDropDownList.Add(new SelectListItem { Value = dir.Name, Text = dir.Name });
+    }
+
+    var studiosDropDownList = new List<System.Web.Mvc.SelectListItem>();
+    foreach (var st in studios)
+    {
+        studiosDropDownList.Add(new SelectListItem { Value = st.Name, Text = st.Name });
+    }
+
+    <div class="row">
+        <div class="col s6 offset-s3">
+            <div class="card-panel z-depth-4">
+                <h4>Edit movie</h4>
+                <div class="row">
+                    <div class="input-field col s12">
+                        @Html.EditorFor(m => m.Title)
+                        @Html.ValidationMessageFor(model => model.Title)
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        @Html.EditorFor(m => m.Year)
+                        @Html.ValidationMessageFor(model => model.Year)
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field">
+                        <span>Actor Name</span>
+                        @Html.DropDownListFor(m => m.LeadingMaleRole.Name, actorsDropDownList)
+                        @Html.ValidationMessageFor(m => m.LeadingMaleRole.Name)
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field">
+                        <span>Actress Name</span>
+                        @Html.DropDownListFor(m => m.LeadingFemaleRole.Name, actressesDropDownList)
+                        @Html.ValidationMessageFor(m => m.LeadingFemaleRole.Name)
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field">
+                        <span>Director Name</span>
+                        @Html.DropDownListFor(m => m.Director.Name, directorsDropDownList)
+                        @Html.ValidationMessageFor(m => m.Director.Name)
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field">
+                        <span>Studio Name</span>
+                        @Html.DropDownListFor(m => m.Studio.Name, studiosDropDownList)
+                        @Html.ValidationMessageFor(m => m.Studio.Name)
+                    </div>
+                </div>
+                <div class="center">
+                    <input type="submit" value="Save" class="btn" />
+                </div>
+            </div>
+        </div>
+    </div>
+}
