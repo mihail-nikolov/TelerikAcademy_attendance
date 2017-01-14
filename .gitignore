@@ -5,6 +5,8 @@
 *.suo
 *.user
 *.sln.docstates
+*.ppt
+*.pptx
 
 # Build results
 
@@ -111,8 +113,6 @@ AppPackages/
 node_modules/
 bower_components/
 sql/
-*.ppt
-*.pptx
 *.Cache
 ClientBin/
 [Ss]tyle[Cc]op.*
