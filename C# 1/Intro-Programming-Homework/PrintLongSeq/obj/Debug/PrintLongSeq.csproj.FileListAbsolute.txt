@@ -1,5 +1,0 @@
-E:\my documents\telerik\2015\C# 1\Intro-Programming-Homework\PrintLongSeq\bin\Debug\PrintLongSeq.exe.config
-E:\my documents\telerik\2015\C# 1\Intro-Programming-Homework\PrintLongSeq\bin\Debug\PrintLongSeq.exe
-E:\my documents\telerik\2015\C# 1\Intro-Programming-Homework\PrintLongSeq\bin\Debug\PrintLongSeq.pdb
-E:\my documents\telerik\2015\C# 1\Intro-Programming-Homework\PrintLongSeq\obj\Debug\PrintLongSeq.exe
-E:\my documents\telerik\2015\C# 1\Intro-Programming-Homework\PrintLongSeq\obj\Debug\PrintLongSeq.pdb

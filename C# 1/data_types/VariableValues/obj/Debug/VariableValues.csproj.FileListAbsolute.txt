@@ -1,5 +1,0 @@
-E:\my documents\telerik\2015\C# 1\data_types\VariableValues\bin\Debug\VariableValues.exe.config
-E:\my documents\telerik\2015\C# 1\data_types\VariableValues\bin\Debug\VariableValues.exe
-E:\my documents\telerik\2015\C# 1\data_types\VariableValues\bin\Debug\VariableValues.pdb
-E:\my documents\telerik\2015\C# 1\data_types\VariableValues\obj\Debug\VariableValues.exe
-E:\my documents\telerik\2015\C# 1\data_types\VariableValues\obj\Debug\VariableValues.pdb

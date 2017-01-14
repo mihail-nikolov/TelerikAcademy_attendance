@@ -1,6 +1,0 @@
-E:\my documents\telerik\2015\C# 1\operators_expressions\BitWise\bin\Debug\BitWise.exe.config
-E:\my documents\telerik\2015\C# 1\operators_expressions\BitWise\bin\Debug\BitWise.exe
-E:\my documents\telerik\2015\C# 1\operators_expressions\BitWise\bin\Debug\BitWise.pdb
-E:\my documents\telerik\2015\C# 1\operators_expressions\BitWise\obj\Debug\bitwise.csprojResolveAssemblyReference.cache
-E:\my documents\telerik\2015\C# 1\operators_expressions\BitWise\obj\Debug\BitWise.exe
-E:\my documents\telerik\2015\C# 1\operators_expressions\BitWise\obj\Debug\BitWise.pdb

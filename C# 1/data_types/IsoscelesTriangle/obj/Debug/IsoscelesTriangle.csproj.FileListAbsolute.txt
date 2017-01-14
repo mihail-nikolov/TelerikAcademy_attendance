@@ -1,5 +1,0 @@
-E:\my documents\telerik\2015\C# 1\data_types\IsoscelesTriangle\bin\Debug\IsoscelesTriangle.exe.config
-E:\my documents\telerik\2015\C# 1\data_types\IsoscelesTriangle\bin\Debug\IsoscelesTriangle.exe
-E:\my documents\telerik\2015\C# 1\data_types\IsoscelesTriangle\bin\Debug\IsoscelesTriangle.pdb
-E:\my documents\telerik\2015\C# 1\data_types\IsoscelesTriangle\obj\Debug\IsoscelesTriangle.exe
-E:\my documents\telerik\2015\C# 1\data_types\IsoscelesTriangle\obj\Debug\IsoscelesTriangle.pdb

@@ -1,5 +1,0 @@
-E:\my documents\telerik\2015\C# 1\operators_expressions\moon_gravity\bin\Debug\moon_gravity.exe.config
-E:\my documents\telerik\2015\C# 1\operators_expressions\moon_gravity\bin\Debug\moon_gravity.exe
-E:\my documents\telerik\2015\C# 1\operators_expressions\moon_gravity\bin\Debug\moon_gravity.pdb
-E:\my documents\telerik\2015\C# 1\operators_expressions\moon_gravity\obj\Debug\moon_gravity.exe
-E:\my documents\telerik\2015\C# 1\operators_expressions\moon_gravity\obj\Debug\moon_gravity.pdb

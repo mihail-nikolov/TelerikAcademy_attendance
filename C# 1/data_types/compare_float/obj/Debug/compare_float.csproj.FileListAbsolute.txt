@@ -1,6 +1,0 @@
-E:\my documents\telerik\2015\C# 1\data_types\compare_float\bin\Debug\compare_float.exe.config
-E:\my documents\telerik\2015\C# 1\data_types\compare_float\bin\Debug\compare_float.exe
-E:\my documents\telerik\2015\C# 1\data_types\compare_float\bin\Debug\compare_float.pdb
-E:\my documents\telerik\2015\C# 1\data_types\compare_float\obj\Debug\compare_float.exe
-E:\my documents\telerik\2015\C# 1\data_types\compare_float\obj\Debug\compare_float.pdb
-E:\my documents\telerik\2015\C# 1\data_types\compare_float\obj\Debug\compare_float.csprojResolveAssemblyReference.cache

@@ -1,5 +1,0 @@
-E:\my documents\telerik\2015\C# 1\operators_expressions\bit_from_int\bin\Debug\bit_from_int.exe.config
-E:\my documents\telerik\2015\C# 1\operators_expressions\bit_from_int\bin\Debug\bit_from_int.exe
-E:\my documents\telerik\2015\C# 1\operators_expressions\bit_from_int\bin\Debug\bit_from_int.pdb
-E:\my documents\telerik\2015\C# 1\operators_expressions\bit_from_int\obj\Debug\bit_from_int.exe
-E:\my documents\telerik\2015\C# 1\operators_expressions\bit_from_int\obj\Debug\bit_from_int.pdb

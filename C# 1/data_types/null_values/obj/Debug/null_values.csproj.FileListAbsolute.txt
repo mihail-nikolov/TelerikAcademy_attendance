@@ -1,5 +1,0 @@
-E:\my documents\telerik\2015\C# 1\data_types\null_values\bin\Debug\null_values.exe.config
-E:\my documents\telerik\2015\C# 1\data_types\null_values\bin\Debug\null_values.exe
-E:\my documents\telerik\2015\C# 1\data_types\null_values\bin\Debug\null_values.pdb
-E:\my documents\telerik\2015\C# 1\data_types\null_values\obj\Debug\null_values.exe
-E:\my documents\telerik\2015\C# 1\data_types\null_values\obj\Debug\null_values.pdb

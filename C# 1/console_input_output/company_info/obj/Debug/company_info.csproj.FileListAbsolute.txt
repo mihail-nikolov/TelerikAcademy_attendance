@@ -1,5 +1,0 @@
-E:\my documents\telerik\2015\C# 1\console_input_output\company_info\bin\Debug\company_info.exe.config
-E:\my documents\telerik\2015\C# 1\console_input_output\company_info\bin\Debug\company_info.exe
-E:\my documents\telerik\2015\C# 1\console_input_output\company_info\bin\Debug\company_info.pdb
-E:\my documents\telerik\2015\C# 1\console_input_output\company_info\obj\Debug\company_info.exe
-E:\my documents\telerik\2015\C# 1\console_input_output\company_info\obj\Debug\company_info.pdb

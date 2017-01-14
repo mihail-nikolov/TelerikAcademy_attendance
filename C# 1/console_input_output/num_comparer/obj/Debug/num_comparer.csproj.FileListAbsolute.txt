@@ -1,5 +1,0 @@
-E:\my documents\telerik\2015\C# 1\console_input_output\num_comparer\bin\Debug\num_comparer.exe.config
-E:\my documents\telerik\2015\C# 1\console_input_output\num_comparer\bin\Debug\num_comparer.exe
-E:\my documents\telerik\2015\C# 1\console_input_output\num_comparer\bin\Debug\num_comparer.pdb
-E:\my documents\telerik\2015\C# 1\console_input_output\num_comparer\obj\Debug\num_comparer.exe
-E:\my documents\telerik\2015\C# 1\console_input_output\num_comparer\obj\Debug\num_comparer.pdb

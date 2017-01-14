@@ -1,5 +1,0 @@
-E:\my documents\telerik\2015\C# 1\console_input_output\circle_per_area\bin\Debug\circle_per_area.exe.config
-E:\my documents\telerik\2015\C# 1\console_input_output\circle_per_area\bin\Debug\circle_per_area.exe
-E:\my documents\telerik\2015\C# 1\console_input_output\circle_per_area\bin\Debug\circle_per_area.pdb
-E:\my documents\telerik\2015\C# 1\console_input_output\circle_per_area\obj\Debug\circle_per_area.exe
-E:\my documents\telerik\2015\C# 1\console_input_output\circle_per_area\obj\Debug\circle_per_area.pdb

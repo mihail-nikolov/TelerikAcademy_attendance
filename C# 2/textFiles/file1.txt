@@ -1,9 +1,0 @@
-Problem 7. Replace sub-string
-Problem 1. Odd lines
-Problem 2. Concatenate text files
-Problem 3. Line numbers
-    The result should be written to another text file.
-Write a program that compares two text files line by line and prints the number of lines that are the same and the number of lines that are different.
-Problem 5. Maximal area sum
-    Find an area of size 2 x 2 in the matrix, with a maximal sum of its elements.
-        Each of the next N lines contain N numbers separated by space.

@@ -1,5 +1,0 @@
-E:\my documents\telerik\2015\C# 1\data_types\float_double\bin\Debug\float_double.exe.config
-E:\my documents\telerik\2015\C# 1\data_types\float_double\bin\Debug\float_double.exe
-E:\my documents\telerik\2015\C# 1\data_types\float_double\bin\Debug\float_double.pdb
-E:\my documents\telerik\2015\C# 1\data_types\float_double\obj\Debug\float_double.exe
-E:\my documents\telerik\2015\C# 1\data_types\float_double\obj\Debug\float_double.pdb

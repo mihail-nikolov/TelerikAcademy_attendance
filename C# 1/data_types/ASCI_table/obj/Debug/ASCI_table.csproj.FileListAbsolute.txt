@@ -1,5 +1,0 @@
-E:\my documents\telerik\2015\C# 1\data_types\ASCI_table\bin\Debug\ASCI_table.exe.config
-E:\my documents\telerik\2015\C# 1\data_types\ASCI_table\bin\Debug\ASCI_table.exe
-E:\my documents\telerik\2015\C# 1\data_types\ASCI_table\bin\Debug\ASCI_table.pdb
-E:\my documents\telerik\2015\C# 1\data_types\ASCI_table\obj\Debug\ASCI_table.exe
-E:\my documents\telerik\2015\C# 1\data_types\ASCI_table\obj\Debug\ASCI_table.pdb

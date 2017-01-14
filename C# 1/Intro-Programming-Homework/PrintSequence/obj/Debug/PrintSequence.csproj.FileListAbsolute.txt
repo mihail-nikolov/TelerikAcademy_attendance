@@ -1,6 +1,0 @@
-E:\my documents\telerik\2015\C# 1\Intro-Programming-Homework\PrintSequence\bin\Debug\PrintSequence.exe.config
-E:\my documents\telerik\2015\C# 1\Intro-Programming-Homework\PrintSequence\bin\Debug\PrintSequence.exe
-E:\my documents\telerik\2015\C# 1\Intro-Programming-Homework\PrintSequence\bin\Debug\PrintSequence.pdb
-E:\my documents\telerik\2015\C# 1\Intro-Programming-Homework\PrintSequence\obj\Debug\PrintSequence.csprojResolveAssemblyReference.cache
-E:\my documents\telerik\2015\C# 1\Intro-Programming-Homework\PrintSequence\obj\Debug\PrintSequence.exe
-E:\my documents\telerik\2015\C# 1\Intro-Programming-Homework\PrintSequence\obj\Debug\PrintSequence.pdb

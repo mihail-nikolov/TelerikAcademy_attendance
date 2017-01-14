@@ -1,6 +1,0 @@
-E:\my documents\telerik\2015\C# 1\operators_expressions\four_digit\bin\Debug\four_digit.exe.config
-E:\my documents\telerik\2015\C# 1\operators_expressions\four_digit\bin\Debug\four_digit.exe
-E:\my documents\telerik\2015\C# 1\operators_expressions\four_digit\bin\Debug\four_digit.pdb
-E:\my documents\telerik\2015\C# 1\operators_expressions\four_digit\obj\Debug\four_digit.csprojResolveAssemblyReference.cache
-E:\my documents\telerik\2015\C# 1\operators_expressions\four_digit\obj\Debug\four_digit.exe
-E:\my documents\telerik\2015\C# 1\operators_expressions\four_digit\obj\Debug\four_digit.pdb

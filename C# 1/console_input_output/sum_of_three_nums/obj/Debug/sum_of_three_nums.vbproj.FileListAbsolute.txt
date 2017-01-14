@@ -1,1 +1,0 @@
-E:\my documents\telerik\2015\C# 1\console_input_output\sum_of_three_nums\bin\Debug\sum_of_three_nums.exe.config
