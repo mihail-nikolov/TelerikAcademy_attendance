@@ -7,6 +7,7 @@
 *.sln.docstates
 *.ppt
 *.pptx
+*.txt
 
 # Build results
 
@@ -109,7 +110,7 @@ csx
 AppPackages/
 
 # Others
-*telerikAcademyMaster/
+telerikAcademyMaster/
 node_modules/
 bower_components/
 sql/
