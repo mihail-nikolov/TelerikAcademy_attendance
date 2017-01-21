@@ -1,0 +1,25 @@
+﻿<h2>Manage Users</h2>
+
+@(Html.Kendo().Grid<FitnessSystem.Web.Areas.Administration.ViewModels.Users.UserViewModel>()
+      .Name("grid")
+      .Columns(columns =>
+      {
+          columns.Bound(c => c.Email);
+          columns.Bound(c => c.Comments);
+          columns.Bound(c => c.Exercises);
+          columns.Command(command => command.Destroy());
+      })
+      .Pageable()
+      .Sortable(sortable =>
+      {
+          sortable.SortMode(GridSortMode.SingleColumn);
+      })
+      .Filterable()
+      .DataSource(dataSource => dataSource
+          .Ajax()
+          .Model(model => model.Id(p => p.Id))
+          .PageSize(10)
+          .Read(read => read.Action("Users_Read", "ManageUsers"))
+          .Destroy(destroy => destroy.Action("Users_Destroy", "ManageUsers"))
+      )
+)
