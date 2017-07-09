@@ -1,0 +1,43 @@
+﻿<div class="container">
+    <div class="jumbotron text-center">Welcome to the SCS</div>
+    <div class="col-md-3">
+        <strong>Users:</strong><span>{{vm.statistics.Users}}</span>
+    </div>
+    <div class="col-md-3">
+        <strong>Projects:</strong><span>{{vm.statistics.Projects}}</span>
+    </div>
+    <div class="col-md-3">
+        <strong>Commits:</strong><span>{{vm.statistics.Commits}}</span>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Latest 10 Projects</h3>
+                </div>
+                <div class="panel-body">
+                    <div projects-table />
+                    <!--While matching directives, Angular strips the prefix x- or data- from element/attribute names. 
+                        Then it converts - or : delimited strings to camelCase and matches with 
+                        the registered directives. That’s why we have used the helloWorld directive as 
+                        hello-world in the HTML https://www.sitepoint.com/practical-guide-angularjs-directives/ -->
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Latest 10 Commits</h3>
+                </div>
+                <div class="panel-body">
+                    <div class="panel-body">
+                        <div commits-table />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

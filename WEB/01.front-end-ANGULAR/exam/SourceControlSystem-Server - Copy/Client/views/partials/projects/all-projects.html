@@ -1,0 +1,108 @@
+﻿<div class="container">
+    <div class="text-center jumbotron"><h3>Projects Page</h3></div>
+    <div ng-show="vm.identity.isAuthenticated()">
+        <div class="row">
+            <div class="col-md-3"><a href="#/projects/add" class="btn btn-primary">Create new project</a></div>
+        </div>
+        <br />
+
+        <div class="row">
+            <div class="col-md-3">
+                <div class="form-group">
+                    <div class="text-center">
+                        <label for="sort" control-label">Order by:</label>
+                    </div>
+                    <div>
+                        <select class="form-control" required="required" ng-init="vm.request.OrderBy='date'" ng-model="vm.request.OrderBy" id="sort">
+                            <option value="collaborator">Collaborator</option>
+                            <option value="date">Date</option>
+                            <option value="name">Name</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <div class="text-center">
+                        <label for="order" class="control-label">Order Type</label>
+                    </div>
+                    <div>
+                        <select class="form-control" required="required" ng-init="vm.request.OrderType='asc'" ng-model="vm.request.OrderType" id="sort">
+                            <option value="asc">Ascending</option>
+                            <option value="desc">Descending</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <div class="text-center">
+                        <label for="sort" class="control-label">OnlyPublic</label>
+                    </div>
+                    <div>
+                        <select class="form-control" required="required" ng-init="vm.request.OnlyPublic='false'" ng-model="vm.request.OnlyPublic" id="public">
+                            <option value="true">true</option>
+                            <option value="false">false</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <div class="text-center">
+                        <label for="from-city" class="control-label">ByUser</label>
+                    </div>
+                    <div>
+                        <input type="text" ng-model="vm.request.ByUser" class="form-control" />
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <div class="text-center">
+                        <label for="pagesize" control-label">PageSize</label>
+                    </div>
+                    <div>
+                        <input type="number" ng-model="vm.request.PageSize" class="form-control" />
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6 pull-right">
+            <button class="btn btn-primary" ng-click="vm.filterProjects(vm.request)">Filter</button>
+        </div>
+    </div>
+    <br />
+    <!--------------------------------->
+    <div class="row">
+        <div class="col-md-6">
+            <!--<h3 class="panel-title">Latest 10 Projects</h3>-->
+            <div projects-table />
+            <!--While matching directives, Angular strips the prefix x- or data- from element/attribute names.
+            Then it converts - or : delimited strings to camelCase and matches with
+            the registered directives. That’s why we have used the helloWorld directive as
+            hello-world in the HTML https://www.sitepoint.com/practical-guide-angularjs-directives/ -->
+        </div>
+    </div>
+    <!--------------------------------->
+    <div ng-show="vm.identity.isAuthenticated()">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <div class="col-md-3">
+                        <div class="col-md-3">
+                            <button class="btn btn-primary" ng-click="vm.prevPage()">&lt;&lt;</button>
+                        </div>
+                        <div class="col-md-5">
+                            <input type="number" ng-model="vm.request.page" class="form-control" />
+                        </div>
+                        <div class="col-md-3">
+                            <button class="btn btn-primary" ng-click="vm.nextPage()">&gt;&gt;</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

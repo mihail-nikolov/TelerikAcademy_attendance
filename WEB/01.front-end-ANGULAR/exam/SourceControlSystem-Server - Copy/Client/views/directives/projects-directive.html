@@ -1,0 +1,31 @@
+﻿<table class="table table-bordered">
+    <tr>
+        <th>Name</th>
+        <th> License </th>
+        <th> TotalUsers </th>
+        <th>CreatedOn</th>
+    </tr>
+    <tr ng-repeat="project in vm.projects" ng-class-even="'even-class'" ng-class-odd="'odd-class'">
+        <td>
+            <a href="#/projects/{{project.Id}}">{{project.Name}}</a>
+        </td>
+        <td>
+            <div ng-switch on="project.License">
+                <span ng-switch-when="Apache">
+                    <img src="https://tr1.cbsistatic.com/hub/i/2016/11/17/6f5f8308-7193-4b46-866d-b88fb0fa68e5/apachehero.jpg" alt="Apache" style="width:58px;height:58px;">
+                </span>
+                <span ng-switch-when="Mozilla Public License">
+                    <img src="https://screenshots.en.sftcdn.net/en/scrn/107000/107191/mozilla-firefox-10-535x535.png" alt="mozilla" style="width:58px;height:58px;">
+                </span>
+                <span ng-switch-when="GPL">
+                    <img src="https://scontent.cdninstagram.com/hphotos-xpa1/t51.2885-15/s640x640/e35/sh0.08/10948870_860990547313974_418054860_n.jpg" alt="58px" style="width:58px;height:58px;">
+                </span>
+                <span ng-switch-default>
+                    <img src="http://vignette2.wikia.nocookie.net/assassinscreed/images/3/39/Not-found.jpg/revision/latest?cb=20110517171552" alt="notFound" style="width:58px;height:58px;">
+                </span>
+            </div>
+        </td>
+        <td>  {{project.TotalUsers}} </td>
+        <td>{{project.CreatedOn | beautifulDate}}</td>
+    </tr>
+</table>

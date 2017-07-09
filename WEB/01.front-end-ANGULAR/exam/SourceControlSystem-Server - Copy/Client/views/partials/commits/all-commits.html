@@ -1,0 +1,16 @@
+﻿<div class="container">
+    <div ng-show="vm.identity.isAuthenticated()">
+        <span>For more details go to <a href="#/projects/">projects</a> page and choose a project</span>
+    </div>
+
+    <div ng-hide="vm.identity.isAuthenticated()">
+        <div class="col-md-6">
+            <h3 class="panel-title">Latest 10 Commits</h3>
+            <div public-commits />
+            <!--While matching directives, Angular strips the prefix x- or data- from element/attribute names.
+                Then it converts - or : delimited strings to camelCase and matches with
+                the registered directives. That’s why we have used the helloWorld directive as
+                hello-world in the HTML https://www.sitepoint.com/practical-guide-angularjs-directives/ -->
+        </div>
+    </div>
+</div>

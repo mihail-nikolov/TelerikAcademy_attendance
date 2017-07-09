@@ -3,7 +3,6 @@
 
     function beautifulDate() {
         return function (input) {
-            // check if input is date
 
             var monthNames = [
               "January",
@@ -24,8 +23,6 @@
             var day = date.getDate();
             var monthIndex = date.getMonth();
             var year = date.getFullYear();
-
-            // get time
 
             return day + ' ' + monthNames[monthIndex] + ' ' + year;
         }

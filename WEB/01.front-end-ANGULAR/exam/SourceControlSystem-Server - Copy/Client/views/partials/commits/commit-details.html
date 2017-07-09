@@ -1,0 +1,7 @@
+﻿<div class="container" ng-controller="CommitDetailsController" ng-show="vm.identity.isAuthenticated()">
+    <div class="container">
+        <div><strong>Commit Id: </strong> {{vm.commit.Id}}</div>
+        <div><strong>by: </strong> {{vm.commit.UserName}}</div>
+        <div><strong>Created on: </strong> {{vm.commit.CreatedOn | beautifulDate}}</div>
+    </div>
+</div>

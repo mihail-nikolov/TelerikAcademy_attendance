@@ -1,0 +1,72 @@
+﻿<div class="container" ng-controller="ProjectDetailsController" ng-show="vm.identity.isAuthenticated()">
+    <div><strong>Project: </strong> {{vm.project.Name}}</div>
+    <div><strong>License: </strong> {{vm.project.License}}</div>
+    <div><strong>License: </strong> {{vm.project.CreatedOn | beautifulDate}}</div>
+    <div>
+        <strong>Collaborators: </strong>
+        <div ng-repeat="collaborator in vm.collaborators">
+            <span>{{collaborator}}, </span>
+        </div>
+        <strong>Commits: </strong>
+        <div class="col-md-3">
+            <div class="form-group">
+                <div class="text-center">
+                    <label for="from-city" class="control-label">ByUser</label>
+                </div>
+                <div>
+                    <input type="text" ng-model="vm.request.ByUser" class="form-control" />
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="form-group">
+                <div class="text-center">
+                    <label for="pagesize" control-label">PageSize</label>
+                </div>
+                <div>
+                    <input type="number" ng-model="vm.request.PageSize" class="form-control" />
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 pull-right">
+            <button class="btn btn-primary" ng-click="vm.filterCommits(vm.request)">Filter</button>
+        </div>
+        <div class="col-md-6">
+            <div class="panel-body">
+                <div class="panel-body">
+                    <div commits-table />
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <div class="col-md-3">
+                        <div class="col-md-3">
+                            <button class="btn btn-primary" ng-click="vm.prevPage()">&lt;&lt;</button>
+                        </div>
+                        <div class="col-md-5">
+                            <input type="number" ng-model="vm.request.page" class="form-control" />
+                        </div>
+                        <div class="col-md-3">
+                            <button class="btn btn-primary" ng-click="vm.nextPage()">&gt;&gt;</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    <br />
+    <div ng-show="vm.isCurrentUserCollaborator">
+        <a href="#/projects/{{vm.project.Id}}/addcommits" class="btn btn-primary">Add Commit</a>
+        <div>
+            <div class="col-sm-3">
+                <input type="email" name="collaboratorEmailInput" required placeholder="add collaborator email" class="form-control" ng-model="collaboratorEmail" />
+            </div>
+            <button ng-click='vm.addCollaborator(collaboratorEmail)' ng-disabled="collaboratorEmailInput.$invalid" class="btn btn-primary">
+                Add collaborator
+            </button>
+        </div>
+    </div>
+</div>

@@ -54,5 +54,5 @@
     angular.module('myApp', ['ngRoute', 'ngCookies', 'kendo.directives', 'myApp.controllers', 'myApp.directives', 'myApp.filters']).
         config(['$routeProvider', config])
         .value('toastr', toastr)
-        .constant('baseServiceUrl', 'http://spa.bgcoder.com/');
+        .constant('baseServiceUrl', 'http://localhost:42252/');
 }());

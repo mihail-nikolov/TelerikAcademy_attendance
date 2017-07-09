@@ -1,0 +1,22 @@
+﻿<div class="container" ng-controller="AddCommitController">
+    <div class="well">
+        <form name="AddCommitForm" class="form-horizontal">
+            <fieldset>
+                <legend>Add new commit to: <strong>{{vm.project.Name}}</strong></legend>
+                <div class="form-group">
+                    <label class="col-md-2 control-label">Put your code here</label>
+                    <div class="col-md-10">
+                        <input type="text" placeholder="your code" ng-model="vm.commit.sourceCode" required="required" />
+                    </div>
+                </div>
+
+                <div class="pull-right">
+                    <button ng-click="vm.addCommit(vm.commit)" ng-disabled="AddCommitForm.$invalid" class="btn btn-primary">
+                        Add
+                    </button>
+                    <a href="#/projects" class="btn btn-primary">Cancel</a>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+</div>
